@@ -185,10 +185,10 @@ void Matcher::matchFeatures(int32_t method, Matrix *Tr_delta) {
   //////////////////
   // sanity check //
   //////////////////
-  cout << "param.multi_stage: " << param.multi_stage << endl;
-  cout << "method: " << method << endl;
-  cout << "param.refinement: " << param.refinement << endl;
-  cout << "param.half_resolution: " << param.half_resolution << endl;
+  // cout << "param.multi_stage: " << param.multi_stage << endl;
+  // cout << "method: " << method << endl;
+  // cout << "param.refinement: " << param.refinement << endl;
+  // cout << "param.half_resolution: " << param.half_resolution << endl;
   
   // flow
   if (method==0) {
