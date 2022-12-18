@@ -25,6 +25,7 @@ Street, Fifth Floor, Boston, MA 02110-1301, USA
 
 using namespace std;
 
+#include "myComputeFeature.h"
 //////////////////////
 // PUBLIC FUNCTIONS //
 //////////////////////
@@ -176,8 +177,10 @@ void Matcher::pushBack (uint8_t *I1,uint8_t* I2,int32_t* dims,const bool replace
 
   // compute new features for current frame
   computeFeatures(I1c,dims_c,m1c1,n1c1,m1c2,n1c2,I1c_du,I1c_dv,I1c_du_full,I1c_dv_full);
+  // myComputeFeatures(I1c,dims_c,m1c1,n1c1,m1c2,n1c2,I1c_du,I1c_dv,I1c_du_full,I1c_dv_full);
   if (I2!=0)
     computeFeatures(I2c,dims_c,m2c1,n2c1,m2c2,n2c2,I2c_du,I2c_dv,I2c_du_full,I2c_dv_full);
+    // myComputeFeatures(I2c,dims_c,m2c1,n2c1,m2c2,n2c2,I2c_du,I2c_dv,I2c_du_full,I2c_dv_full);
 }
 
 void Matcher::matchFeatures(int32_t method, Matrix *Tr_delta) {
@@ -344,10 +347,11 @@ void Matcher::nonMaximumSuppression (int16_t* I_f1,int16_t* I_f2,const int32_t* 
   int32_t f1mini,f1minj,f1maxi,f1maxj,f2mini,f2minj,f2maxi,f2maxj;
   int32_t f1minval,f1maxval,f2minval,f2maxval,currval;
   int32_t addr;
-  
-  for (int32_t i=n+margin; i<width-n-margin;i+=n+1) {
-    for (int32_t j=n+margin; j<height-n-margin;j+=n+1) {
-
+  // cout << "margin: " << margin << endl;
+  // cout << "width: " << width << "height: " <<height<<  "bpl: " << bpl << endl;
+  for (int32_t j=n+margin; j<height-n-margin;j+=n+1) {
+    for (int32_t i=n+margin; i<width-n-margin;i+=n+1) { 
+      // cout << i<< " " << j << endl;
       f1mini = i; f1minj = j; f1maxi = i; f1maxj = j;
       f2mini = i; f2minj = j; f2maxi = i; f2maxj = j;
       
@@ -357,8 +361,8 @@ void Matcher::nonMaximumSuppression (int16_t* I_f1,int16_t* I_f2,const int32_t* 
       f2minval = *(I_f2+addr);
       f2maxval = f2minval;
 
-      for (int32_t i2=i; i2<=i+n; i2++) {
-        for (int32_t j2=j; j2<=j+n; j2++) {
+      for (int32_t j2=j; j2<=j+n; j2++) {
+        for (int32_t i2=i; i2<=i+n; i2++) {
           addr    = getAddressOffsetImage(i2,j2,bpl);
           currval = *(I_f1+addr);
           if (currval<f1minval) {
@@ -384,8 +388,8 @@ void Matcher::nonMaximumSuppression (int16_t* I_f1,int16_t* I_f2,const int32_t* 
       }
       
       // f1 minimum
-      for (int32_t i2=f1mini-n; i2<=min(f1mini+n,width-1-margin); i2++) {
-        for (int32_t j2=f1minj-n; j2<=min(f1minj+n,height-1-margin); j2++) {
+      for (int32_t j2=f1minj-n; j2<=min(f1minj+n,height-1-margin); j2++) {
+        for (int32_t i2=f1mini-n; i2<=min(f1mini+n,width-1-margin); i2++) {
           currval = *(I_f1+getAddressOffsetImage(i2,j2,bpl));
           if (currval<f1minval && (i2<i || i2>i+n || j2<j || j2>j+n))
             goto failed_f1min;            
@@ -396,8 +400,8 @@ void Matcher::nonMaximumSuppression (int16_t* I_f1,int16_t* I_f2,const int32_t* 
       failed_f1min:;
 
       // f1 maximum
-      for (int32_t i2=f1maxi-n; i2<=min(f1maxi+n,width-1-margin); i2++) {
-        for (int32_t j2=f1maxj-n; j2<=min(f1maxj+n,height-1-margin); j2++) {
+      for (int32_t j2=f1maxj-n; j2<=min(f1maxj+n,height-1-margin); j2++) {
+        for (int32_t i2=f1maxi-n; i2<=min(f1maxi+n,width-1-margin); i2++) {
           currval = *(I_f1+getAddressOffsetImage(i2,j2,bpl));
           if (currval>f1maxval && (i2<i || i2>i+n || j2<j || j2>j+n))
             goto failed_f1max;
@@ -408,8 +412,8 @@ void Matcher::nonMaximumSuppression (int16_t* I_f1,int16_t* I_f2,const int32_t* 
       failed_f1max:;
       
       // f2 minimum
-      for (int32_t i2=f2mini-n; i2<=min(f2mini+n,width-1-margin); i2++) {
-        for (int32_t j2=f2minj-n; j2<=min(f2minj+n,height-1-margin); j2++) {
+      for (int32_t j2=f2minj-n; j2<=min(f2minj+n,height-1-margin); j2++) {
+        for (int32_t i2=f2mini-n; i2<=min(f2mini+n,width-1-margin); i2++) {
           currval = *(I_f2+getAddressOffsetImage(i2,j2,bpl));
           if (currval<f2minval && (i2<i || i2>i+n || j2<j || j2>j+n))
             goto failed_f2min;
@@ -420,8 +424,8 @@ void Matcher::nonMaximumSuppression (int16_t* I_f1,int16_t* I_f2,const int32_t* 
       failed_f2min:;
 
       // f2 maximum
-      for (int32_t i2=f2maxi-n; i2<=min(f2maxi+n,width-1-margin); i2++) {
-        for (int32_t j2=f2maxj-n; j2<=min(f2maxj+n,height-1-margin); j2++) {
+      for (int32_t j2=f2maxj-n; j2<=min(f2maxj+n,height-1-margin); j2++) {
+        for (int32_t i2=f2maxi-n; i2<=min(f2maxi+n,width-1-margin); i2++) {
           currval = *(I_f2+getAddressOffsetImage(i2,j2,bpl));
           if (currval>f2maxval && (i2<i || i2>i+n || j2<j || j2>j+n))
             goto failed_f2max;
@@ -686,15 +690,18 @@ void Matcher::computeFeatures (uint8_t *I,const int32_t* dims,int32_t* &max1,int
   // extract sparse maxima (1st pass) via non-maximum suppression
   vector<Matcher::maximum> maxima1;
   if (param.multi_stage) {
-    int32_t nms_n_sparse = param.nms_n*3;
+    int32_t nms_n_sparse = param.nms_n*4;  // param.nms_n*3
     if (nms_n_sparse>10)
       nms_n_sparse = max(param.nms_n,10);
+      // cout << "1st pass n: " << nms_n_sparse << endl;
     nonMaximumSuppression(I_f1,I_f2,dims_matching,maxima1,nms_n_sparse);
     computeDescriptors(I_du,I_dv,dims_matching[2],maxima1);
   }
   
   // extract dense maxima (2nd pass) via non-maximum suppression
   vector<Matcher::maximum> maxima2;
+  // cout << "2nd pass n: " << param.nms_n << endl;
+
   nonMaximumSuppression(I_f1,I_f2,dims_matching,maxima2,param.nms_n);
   computeDescriptors(I_du,I_dv,dims_matching[2],maxima2);
 
@@ -1596,3 +1603,11 @@ float Matcher::mean(const uint8_t* I,const int32_t &bpl,const int32_t &u_min,con
     mean /= (float)((u_max-u_min+1)*(v_max-v_min+1));
 }
 
+
+// ============================================================================================ // 
+//
+//
+// My Function
+//
+//
+// ============================================================================================ // 

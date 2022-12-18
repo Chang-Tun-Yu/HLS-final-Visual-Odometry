@@ -30,10 +30,11 @@ Street, Fifth Floor, Boston, MA 02110-1301, USA
 #include <string>
 #include <vector>
 #include <stdint.h>
+#include <fstream>
 
 #include <viso_stereo.h>
 #include <viso_mono.h>
-#include <png++/png.hpp>
+// #include <png++/png.hpp>
 
 using namespace std;
 
@@ -78,28 +79,36 @@ int main_mono (int argc, char** argv) {
   for (int32_t i=0; i<373; i++) {
 
     // input file names
-    char base_name[256]; sprintf(base_name,"%06d.png",i);
-    string img_file_name  = dir + "/I1_" + base_name;
+    // char base_name[256]; sprintf(base_name,"%06d.png",i);
+    char binary_name[256]; sprintf(binary_name,"%06d.dat",i);
+    // string img_file_name  = dir + "/I1_" + base_name;
+    string img_binary_name  = dir + "/I1_" + binary_name;
     
     // catch image read/write errors here
     try {
 
       // load left and right input image
-      png::image< png::gray_pixel > Img(img_file_name);
+      // png::image< png::gray_pixel > Img(img_file_name);
 
       // image dimensions
-      int32_t width  = Img.get_width();
-      int32_t height = Img.get_height();
+      // int32_t width  = Img.get_width();
+      // int32_t height = Img.get_height();
+      int32_t width  = 1344;
+      int32_t height = 372;
 
       // convert input images to uint8_t buffer
       uint8_t* Img_data  = (uint8_t*)malloc(width*height*sizeof(uint8_t));
-      int32_t k=0;
-      for (int32_t v=0; v<height; v++) {
-        for (int32_t u=0; u<width; u++) {
-          Img_data[k]  = Img.get_pixel(u,v);
-          k++;
-        }
-      }
+      // int32_t k=0;
+      // for (int32_t v=0; v<height; v++) {
+      //   for (int32_t u=0; u<width; u++) {
+      //     Img_data[k]  = Img.get_pixel(u,v);
+      //     k++;
+      //   }
+      // }
+      ifstream ifs;
+      ifs.open(img_binary_name.c_str(), ifstream::binary | ifstream::in);
+      ifs.read((char*) Img_data, width*height*sizeof(uint8_t));
+      ifs.close();
 
       // status
       cout << "Processing: Frame: " << i;
@@ -171,35 +180,44 @@ int main_stereo (int argc, char** argv) {
   for (int32_t i=0; i<373; i++) {
 
     // input file names
-    char base_name[256]; sprintf(base_name,"%06d.png",i);
-    string left_img_file_name  = dir + "/I1_" + base_name;
-    string right_img_file_name = dir + "/I2_" + base_name;
-    // string left_img_file_name  = dir + "/image_0/" + base_name;
-    // string right_img_file_name = dir + "/image_1/" + base_name;
+    // char base_name[256]; sprintf(base_name,"%06d.png",i);
+    char binary_name[256]; sprintf(binary_name,"%06d.dat",i);
+    // string left_img_file_name  = dir + "/I1_" + base_name;
+    // string right_img_file_name = dir + "/I2_" + base_name;
+    string left_binary_file_name  = dir + "/I1_" + binary_name;
+    string right_binary_file_name = dir + "/I2_" + binary_name;
     
     // catch image read/write errors here
     try {
 
       // load left and right input image
-      png::image< png::gray_pixel > left_img(left_img_file_name);
-      png::image< png::gray_pixel > right_img(right_img_file_name);
+      // png::image< png::gray_pixel > left_img(left_img_file_name);
+      // png::image< png::gray_pixel > right_img(right_img_file_name);
 
       // image dimensions
-      int32_t width  = left_img.get_width();
-      int32_t height = left_img.get_height();
+      // int32_t width  = left_img.get_width();
+      // int32_t height = left_img.get_height();
+      int32_t width  = 1344;
+      int32_t height = 372;
 
       // convert input images to uint8_t buffer
       uint8_t* left_img_data  = (uint8_t*)malloc(width*height*sizeof(uint8_t));
       uint8_t* right_img_data = (uint8_t*)malloc(width*height*sizeof(uint8_t));
-      int32_t k=0;
-      for (int32_t v=0; v<height; v++) {
-        for (int32_t u=0; u<width; u++) {
-          left_img_data[k]  = left_img.get_pixel(u,v);
-          right_img_data[k] = right_img.get_pixel(u,v);
-          k++;
-        }
-      }
-
+      // int32_t k=0;
+      // for (int32_t v=0; v<height; v++) {
+      //   for (int32_t u=0; u<width; u++) {
+      //     left_img_data[k]  = left_img.get_pixel(u,v);
+      //     right_img_data[k] = right_img.get_pixel(u,v);
+      //     k++;
+      //   }
+      // }
+      ifstream ifs;
+      ifs.open(left_binary_file_name.c_str(), ifstream::binary | ifstream::in);
+      ifs.read((char*) left_img_data, width*height*sizeof(uint8_t));
+      ifs.close();
+      ifs.open(right_binary_file_name.c_str(), ifstream::binary | ifstream::in);
+      ifs.read((char*) right_img_data, width*height*sizeof(uint8_t));
+      ifs.close();
       // status
       cout << "Processing: Frame: " << i;
       
@@ -221,15 +239,24 @@ int main_stereo (int argc, char** argv) {
         cout << " ... failed!" << endl;
       }
 
+      // saving binary img files
+      // ofstream ofileleft(left_binary_file_name.c_str(), ofstream::binary | ofstream::out);
+      // ofileleft.write((char*)left_img_data, width*height*sizeof(uint8_t));
+      // ofileleft.close();
+      // ofstream ofileright(right_binary_file_name.c_str(), ofstream::binary | ofstream::out);
+      // ofileright.write((char*)right_img_data, width*height*sizeof(uint8_t));
+      // ofileright.close();
+
       // release uint8_t buffers
       free(left_img_data);
       free(right_img_data);
-
+      
     // catch image read errors here
     } catch (...) {
       cerr << "ERROR: Couldn't read input files!" << endl;
       return 1;
     }
+    
   }
   
   // output

@@ -54,7 +54,7 @@ public:
     
     // default settings
     parameters () {
-      nms_n                  = 3;
+      nms_n                  = 2; // 3
       nms_tau                = 50;
       match_binsize          = 50;
       match_radius           = 200;
@@ -169,19 +169,28 @@ private:
     return v*width+u;
   }
 
+  inline int32_t myGetAddressOffsetImage (const int32_t& u,const int32_t& v,const int32_t& width) {
+    return v*width+u;
+  }
+
   // Alexander Neubeck and Luc Van Gool: Efficient Non-Maximum Suppression, ICPR'06, algorithm 4
   void nonMaximumSuppression (int16_t* I_f1,int16_t* I_f2,const int32_t* dims,std::vector<Matcher::maximum> &maxima,int32_t nms_n);
+  void myNonMaximumSuppression (int16_t* I_f1,int16_t* I_f2,const int32_t* dims,std::vector<Matcher::maximum> &maxima1,std::vector<Matcher::maximum> &maxima2);
 
   // descriptor functions
   inline uint8_t saturate(int16_t in);
   void filterImageAll (uint8_t* I,uint8_t* I_du,uint8_t* I_dv,int16_t* I_f1,int16_t* I_f2,const int* dims);
   void filterImageSobel (uint8_t* I,uint8_t* I_du,uint8_t* I_dv,const int* dims);
   inline void computeDescriptor (const uint8_t* I_du,const uint8_t* I_dv,const int32_t &bpl,const int32_t &u,const int32_t &v,uint8_t *desc_addr);
+  inline void myComputeDescriptor (const uint8_t* I_du,const uint8_t* I_dv,const int32_t &bpl,const int32_t &u,const int32_t &v,uint8_t *desc_addr);
   inline void computeSmallDescriptor (const uint8_t* I_du,const uint8_t* I_dv,const int32_t &bpl,const int32_t &u,const int32_t &v,uint8_t *desc_addr);
   void computeDescriptors (uint8_t* I_du,uint8_t* I_dv,const int32_t bpl,std::vector<Matcher::maximum> &maxima);
+  void myComputeDescriptors (uint8_t* I_du,uint8_t* I_dv,const int32_t bpl,std::vector<Matcher::maximum> &maxima);
   
   void getHalfResolutionDimensions(const int32_t *dims,int32_t *dims_half);
+  void myGetHalfResolutionDimensions(const int32_t *dims,int32_t *dims_half);
   uint8_t* createHalfResolutionImage(uint8_t *I,const int32_t* dims);
+  uint8_t* myCreateHalfResolutionImage(uint8_t *I,const int32_t* dims);
 
   // compute sparse set of features from image
   // inputs:  I ........ image
@@ -193,6 +202,7 @@ private:
   //          I_dv ..... gradient in vertical direction
   // WARNING: max,I_du,I_dv has to be freed by yourself!
   void computeFeatures (uint8_t *I,const int32_t* dims,int32_t* &max1,int32_t &num1,int32_t* &max2,int32_t &num2,uint8_t* &I_du,uint8_t* &I_dv,uint8_t* &I_du_full,uint8_t* &I_dv_full);
+  void myComputeFeatures (uint8_t *I,const int32_t* dims,int32_t* &max1,int32_t &num1,int32_t* &max2,int32_t &num2,uint8_t* &I_du,uint8_t* &I_dv,uint8_t* &I_du_full,uint8_t* &I_dv_full);
 
   // matching functions
   void computePriorStatistics (std::vector<Matcher::p_match> &p_matched,int32_t method);
@@ -220,6 +230,11 @@ private:
                        float       &u2,float       &v2,
                        uint8_t* desc_buffer);
   void refinement (std::vector<Matcher::p_match> &p_matched,int32_t method);
+
+  // filter
+  void mySobel5x5 ( const uint8_t* in, uint8_t* out_v, uint8_t* out_h, int w, int h );
+  void myCheckerboard5x5 ( const uint8_t* in, int16_t* out, int w, int h );
+  void myBlob5x5( const uint8_t* in, int16_t* out, int w, int h );
 
   // mean for gain computation
   inline float mean(const uint8_t* I,const int32_t &bpl,const int32_t &u_min,const int32_t &u_max,const int32_t &v_min,const int32_t &v_max);

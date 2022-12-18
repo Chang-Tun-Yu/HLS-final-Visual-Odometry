@@ -273,12 +273,12 @@ namespace filter {
       assert( w % 16 == 0 && "width must be multiple of 16!" );
       const int w_chunk  = w/16;
       __m128i* 	i0       = (__m128i*)( in );
-      __m128i* 	i1       = (__m128i*)( in ) + w_chunk*1;
-      __m128i* 	i2       = (__m128i*)( in ) + w_chunk*2;
-      __m128i* 	i3       = (__m128i*)( in ) + w_chunk*3;
-      __m128i* 	i4       = (__m128i*)( in ) + w_chunk*4;
-      __m128i* result_h  = (__m128i*)( out_h ) + 4*w_chunk;
-      __m128i* result_v  = (__m128i*)( out_v ) + 4*w_chunk;
+      __m128i* 	i1       = (__m128i*)( in ) + w_chunk*1;  // one line
+      __m128i* 	i2       = (__m128i*)( in ) + w_chunk*2;  // two line
+      __m128i* 	i3       = (__m128i*)( in ) + w_chunk*3;  // three line
+      __m128i* 	i4       = (__m128i*)( in ) + w_chunk*4;  // four line
+      __m128i* result_h  = (__m128i*)( out_h ) + 4*w_chunk;  // two line
+      __m128i* result_v  = (__m128i*)( out_v ) + 4*w_chunk;  // two line
       __m128i* end_input = (__m128i*)( in ) + w_chunk*h;
       __m128i sixes      = _mm_set1_epi16( 6 );
       __m128i fours      = _mm_set1_epi16( 4 );
