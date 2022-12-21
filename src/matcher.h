@@ -61,9 +61,9 @@ public:
       match_disp_tolerance   = 2;
       outlier_disp_tolerance = 5;
       outlier_flow_tolerance = 5;
-      multi_stage            = 1;
-      half_resolution        = 1;
-      refinement             = 1;
+      multi_stage            = 0;
+      half_resolution        = 0;
+      refinement             = 0;
     }
   };
 
@@ -132,7 +132,7 @@ public:
   // given a vector of inliers computes gain factor between the current and
   // the previous frame. this function is useful if you want to reconstruct 3d
   // and you want to cancel the change of (unknown) camera gain.
-  float getGain (std::vector<int32_t> inliers);
+  // float getGain (std::vector<int32_t> inliers);
 
 private:
 
@@ -175,22 +175,18 @@ private:
 
   // Alexander Neubeck and Luc Van Gool: Efficient Non-Maximum Suppression, ICPR'06, algorithm 4
   void nonMaximumSuppression (int16_t* I_f1,int16_t* I_f2,const int32_t* dims,std::vector<Matcher::maximum> &maxima,int32_t nms_n);
-  void myNonMaximumSuppression (int16_t* I_f1,int16_t* I_f2,const int32_t* dims,std::vector<Matcher::maximum> &maxima1,std::vector<Matcher::maximum> &maxima2);
+  void myNonMaximumSuppression_and_ComputeDescriptors (int16_t* I_f1,int16_t* I_f2,const int32_t* dims, uint8_t* I_du,uint8_t* I_dv, int32_t* max2, int32_t &num2);
 
   // descriptor functions
   inline uint8_t saturate(int16_t in);
-  void filterImageAll (uint8_t* I,uint8_t* I_du,uint8_t* I_dv,int16_t* I_f1,int16_t* I_f2,const int* dims);
-  void filterImageSobel (uint8_t* I,uint8_t* I_du,uint8_t* I_dv,const int* dims);
   inline void computeDescriptor (const uint8_t* I_du,const uint8_t* I_dv,const int32_t &bpl,const int32_t &u,const int32_t &v,uint8_t *desc_addr);
   inline void myComputeDescriptor (const uint8_t* I_du,const uint8_t* I_dv,const int32_t &bpl,const int32_t &u,const int32_t &v,uint8_t *desc_addr);
   inline void computeSmallDescriptor (const uint8_t* I_du,const uint8_t* I_dv,const int32_t &bpl,const int32_t &u,const int32_t &v,uint8_t *desc_addr);
   void computeDescriptors (uint8_t* I_du,uint8_t* I_dv,const int32_t bpl,std::vector<Matcher::maximum> &maxima);
-  void myComputeDescriptors (uint8_t* I_du,uint8_t* I_dv,const int32_t bpl,std::vector<Matcher::maximum> &maxima);
+  // void myComputeDescriptors (uint8_t* I_du,uint8_t* I_dv,const int32_t bpl,std::vector<Matcher::maximum> &maxima);
   
   void getHalfResolutionDimensions(const int32_t *dims,int32_t *dims_half);
-  void myGetHalfResolutionDimensions(const int32_t *dims,int32_t *dims_half);
   uint8_t* createHalfResolutionImage(uint8_t *I,const int32_t* dims);
-  uint8_t* myCreateHalfResolutionImage(uint8_t *I,const int32_t* dims);
 
   // compute sparse set of features from image
   // inputs:  I ........ image
@@ -202,10 +198,10 @@ private:
   //          I_dv ..... gradient in vertical direction
   // WARNING: max,I_du,I_dv has to be freed by yourself!
   void computeFeatures (uint8_t *I,const int32_t* dims,int32_t* &max1,int32_t &num1,int32_t* &max2,int32_t &num2,uint8_t* &I_du,uint8_t* &I_dv,uint8_t* &I_du_full,uint8_t* &I_dv_full);
-  void myComputeFeatures (uint8_t *I,const int32_t* dims,int32_t* &max1,int32_t &num1,int32_t* &max2,int32_t &num2,uint8_t* &I_du,uint8_t* &I_dv,uint8_t* &I_du_full,uint8_t* &I_dv_full);
+  void myComputeFeatures (uint8_t *I,const int32_t* dims, int32_t* max2,int32_t &num2);
 
   // matching functions
-  void computePriorStatistics (std::vector<Matcher::p_match> &p_matched,int32_t method);
+  // void computePriorStatistics (std::vector<Matcher::p_match> &p_matched,int32_t method);
   void createIndexVector (int32_t* m,int32_t n,std::vector<int32_t> *k,const int32_t &u_bin_num,const int32_t &v_bin_num);
   inline void findMatch (int32_t* m1,const int32_t &i1,int32_t* m2,const int32_t &step_size,
                          std::vector<int32_t> *k2,const int32_t &u_bin_num,const int32_t &v_bin_num,const int32_t &stat_bin,
@@ -217,19 +213,6 @@ private:
   // outlier removal
   void removeOutliers (std::vector<Matcher::p_match> &p_matched,int32_t method);
 
-  // parabolic fitting
-  bool parabolicFitting(const uint8_t* I1_du,const uint8_t* I1_dv,const int32_t* dims1,
-                        const uint8_t* I2_du,const uint8_t* I2_dv,const int32_t* dims2,
-                        const float &u1,const float &v1,
-                        float       &u2,float       &v2,
-                        Matrix At,Matrix AtA,
-                        uint8_t* desc_buffer);
-  void relocateMinimum(const uint8_t* I1_du,const uint8_t* I1_dv,const int32_t* dims1,
-                       const uint8_t* I2_du,const uint8_t* I2_dv,const int32_t* dims2,
-                       const float &u1,const float &v1,
-                       float       &u2,float       &v2,
-                       uint8_t* desc_buffer);
-  void refinement (std::vector<Matcher::p_match> &p_matched,int32_t method);
 
   // filter
   void mySobel5x5 ( const uint8_t* in, uint8_t* out_v, uint8_t* out_h, int w, int h );
@@ -243,16 +226,15 @@ private:
   parameters param;
   int32_t    margin;
   
-  int32_t *m1p1,*m2p1,*m1c1,*m2c1;
-  int32_t *m1p2,*m2p2,*m1c2,*m2c2;
-  int32_t n1p1,n2p1,n1c1,n2c1;
-  int32_t n1p2,n2p2,n1c2,n2c2;
-  uint8_t *I1p,*I2p,*I1c,*I2c;
-  uint8_t *I1p_du,*I2p_du,*I1c_du,*I2c_du;
-  uint8_t *I1p_dv,*I2p_dv,*I1c_dv,*I2c_dv;
-  uint8_t *I1p_du_full,*I2p_du_full,*I1c_du_full,*I2c_du_full; // only needed for
-  uint8_t *I1p_dv_full,*I2p_dv_full,*I1c_dv_full,*I2c_dv_full; // half-res matching
+
+  int32_t *m2p2,*m2c2;
+  int32_t n2p2,n2c2;
+  
   int32_t dims_p[3],dims_c[3];
+
+  int32_t m1c2[288000];
+  int32_t m1p2[288000];
+  int32_t n1c2, n1p2;
 
   std::vector<Matcher::p_match> p_matched_1;
   std::vector<Matcher::p_match> p_matched_2;

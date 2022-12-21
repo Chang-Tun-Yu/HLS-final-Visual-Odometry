@@ -1,0 +1,17 @@
+1344, 372
+672, 186
+
+method: 0
+
+nms_n                  = 2;
+nms_tau                = 50;
+match_binsize          = 50;
+match_radius           = 200;
+match_disp_tolerance   = 2;
+outlier_disp_tolerance = 5;
+outlier_flow_tolerance = 5;
+multi_stage            = 1;
+half_resolution        = 1;
+refinement             = 1;
+
+max freature point = 24000

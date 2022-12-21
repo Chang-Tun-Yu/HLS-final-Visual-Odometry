@@ -34,7 +34,7 @@ Street, Fifth Floor, Boston, MA 02110-1301, USA
 
 #include <viso_stereo.h>
 #include <viso_mono.h>
-// #include <png++/png.hpp>
+#include <png++/png.hpp>
 
 using namespace std;
 
@@ -59,9 +59,9 @@ int main_mono (int argc, char** argv) {
   // param.calib.cu = 635.96; // principal point (u-coordinate) in pixels
   // param.calib.cv = 194.13; // principal point (v-coordinate) in pixels
   // param.base     = 0.5707; // baseline in meters
-  param.calib.f  = 645.24; // focal length in pixels
-  param.calib.cu = 635.96; // principal point (u-coordinate) in pixels
-  param.calib.cv = 194.13; // principal point (v-coordinate) in pixels
+  param.calib.f  = 491.543832; // focal length in pixels
+  param.calib.cu = 484.474328; // principal point (u-coordinate) in pixels
+  param.calib.cv = 147.888234; // principal point (v-coordinate) in pixels
   param.height   = 1.6;
   param.pitch    = -0.08;
 
@@ -93,8 +93,8 @@ int main_mono (int argc, char** argv) {
       // image dimensions
       // int32_t width  = Img.get_width();
       // int32_t height = Img.get_height();
-      int32_t width  = 1344;
-      int32_t height = 372;
+      int32_t width  = 1024;
+      int32_t height = 284;
 
       // convert input images to uint8_t buffer
       uint8_t* Img_data  = (uint8_t*)malloc(width*height*sizeof(uint8_t));
@@ -164,9 +164,9 @@ int main_stereo (int argc, char** argv) {
   VisualOdometryStereo::parameters param;
   
   // calibration parameters for sequence 2010_03_09_drive_0019 
-  param.calib.f  = 645.24; // focal length in pixels
-  param.calib.cu = 635.96; // principal point (u-coordinate) in pixels
-  param.calib.cv = 194.13; // principal point (v-coordinate) in pixels
+  param.calib.f  = 491.543832; // focal length in pixels
+  param.calib.cu = 484.474328; // principal point (u-coordinate) in pixels
+  param.calib.cv = 147.888234; // principal point (v-coordinate) in pixels
   param.base     = 0.5707; // baseline in meters
   
   // init visual odometry
@@ -197,8 +197,8 @@ int main_stereo (int argc, char** argv) {
       // image dimensions
       // int32_t width  = left_img.get_width();
       // int32_t height = left_img.get_height();
-      int32_t width  = 1344;
-      int32_t height = 372;
+      int32_t width  = 1024;
+      int32_t height = 284;
 
       // convert input images to uint8_t buffer
       uint8_t* left_img_data  = (uint8_t*)malloc(width*height*sizeof(uint8_t));

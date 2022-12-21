@@ -100,7 +100,7 @@ public:
   // given a vector of inliers computes gain factor between the current and
   // the previous frame. this function is useful if you want to reconstruct 3d
   // and you want to cancel the change of (unknown) camera gain.
-  float getGain (std::vector<int32_t> inliers_) { return matcher->getGain(inliers_); }
+  // float getGain (std::vector<int32_t> inliers_) { return matcher->getGain(inliers_); }
 
   // streams out the current transformation matrix Tr_delta 
   friend std::ostream& operator<< (std::ostream &os,VisualOdometry &viso) {

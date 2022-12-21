@@ -3,14 +3,14 @@ cmake_minimum_required (VERSION 2.6)
 project (libviso2)
 
 # gprof
-SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pg")
-SET(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -pg")
-SET(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} -pg")
-if(CMAKE_COMPILER_IS_GNUCXX)
-  add_definitions(${CMAKE_CXX_FLAGS} "-Ofast")
-  add_definitions(${CMAKE_CXX_FLAGS} "-fno-reorder-functions")
-  add_definitions(${CMAKE_CXX_FLAGS} "-fno-inline")
-endif()
+# SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pg")
+# SET(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -pg")
+# SET(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} -pg")
+# if(CMAKE_COMPILER_IS_GNUCXX)
+#   add_definitions(${CMAKE_CXX_FLAGS} "-Ofast")
+#   add_definitions(${CMAKE_CXX_FLAGS} "-fno-reorder-functions")
+#   add_definitions(${CMAKE_CXX_FLAGS} "-fno-inline")
+# endif()
 
 # directories
 set (LIBVISO2_SRC_DIR src)
