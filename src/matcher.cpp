@@ -22,6 +22,7 @@ Street, Fifth Floor, Boston, MA 02110-1301, USA
 #include "matcher.h"
 #include "triangle.h"
 #include "filter.h"
+#include "myMatch.h"
 
 using namespace std;
 
@@ -65,7 +66,7 @@ void Matcher::pushBack (uint8_t *I1,uint8_t* I2,int32_t* dims,const bool replace
     if (m2c2)        _mm_free(m2c2);
   } else {
     if (m2p2)        _mm_free(m2p2);
-    for (int i =0; i < 288000; i++) {
+    for (int i =0; i < MAX_FEATURE_ARRAY_SZIE; i++) {
       m1p2[i] = m1c2[i];
     }
     n1p2 = n1c2;
@@ -101,7 +102,8 @@ void Matcher::matchFeatures(int32_t method, Matrix *Tr_delta) {
   p_matched_2.clear();
 
   // matching(m1p2,m2p2,m1c2,m2c2,n1p2,n2p2,n1c2,n2c2,p_matched_2,method,false,Tr_delta);
-  matching(m1p2,0,m1c2,0,n1p2,0,n1c2,0,p_matched_2,method,false,Tr_delta);
+  // matching(m1p2,0,m1c2,0,n1p2,0,n1c2,0,p_matched_2,method,false,Tr_delta);
+  myMatching(m1p2,m1c2,n1p2,n1c2,p_matched_2);
   removeOutliers(p_matched_2,method);
   cout << "match done" << endl;
 }

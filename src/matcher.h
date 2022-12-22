@@ -32,6 +32,7 @@ Street, Fifth Floor, Boston, MA 02110-1301, USA
 #include <vector>
 
 #include "matrix.h"
+#include "size.h"
 #include "myComputeFeature.hpp"
 
 class Matcher {
@@ -207,6 +208,12 @@ private:
                  int32_t n1p,int32_t n2p,int32_t n1c,int32_t n2c,
                  std::vector<Matcher::p_match> &p_matched,int32_t method,bool use_prior,Matrix *Tr_delta = 0);
 
+  void myCreateIndexVector (int32_t* m,int32_t n,std::vector<int32_t> *k,const int32_t &u_bin_num,const int32_t &v_bin_num);
+  inline void myFindMatch (int32_t* m1,const int32_t &i1,int32_t* m2,const int32_t &step_size,std::vector<int32_t> *k2,
+                                const int32_t &u_bin_num,const int32_t &v_bin_num,const int32_t &stat_bin,
+                                int32_t& min_ind,int32_t stage);
+  void myMatching (int32_t *m1p,int32_t *m1c, int32_t n1p,int32_t n1c, std::vector<Matcher::p_match> &p_matched);
+
   // outlier removal
   void removeOutliers (std::vector<Matcher::p_match> &p_matched,int32_t method);
 
@@ -229,8 +236,8 @@ private:
   
   int32_t dims_p[3],dims_c[3];
 
-  int32_t m1c2[288000];
-  int32_t m1p2[288000];
+  int32_t m1c2[MAX_FEATURE_ARRAY_SZIE];
+  int32_t m1p2[MAX_FEATURE_ARRAY_SZIE];
   int32_t n1c2, n1p2;
 
   std::vector<Matcher::p_match> p_matched_1;
