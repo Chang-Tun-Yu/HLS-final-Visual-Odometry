@@ -25,7 +25,6 @@ Street, Fifth Floor, Boston, MA 02110-1301, USA
 
 using namespace std;
 
-#include "myComputeFeature.h"
 //////////////////////
 // PUBLIC FUNCTIONS //
 //////////////////////

@@ -1,4 +1,7 @@
 build/
+matlab/
+2010_03_09_drive_0019_small/
+
 *.o
 *.zip
 

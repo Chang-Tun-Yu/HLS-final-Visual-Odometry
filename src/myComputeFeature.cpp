@@ -1,16 +1,14 @@
+#include <iostream>
+#include <stdint.h>
+#include "myComputeFeature.hpp"
 
-// #include <stdio.h>
-// #include <stdlib.h>
-// #include <string.h>
-// #include <iostream>
-// #include <math.h>
-// #include <emmintrin.h>
-// #include <algorithm>
-// #include <vector>
-// using namespace std;
+using namespace std;
 
+inline int32_t myGetAddressOffsetImage (const int32_t& u,const int32_t& v,const int32_t& width) {
+    return v*width+u;
+}
 
-void Matcher::myComputeDescriptor (const uint8_t* I_du,const uint8_t* I_dv,const int32_t &bpl,const int32_t &u,const int32_t &v,uint8_t *desc_addr) {
+void myComputeDescriptor (const uint8_t* I_du,const uint8_t* I_dv,const int32_t &bpl,const int32_t &u,const int32_t &v,uint8_t *desc_addr) {
   
     // get address indices
   int32_t addr_m1 = myGetAddressOffsetImage(u,v-1,bpl);
@@ -57,7 +55,7 @@ void Matcher::myComputeDescriptor (const uint8_t* I_du,const uint8_t* I_dv,const
 }
 
 
-void  Matcher::mySobel5x5 ( const uint8_t* in, uint8_t* out_v, uint8_t* out_h, int w, int h ) {
+void  mySobel5x5 ( const uint8_t* in, uint8_t* out_v, uint8_t* out_h, int w, int h ) {
     const int16_t v_weight[5][5] = {
         {1, 2, 0, -2, -1},
         {4, 8, 0, -8, -4},
@@ -110,7 +108,7 @@ void  Matcher::mySobel5x5 ( const uint8_t* in, uint8_t* out_v, uint8_t* out_h, i
     }
 }
 
-void  Matcher::myCheckerboard5x5 ( const uint8_t* in, int16_t* out, int w, int h ) {
+void  myCheckerboard5x5 ( const uint8_t* in, int16_t* out, int w, int h ) {
     const int16_t weight[5][5] = {
         {-1, -1, 0, 1, 1},
         {-1, -1, 0, 1, 1},
@@ -131,7 +129,7 @@ void  Matcher::myCheckerboard5x5 ( const uint8_t* in, int16_t* out, int w, int h
     }
 }
 
-void Matcher::myBlob5x5( const uint8_t* in, int16_t* out, int w, int h ) {
+void myBlob5x5 ( const uint8_t* in, int16_t* out, int w, int h ) {
     const int16_t weight[5][5] = {
         {-1, -1, -1, -1, -1},
         {-1, 1, 1, 1, -1},
@@ -152,12 +150,13 @@ void Matcher::myBlob5x5( const uint8_t* in, int16_t* out, int w, int h ) {
     }
 }
 
-void Matcher::myNonMaximumSuppression_and_ComputeDescriptors (int16_t* I_f1,int16_t* I_f2,const int32_t* dims, uint8_t* I_du,uint8_t* I_dv, int32_t* max2, int32_t &num2) {
+void myNonMaximumSuppression_and_ComputeDescriptors (int16_t* I_f1,int16_t* I_f2,const int32_t* dims, uint8_t* I_du,uint8_t* I_dv, int32_t* max2, int32_t &num2) {
     int32_t width  = dims[0];
     int32_t height = dims[1];
     int32_t bpl    = dims[2];
     int32_t tau    = 50;
-    
+    int32_t margin = 9;
+
     int16_t f1map[9][9];
     int16_t f2map[9][9];
     uint8_t du_map[169];
@@ -337,7 +336,7 @@ void Matcher::myNonMaximumSuppression_and_ComputeDescriptors (int16_t* I_f1,int1
     }
 }
 
-void Matcher::myComputeFeatures (uint8_t *I,const int32_t* dims, int32_t* max2,int32_t &num2) {
+void myComputeFeatures (uint8_t *I,const int32_t* dims, int32_t* max2,int32_t &num2) {
   cout << endl << " MY VERSION" << endl;
 
   
