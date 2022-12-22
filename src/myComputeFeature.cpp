@@ -4,11 +4,11 @@
 
 using namespace std;
 
-inline int32_t myGetAddressOffsetImage (const int32_t& u,const int32_t& v,const int32_t& width) {
+inline int32_t myGetAddressOffsetImage (const int32_t u,const int32_t v,const int32_t width) {
     return v*width+u;
 }
 
-void myComputeDescriptor (const uint8_t* I_du,const uint8_t* I_dv,const int32_t &bpl,const int32_t &u,const int32_t &v,uint8_t *desc_addr) {
+void myComputeDescriptor (const uint8_t I_du[290816],const uint8_t I_dv[290816],const int32_t bpl,const int32_t u,const int32_t v,uint8_t desc_addr[32]) {
   
     // get address indices
   int32_t addr_m1 = myGetAddressOffsetImage(u,v-1,bpl);
@@ -55,7 +55,7 @@ void myComputeDescriptor (const uint8_t* I_du,const uint8_t* I_dv,const int32_t 
 }
 
 
-void  mySobel5x5 ( const uint8_t* in, uint8_t* out_v, uint8_t* out_h, int w, int h ) {
+void  mySobel5x5 ( const uint8_t in[290816], uint8_t out_v[290816], uint8_t out_h[290816], int w, int h ) {
     const int16_t v_weight[5][5] = {
         {1, 2, 0, -2, -1},
         {4, 8, 0, -8, -4},
@@ -108,7 +108,7 @@ void  mySobel5x5 ( const uint8_t* in, uint8_t* out_v, uint8_t* out_h, int w, int
     }
 }
 
-void  myCheckerboard5x5 ( const uint8_t* in, int16_t* out, int w, int h ) {
+void  myCheckerboard5x5 ( const uint8_t in[290816], int16_t out[290816], int w, int h ) {
     const int16_t weight[5][5] = {
         {-1, -1, 0, 1, 1},
         {-1, -1, 0, 1, 1},
@@ -129,7 +129,7 @@ void  myCheckerboard5x5 ( const uint8_t* in, int16_t* out, int w, int h ) {
     }
 }
 
-void myBlob5x5 ( const uint8_t* in, int16_t* out, int w, int h ) {
+void myBlob5x5 ( const uint8_t in[290816], int16_t out[290816], int w, int h ) {
     const int16_t weight[5][5] = {
         {-1, -1, -1, -1, -1},
         {-1, 1, 1, 1, -1},
@@ -150,7 +150,7 @@ void myBlob5x5 ( const uint8_t* in, int16_t* out, int w, int h ) {
     }
 }
 
-void myNonMaximumSuppression_and_ComputeDescriptors (int16_t* I_f1,int16_t* I_f2,const int32_t* dims, uint8_t* I_du,uint8_t* I_dv, int32_t* max2, int32_t &num2) {
+void myNonMaximumSuppression_and_ComputeDescriptors (int16_t I_f1[290816],int16_t I_f2[290816],const int32_t dims[290816], uint8_t I_du[290816],uint8_t I_dv[290816], int32_t max2[288000], int32_t &num2) {
     int32_t width  = dims[0];
     int32_t height = dims[1];
     int32_t bpl    = dims[2];
@@ -336,9 +336,10 @@ void myNonMaximumSuppression_and_ComputeDescriptors (int16_t* I_f1,int16_t* I_f2
     }
 }
 
-void myComputeFeatures (uint8_t *I,const int32_t* dims, int32_t* max2,int32_t &num2) {
+void myComputeFeatures (uint8_t I[290816], int32_t max2[288000],int32_t &num2) {
   cout << endl << " MY VERSION" << endl;
 
+    int32_t dims[3] = {1024, 284, 1024};
   
   // allocate memory for sobel images and filter images
     uint8_t I_du[290816];
