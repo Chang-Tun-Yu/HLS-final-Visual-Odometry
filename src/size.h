@@ -13,10 +13,8 @@
 #define SEARCH_RAD_U            BIN_W*3
 #define SEARCH_RAD_V            BIN_H*3
 
-// #define BIN_NUM                 U_BIN_NUM*V_BIN_NUM*4
-#define BIN_NUM                 504
-#define MAX_FP_IN_BIN           512
-
+#define BIN_NUM                 U_BIN_NUM*V_BIN_NUM*4
+#define MAX_FP_IN_BIN           160 // 158
 
 
 #endif

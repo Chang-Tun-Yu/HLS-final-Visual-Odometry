@@ -6,6 +6,7 @@
 #include <emmintrin.h>
 #include <algorithm>
 #include <vector>
+// #include <cassert>
 
 #include "matrix.h"
 #include "size.h"
@@ -28,8 +29,12 @@ void Matcher::myCreateIndexVector (int32_t* m,int32_t n,int32_t k[BIN_NUM][MAX_F
     int32_t c = *(m+step_size*i+3); // class
     
     // compute row and column of bin to which this observation belongs
-    int32_t u_bin = min((int32_t)floor((float)u/(float)param.match_binsize),u_bin_num-1);
-    int32_t v_bin = min((int32_t)floor((float)v/(float)param.match_binsize),v_bin_num-1);
+    // int32_t u_bin = min((int32_t)floor((float)u/(float)BIN_W),u_bin_num-1);
+    // int32_t v_bin = min((int32_t)floor((float)v/(float)BIN_H),v_bin_num-1);
+    int32_t u_bin = u/BIN_W;
+
+    int32_t v_bin = v/BIN_H;
+
     
     // save index
     // k[(c*v_bin_num+v_bin)*u_bin_num+u_bin].push_back(i);
@@ -59,16 +64,20 @@ inline void Matcher::myFindMatch (int32_t* m1,const int32_t &i1,int32_t* m2,cons
   
   float u_min,u_max,v_min,v_max;
   
-  u_min = u1-param.match_radius;
-  u_max = u1+param.match_radius;
-  v_min = v1-param.match_radius;
-  v_max = v1+param.match_radius;
+  u_min = u1-SEARCH_RAD_U;
+  u_max = u1+SEARCH_RAD_U;
+  v_min = v1-SEARCH_RAD_V;
+  v_max = v1+SEARCH_RAD_V;
 
   // bins of interest
-  int32_t u_bin_min = min(max((int32_t)floor(u_min/(float)param.match_binsize),0),u_bin_num-1);
-  int32_t u_bin_max = min(max((int32_t)floor(u_max/(float)param.match_binsize),0),u_bin_num-1);
-  int32_t v_bin_min = min(max((int32_t)floor(v_min/(float)param.match_binsize),0),v_bin_num-1);
-  int32_t v_bin_max = min(max((int32_t)floor(v_max/(float)param.match_binsize),0),v_bin_num-1);
+//   int32_t u_bin_min = min(max((int32_t)floor(u_min/(float)BIN_W),0),u_bin_num-1);
+//   int32_t u_bin_max = min(max((int32_t)floor(u_max/(float)BIN_W),0),u_bin_num-1);
+//   int32_t v_bin_min = min(max((int32_t)floor(v_min/(float)BIN_H),0),v_bin_num-1);
+//   int32_t v_bin_max = min(max((int32_t)floor(v_max/(float)BIN_H),0),v_bin_num-1);
+  int32_t u_bin_min = min(max( (int32_t)u_min/BIN_W, 0), U_BIN_NUM);
+  int32_t u_bin_max = min(max( (int32_t)u_max/BIN_W, 0), U_BIN_NUM);
+  int32_t v_bin_min = min(max( (int32_t)v_min/BIN_H, 0), V_BIN_NUM);
+  int32_t v_bin_max = min(max( (int32_t)v_max/BIN_H, 0), V_BIN_NUM);
   
   // for all bins of interest do
   for (int32_t u_bin=u_bin_min; u_bin<=u_bin_max; u_bin++) {
@@ -114,17 +123,21 @@ inline void Matcher::myFindMatch (int32_t* m1,const int32_t &i1,int32_t* m2,cons
 
 void Matcher::myMatching (int32_t *m1p,int32_t *m1c, int32_t n1p,int32_t n1c, vector<Matcher::p_match> &p_matched) {
 // cout << "my" << endl;
+// static int bin_max;
   // descriptor step size (number of int32_t elements in struct)
   int32_t step_size = sizeof(Matcher::maximum)/sizeof(int32_t);
   
   // compute number of bins
-  int32_t u_bin_num = (int32_t)ceil((float)dims_c[0]/(float)param.match_binsize);
-  int32_t v_bin_num = (int32_t)ceil((float)dims_c[1]/(float)param.match_binsize);
+//   int32_t u_bin_num = (int32_t)ceil((float)dims_c[0]/(float)BIN_W);
+//   int32_t v_bin_num = (int32_t)ceil((float)dims_c[1]/(float)BIN_H);
+  int32_t u_bin_num = U_BIN_NUM;
+  int32_t v_bin_num = V_BIN_NUM;
 //   cout << "u_bin_num " <<u_bin_num << " v_bin_num "  <<  v_bin_num << endl;
 //   u_bin_num 21 v_bin_num 6
 
 
-  int32_t bin_num   = 4*v_bin_num*u_bin_num; // 4 classes
+//   int32_t bin_num   = 4*v_bin_num*u_bin_num; // 4 classes
+  int32_t bin_num   = BIN_NUM; // 4 classes
   
   // allocate memory for index vectors (needed for efficient search)
 //   vector<int32_t> *k1p = new vector<int32_t>[bin_num];
@@ -148,6 +161,19 @@ void Matcher::myMatching (int32_t *m1p,int32_t *m1c, int32_t n1p,int32_t n1c, ve
   // create position/class bin index vectors
   myCreateIndexVector(m1p,n1p,k1p, num1p,u_bin_num,v_bin_num);
   myCreateIndexVector(m1c,n1c,k1c, num1c,u_bin_num,v_bin_num);
+
+  // FIND BIN MAX
+//   int max = 0;
+//   for (int i=0; i < BIN_NUM; i++) {
+//     if (num1c[i] > max) {
+//         max = num1c[i];
+//         // cout << max << endl;
+//     }
+//   }
+//   if (max > bin_max) {
+//     bin_max = max;
+//     cout << "bin_max " << bin_max << endl;
+//   }
 //   cout << "create" << endl;
   // for all points do
   for (i1c=0; i1c<n1c; i1c++) {
@@ -157,8 +183,8 @@ void Matcher::myMatching (int32_t *m1p,int32_t *m1c, int32_t n1p,int32_t n1c, ve
     v1c = *(m1c+step_size*i1c+1);
 
     // compute row and column of statistics bin to which this observation belongs
-    int32_t u_bin = min((int32_t)floor((float)u1c/(float)param.match_binsize),u_bin_num-1);
-    int32_t v_bin = min((int32_t)floor((float)v1c/(float)param.match_binsize),v_bin_num-1);
+    int32_t u_bin = u1c/BIN_W;
+    int32_t v_bin = v1c/BIN_H;
     int32_t stat_bin = v_bin*u_bin_num+u_bin;
 
     // match forward/backward
