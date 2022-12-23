@@ -14,14 +14,14 @@ using namespace std;
 
 #define ABS(a, b) ((a > b)? a-b:b-a);
 
-void Matcher::myCreateIndexVector (int32_t* m,int32_t n,vector<int32_t> *k,const int32_t &u_bin_num,const int32_t &v_bin_num) {
+void Matcher::myCreateIndexVector (int32_t* m,int32_t n,int32_t k[BIN_NUM][MAX_FP_IN_BIN], int32_t k_num[BIN_NUM],const int32_t &u_bin_num,const int32_t &v_bin_num) {
 
   // descriptor step size
   int32_t step_size = sizeof(Matcher::maximum)/sizeof(int32_t);
-  
+  int32_t bin_idx;
   // for all points do
   for (int32_t i=0; i<n; i++) {
-    
+    // cout << i << endl;
     // extract coordinates and class
     int32_t u = *(m+step_size*i+0); // u-coordinate
     int32_t v = *(m+step_size*i+1); // v-coordinate
@@ -32,11 +32,14 @@ void Matcher::myCreateIndexVector (int32_t* m,int32_t n,vector<int32_t> *k,const
     int32_t v_bin = min((int32_t)floor((float)v/(float)param.match_binsize),v_bin_num-1);
     
     // save index
-    k[(c*v_bin_num+v_bin)*u_bin_num+u_bin].push_back(i);
+    // k[(c*v_bin_num+v_bin)*u_bin_num+u_bin].push_back(i);
+    bin_idx = (c*v_bin_num+v_bin)*u_bin_num+u_bin;
+    k[bin_idx][k_num[bin_idx]] = i;
+    k_num[bin_idx] += 1;
   }
 }
 
-inline void Matcher::myFindMatch (int32_t* m1,const int32_t &i1,int32_t* m2,const int32_t &step_size,vector<int32_t> *k2,
+inline void Matcher::myFindMatch (int32_t* m1,const int32_t &i1,int32_t* m2,const int32_t &step_size,int32_t k2[BIN_NUM][MAX_FP_IN_BIN], int32_t k2_num[BIN_NUM], 
                                 const int32_t &u_bin_num,const int32_t &v_bin_num,const int32_t &stat_bin,
                                 int32_t& min_ind,int32_t stage) {
   
@@ -71,14 +74,17 @@ inline void Matcher::myFindMatch (int32_t* m1,const int32_t &i1,int32_t* m2,cons
   for (int32_t u_bin=u_bin_min; u_bin<=u_bin_max; u_bin++) {
     for (int32_t v_bin=v_bin_min; v_bin<=v_bin_max; v_bin++) {
       int32_t k2_ind = (c*v_bin_num+v_bin)*u_bin_num+u_bin;
-      for (vector<int32_t>::const_iterator i2_it=k2[k2_ind].begin(); i2_it!=k2[k2_ind].end(); i2_it++) {
-        int32_t u2   = *(m2+step_size*(*i2_it)+0);
-        int32_t v2   = *(m2+step_size*(*i2_it)+1);
+    //   for (vector<int32_t>::const_iterator i2_it=k2[k2_ind].begin(); i2_it!=k2[k2_ind].end(); i2_it++) {
+      for (int i2=0; i2 < k2_num[k2_ind]; i2++) {
+        // int32_t u2   = *(m2+step_size*(*i2_it)+0);
+        // int32_t v2   = *(m2+step_size*(*i2_it)+1);
+        int32_t u2   = *(m2+step_size*(k2[k2_ind][i2])+0);
+        int32_t v2   = *(m2+step_size*(k2[k2_ind][i2])+1);
         
         if (u2>=u_min && u2<=u_max && v2>=v_min && v2<=v_max) {
         //   __m128i xmm3 = _mm_load_si128((__m128i*)(m2+step_size*(*i2_it)+4));
         //   __m128i xmm4 = _mm_load_si128((__m128i*)(m2+step_size*(*i2_it)+8));              
-            memcpy(d2, m2+step_size*(*i2_it)+4, 32);
+            memcpy(d2, m2+step_size*(k2[k2_ind][i2])+4, 32);
         //   xmm3 = _mm_sad_epu8 (xmm1,xmm3);
         //   xmm4 = _mm_sad_epu8 (xmm2,xmm4);
         //   xmm4 = _mm_add_epi16(xmm3,xmm4);
@@ -97,7 +103,7 @@ inline void Matcher::myFindMatch (int32_t* m1,const int32_t &i1,int32_t* m2,cons
         //   }
           
           if (cost<min_cost) {
-            min_ind  = *i2_it;
+            min_ind  = k2[k2_ind][i2];
             min_cost = cost;
           }
         }
@@ -107,36 +113,42 @@ inline void Matcher::myFindMatch (int32_t* m1,const int32_t &i1,int32_t* m2,cons
 }
 
 void Matcher::myMatching (int32_t *m1p,int32_t *m1c, int32_t n1p,int32_t n1c, vector<Matcher::p_match> &p_matched) {
-
+// cout << "my" << endl;
   // descriptor step size (number of int32_t elements in struct)
   int32_t step_size = sizeof(Matcher::maximum)/sizeof(int32_t);
   
   // compute number of bins
   int32_t u_bin_num = (int32_t)ceil((float)dims_c[0]/(float)param.match_binsize);
   int32_t v_bin_num = (int32_t)ceil((float)dims_c[1]/(float)param.match_binsize);
+//   cout << "u_bin_num " <<u_bin_num << " v_bin_num "  <<  v_bin_num << endl;
+//   u_bin_num 21 v_bin_num 6
+
+
   int32_t bin_num   = 4*v_bin_num*u_bin_num; // 4 classes
   
   // allocate memory for index vectors (needed for efficient search)
-  vector<int32_t> *k1p = new vector<int32_t>[bin_num];
-  vector<int32_t> *k2p = new vector<int32_t>[bin_num];
-  vector<int32_t> *k1c = new vector<int32_t>[bin_num];
-  vector<int32_t> *k2c = new vector<int32_t>[bin_num];
-  
+//   vector<int32_t> *k1p = new vector<int32_t>[bin_num];
+//   vector<int32_t> *k1c = new vector<int32_t>[bin_num];
+  int32_t k1p[BIN_NUM][MAX_FP_IN_BIN];
+  int32_t k1c[BIN_NUM][MAX_FP_IN_BIN];
+  int32_t num1p[BIN_NUM] = {0};
+  int32_t num1c[BIN_NUM] = {0};
+//   cout << "init" << endl;
   // loop variables
-  int32_t* M = (int32_t*)calloc(dims_c[0]*dims_c[1],sizeof(int32_t));
-  int32_t i1p,i2p,i1c,i2c,i1c2,i1p2;
-  int32_t u1p,v1p,u2p,v2p,u1c,v1c,u2c,v2c;
+//   int32_t* M = (int32_t*)calloc(dims_c[0]*dims_c[1],sizeof(int32_t));
+  int32_t M[IMG_SIZE] = {0};
+  int32_t i1p,i1c,i1c2;
+  int32_t u1p,v1p,u1c,v1c;
   
-  double t00,t01,t02,t03,t10,t11,t12,t13,t20,t21,t22,t23;
 
   /////////////////////////////////////////////////////
   // method: flow
 
     
   // create position/class bin index vectors
-  myCreateIndexVector(m1p,n1p,k1p,u_bin_num,v_bin_num);
-  myCreateIndexVector(m1c,n1c,k1c,u_bin_num,v_bin_num);
-  
+  myCreateIndexVector(m1p,n1p,k1p, num1p,u_bin_num,v_bin_num);
+  myCreateIndexVector(m1c,n1c,k1c, num1c,u_bin_num,v_bin_num);
+//   cout << "create" << endl;
   // for all points do
   for (i1c=0; i1c<n1c; i1c++) {
 
@@ -150,8 +162,8 @@ void Matcher::myMatching (int32_t *m1p,int32_t *m1c, int32_t n1p,int32_t n1c, ve
     int32_t stat_bin = v_bin*u_bin_num+u_bin;
 
     // match forward/backward
-    myFindMatch(m1c,i1c,m1p,step_size,k1p,u_bin_num,v_bin_num,stat_bin,i1p, 0);
-    myFindMatch(m1p,i1p,m1c,step_size,k1c,u_bin_num,v_bin_num,stat_bin,i1c2,1);
+    myFindMatch(m1c,i1c,m1p,step_size,k1p, num1p,u_bin_num,v_bin_num,stat_bin,i1p, 0);
+    myFindMatch(m1p,i1p,m1c,step_size,k1c, num1c,u_bin_num,v_bin_num,stat_bin,i1c2,1);
 
     // circle closure success?
     if (i1c2==i1c) {
@@ -161,17 +173,11 @@ void Matcher::myMatching (int32_t *m1p,int32_t *m1c, int32_t n1p,int32_t n1c, ve
       v1p = *(m1p+step_size*i1p+1);
 
       // add match if this pixel isn't matched yet
-      if (*(M+getAddressOffsetImage(u1c,v1c,dims_c[0]))==0) {
+      if (M[getAddressOffsetImage(u1c,v1c,dims_c[0])]==0) {
         p_matched.push_back(Matcher::p_match(u1p,v1p,i1p,-1,-1,-1,u1c,v1c,i1c,-1,-1,-1));
-        *(M+getAddressOffsetImage(u1c,v1c,dims_c[0])) = 1;
+        M[getAddressOffsetImage(u1c,v1c,dims_c[0])] = 1;
       }
     }
   }
   
-  // free memory
-  free(M);
-  delete []k1p;
-  delete []k2p;
-  delete []k1c;
-  delete []k2c;
 }
