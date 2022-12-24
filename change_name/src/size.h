@@ -3,6 +3,7 @@
 
 #define IMG_SIZE                290816
 #define MAX_FEATURE_POINT_SZIE  24000
+#define MAX_FEATURE_ARRAY_SZIE  24000*12
 
 
 #define BIN_W                   60
@@ -14,9 +15,6 @@
 
 #define BIN_NUM                 U_BIN_NUM*V_BIN_NUM*4
 #define MAX_FP_IN_BIN           160 // 158
-#define MAX2_BIN_OFFSET         MAX_FP_IN_BIN*12 
-#define MAX_FEATURE_ARRAY_SZIE  BIN_NUM*MAX_FP_IN_BIN*12
-
 
 
 #endif

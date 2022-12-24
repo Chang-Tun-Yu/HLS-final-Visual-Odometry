@@ -6,7 +6,7 @@
 #include <emmintrin.h>
 #include <algorithm>
 #include <vector>
-#include <cassert>
+// #include <cassert>
 
 #include "matrix.h"
 #include "size.h"
@@ -15,75 +15,34 @@ using namespace std;
 
 #define ABS(a, b) ((a > b)? a-b:b-a);
 
-void Matcher::myCreateIndexVector (int32_t m[MAX_FEATURE_ARRAY_SZIE],int32_t& n,int32_t k[BIN_NUM][MAX_FP_IN_BIN], int32_t k_num[BIN_NUM],const int32_t &u_bin_num,const int32_t &v_bin_num, int32_t m_num[BIN_NUM]) {
-  // 
-  int32_t fp_cnt = 0;
-  int32_t max_tmp[MAX_FEATURE_ARRAY_SZIE];
-  n = 0;
-  // for each bin
+void Matcher::myCreateIndexVector (int32_t* m,int32_t n,int32_t k[BIN_NUM][MAX_FP_IN_BIN], int32_t k_num[BIN_NUM],const int32_t &u_bin_num,const int32_t &v_bin_num) {
+
+  // descriptor step size
+  int32_t step_size = sizeof(Matcher::maximum)/sizeof(int32_t);
   int32_t bin_idx;
-  
-  for (int _bin = 0; _bin < BIN_NUM; _bin++) {
-    int c = _bin % 4;
-    int spatial_idx = _bin / 4;
-
-    // copy to tmp
-    // construct k
-    for (int e = 0; e < m_num[_bin]; e++) {
-        for (int s=0; s < 12; s++) {
-            max_tmp[12*fp_cnt+s] = m[MAX2_BIN_OFFSET*_bin+12*e+s];
-        }
-        // check
-        // assert(m[MAX2_BIN_OFFSET*_bin+12*e+3]==c);
-        // assert((m[MAX2_BIN_OFFSET*_bin+12*e+0]/BIN_W + U_BIN_NUM*m[MAX2_BIN_OFFSET*_bin+12*e+1]/BIN_H)==spatial_idx);
-        // cout << "u " << m[MAX2_BIN_OFFSET*_bin+12*e+0] << " v " << m[MAX2_BIN_OFFSET*_bin+12*e+1] << " c " << m[MAX2_BIN_OFFSET*_bin+12*e+3] 
-        //     << " ubin " << m[MAX2_BIN_OFFSET*_bin+12*e+0]/BIN_W << " vbin " << m[MAX2_BIN_OFFSET*_bin+12*e+1]/BIN_H << endl;
-        bin_idx = c*U_BIN_NUM*V_BIN_NUM + (spatial_idx);
-        k[bin_idx][k_num[bin_idx]] = fp_cnt;
-        k_num[bin_idx] += 1;
-        fp_cnt++;
-    }
-  }
-
-
-  n = fp_cnt;
-
-  // copy tmp back to m
-  for (int i=0; i < n; i++) {
-    for (int s=0; s <12; s++) {
-        m[i*12+s] = max_tmp[i*12+s];
-    }
-  }
-
-
-
-
-//   // descriptor step size
-//   int32_t step_size = sizeof(Matcher::maximum)/sizeof(int32_t);
-//   // for all points do
-//   for (int32_t i=0; i<n; i++) {
-//     // cout << i << endl;
-//     // extract coordinates and class
-//     int32_t u = *(m+step_size*i+0); // u-coordinate
-//     int32_t v = *(m+step_size*i+1); // v-coordinate
-//     int32_t c = *(m+step_size*i+3); // class
+  // for all points do
+  for (int32_t i=0; i<n; i++) {
+    // cout << i << endl;
+    // extract coordinates and class
+    int32_t u = *(m+step_size*i+0); // u-coordinate
+    int32_t v = *(m+step_size*i+1); // v-coordinate
+    int32_t c = *(m+step_size*i+3); // class
     
-//     // compute row and column of bin to which this observation belongs
-//     // int32_t u_bin = min((int32_t)floor((float)u/(float)BIN_W),u_bin_num-1);
-//     // int32_t v_bin = min((int32_t)floor((float)v/(float)BIN_H),v_bin_num-1);
-//     int32_t u_bin = u/BIN_W;
-//     int32_t v_bin = v/BIN_H;
+    // compute row and column of bin to which this observation belongs
+    // int32_t u_bin = min((int32_t)floor((float)u/(float)BIN_W),u_bin_num-1);
+    // int32_t v_bin = min((int32_t)floor((float)v/(float)BIN_H),v_bin_num-1);
+    int32_t u_bin = u/BIN_W;
+    int32_t v_bin = v/BIN_H;
    
-//     // save index
-//     // k[(c*v_bin_num+v_bin)*u_bin_num+u_bin].push_back(i);
-//     bin_idx = (c*v_bin_num+v_bin)*u_bin_num+u_binc;
-    
-//     k[bin_idx][k_num[bin_idx]] = i;
-//     k_num[bin_idx] += 1;
-//   }
+    // save index
+    // k[(c*v_bin_num+v_bin)*u_bin_num+u_bin].push_back(i);
+    bin_idx = (c*v_bin_num+v_bin)*u_bin_num+u_bin;
+    k[bin_idx][k_num[bin_idx]] = i;
+    k_num[bin_idx] += 1;
+  }
 }
 
-inline void Matcher::myFindMatch (int32_t m1[MAX_FEATURE_ARRAY_SZIE],const int32_t &i1,int32_t m2[MAX_FEATURE_ARRAY_SZIE],const int32_t &step_size,int32_t k2[BIN_NUM][MAX_FP_IN_BIN], int32_t k2_num[BIN_NUM], 
+inline void Matcher::myFindMatch (int32_t* m1,const int32_t &i1,int32_t* m2,const int32_t &step_size,int32_t k2[BIN_NUM][MAX_FP_IN_BIN], int32_t k2_num[BIN_NUM], 
                                 const int32_t &u_bin_num,const int32_t &v_bin_num,const int32_t &stat_bin,
                                 int32_t& min_ind,int32_t stage) {
   
@@ -113,10 +72,10 @@ inline void Matcher::myFindMatch (int32_t m1[MAX_FEATURE_ARRAY_SZIE],const int32
 //   int32_t u_bin_max = min(max((int32_t)floor(u_max/(float)BIN_W),0),u_bin_num-1);
 //   int32_t v_bin_min = min(max((int32_t)floor(v_min/(float)BIN_H),0),v_bin_num-1);
 //   int32_t v_bin_max = min(max((int32_t)floor(v_max/(float)BIN_H),0),v_bin_num-1);
-  int32_t u_bin_min = min(max( (int32_t)u_min/BIN_W, 0), U_BIN_NUM-1);
-  int32_t u_bin_max = min(max( (int32_t)u_max/BIN_W, 0), U_BIN_NUM-1);
-  int32_t v_bin_min = min(max( (int32_t)v_min/BIN_H, 0), V_BIN_NUM-1);
-  int32_t v_bin_max = min(max( (int32_t)v_max/BIN_H, 0), V_BIN_NUM-1);
+  int32_t u_bin_min = min(max( (int32_t)u_min/BIN_W, 0), U_BIN_NUM);
+  int32_t u_bin_max = min(max( (int32_t)u_max/BIN_W, 0), U_BIN_NUM);
+  int32_t v_bin_min = min(max( (int32_t)v_min/BIN_H, 0), V_BIN_NUM);
+  int32_t v_bin_max = min(max( (int32_t)v_max/BIN_H, 0), V_BIN_NUM);
   
   // for all bins of interest do
   for (int32_t u_bin=u_bin_min; u_bin<=u_bin_max; u_bin++) {
@@ -160,7 +119,7 @@ inline void Matcher::myFindMatch (int32_t m1[MAX_FEATURE_ARRAY_SZIE],const int32
   }
 }
 
-void Matcher::myMatching (int32_t m1p[MAX_FEATURE_ARRAY_SZIE],int32_t m1c[MAX_FEATURE_ARRAY_SZIE], int32_t n1p[BIN_NUM],int32_t n1c[BIN_NUM], std::vector<Matcher::p_match> &p_matched) {
+void Matcher::myMatching (int32_t *m1p,int32_t *m1c, int32_t n1p,int32_t n1c, vector<Matcher::p_match> &p_matched) {
 // cout << "my" << endl;
 // static int bin_max;
   // descriptor step size (number of int32_t elements in struct)
@@ -185,7 +144,7 @@ void Matcher::myMatching (int32_t m1p[MAX_FEATURE_ARRAY_SZIE],int32_t m1c[MAX_FE
   int32_t k1c[BIN_NUM][MAX_FP_IN_BIN];
   int32_t num1p[BIN_NUM] = {0};
   int32_t num1c[BIN_NUM] = {0};
-  cout << "init" << endl;
+//   cout << "init" << endl;
   // loop variables
 //   int32_t* M = (int32_t*)calloc(dims_c[0]*dims_c[1],sizeof(int32_t));
   int32_t M[IMG_SIZE] = {0};
@@ -195,19 +154,12 @@ void Matcher::myMatching (int32_t m1p[MAX_FEATURE_ARRAY_SZIE],int32_t m1c[MAX_FE
 
   /////////////////////////////////////////////////////
   // method: flow
-    int nump = 0;
-    int numc = 0;
+
     
   // create position/class bin index vectors
-//   myCreateIndexVector(m1p,n1p,k1p, num1p,u_bin_num,v_bin_num);
-//   myCreateIndexVector(m1c,n1c,k1c, num1c,u_bin_num,v_bin_num);
-// todo: reconstruct max2 and num2
-  cout << "create_p" << endl;
+  myCreateIndexVector(m1p,n1p,k1p, num1p,u_bin_num,v_bin_num);
+  myCreateIndexVector(m1c,n1c,k1c, num1c,u_bin_num,v_bin_num);
 
-  myCreateIndexVector(m1p,nump, k1p, num1p,u_bin_num,v_bin_num,n1p);
-  cout << "create_c" << endl;
-
-  myCreateIndexVector(m1c,numc, k1c, num1c,u_bin_num,v_bin_num,n1c);
   // FIND BIN MAX
 //   int max = 0;
 //   for (int i=0; i < BIN_NUM; i++) {
@@ -220,13 +172,10 @@ void Matcher::myMatching (int32_t m1p[MAX_FEATURE_ARRAY_SZIE],int32_t m1c[MAX_FE
 //     bin_max = max;
 //     cout << "bin_max " << bin_max << endl;
 //   }
-  cout << "create" << endl;
+//   cout << "create" << endl;
   // for all points do
-//   for (i1c=0; i1c<n1c; i1c++) {
-    cout << "numc" << numc<< endl;
-    cout << "nump" << nump<< endl;
-  for (i1c=0; i1c<numc; i1c++) {
-    // cout << "i1c"<<i1c << endl;
+  cout << "n1c" << n1c << endl;
+  for (i1c=0; i1c<n1c; i1c++) {
 
     // coordinates in previous left image
     u1c = *(m1c+step_size*i1c+0);
@@ -235,13 +184,12 @@ void Matcher::myMatching (int32_t m1p[MAX_FEATURE_ARRAY_SZIE],int32_t m1c[MAX_FE
     // compute row and column of statistics bin to which this observation belongs
     int32_t u_bin = u1c/BIN_W;
     int32_t v_bin = v1c/BIN_H;
-    // cout << u_bin << " " << v_bin <<endl;
     int32_t stat_bin = v_bin*u_bin_num+u_bin;
 
     // match forward/backward
     myFindMatch(m1c,i1c,m1p,step_size,k1p, num1p,u_bin_num,v_bin_num,stat_bin,i1p, 0);
     myFindMatch(m1p,i1p,m1c,step_size,k1c, num1c,u_bin_num,v_bin_num,stat_bin,i1c2,1);
-    // cout <<" find finish" << endl;
+
     // circle closure success?
     if (i1c2==i1c) {
 

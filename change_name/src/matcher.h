@@ -208,11 +208,11 @@ private:
                  int32_t n1p,int32_t n2p,int32_t n1c,int32_t n2c,
                  std::vector<Matcher::p_match> &p_matched,int32_t method,bool use_prior,Matrix *Tr_delta = 0);
 
-  void  myCreateIndexVector (int32_t m[MAX_FEATURE_ARRAY_SZIE],int32_t& n,int32_t k[BIN_NUM][MAX_FP_IN_BIN], int32_t k_num[BIN_NUM],const int32_t &u_bin_num,const int32_t &v_bin_num, int32_t m_num[BIN_NUM]);
-  inline void myFindMatch (int32_t m1[MAX_FEATURE_ARRAY_SZIE],const int32_t &i1,int32_t m2[MAX_FEATURE_ARRAY_SZIE],const int32_t &step_size,int32_t k2[BIN_NUM][MAX_FP_IN_BIN], int32_t k2_num[BIN_NUM], 
+  void myCreateIndexVector (int32_t* m,int32_t n,int32_t k[BIN_NUM][MAX_FP_IN_BIN], int32_t k_num[BIN_NUM],const int32_t &u_bin_num,const int32_t &v_bin_num);
+  inline void myFindMatch (int32_t* m1,const int32_t &i1,int32_t* m2,const int32_t &step_size,int32_t k2[BIN_NUM][MAX_FP_IN_BIN], int32_t k2_num[BIN_NUM], 
                                 const int32_t &u_bin_num,const int32_t &v_bin_num,const int32_t &stat_bin,
                                 int32_t& min_ind,int32_t stage);
-  void myMatching (int32_t m1p[MAX_FEATURE_ARRAY_SZIE],int32_t m1c[MAX_FEATURE_ARRAY_SZIE], int32_t n1p[BIN_NUM],int32_t n1c[BIN_NUM], std::vector<Matcher::p_match> &p_matched);
+  void myMatching (int32_t *m1p,int32_t *m1c, int32_t n1p,int32_t n1c, std::vector<Matcher::p_match> &p_matched);
 
   // outlier removal
   void removeOutliers (std::vector<Matcher::p_match> &p_matched,int32_t method);
@@ -238,8 +238,7 @@ private:
 
   int32_t max2c[MAX_FEATURE_ARRAY_SZIE];
   int32_t max2p[MAX_FEATURE_ARRAY_SZIE];
-  int32_t max2c_num[BIN_NUM];
-  int32_t max2p_num[BIN_NUM];
+  int32_t max2c_num, max2p_num;
 
   std::vector<Matcher::p_match> p_matched_1;
   std::vector<Matcher::p_match> p_matched_2;

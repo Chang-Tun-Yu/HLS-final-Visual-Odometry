@@ -13,6 +13,6 @@ void myCheckerboard5x5 ( const uint8_t in[IMG_SIZE], int16_t out[IMG_SIZE], int 
 
 void myBlob5x5 ( const uint8_t in[IMG_SIZE], int16_t out[IMG_SIZE], int w, int h );
 
-void myNonMaximumSuppression_and_ComputeDescriptors (int16_t I_f1[IMG_SIZE],int16_t I_f2[IMG_SIZE],const int32_t dims[IMG_SIZE], uint8_t I_du[IMG_SIZE],uint8_t I_dv[IMG_SIZE], int32_t max2[MAX_FEATURE_ARRAY_SZIE], int32_t max2_num[BIN_NUM]);
+void myNonMaximumSuppression_and_ComputeDescriptors (int16_t I_f1[IMG_SIZE],int16_t I_f2[IMG_SIZE],const int32_t dims[IMG_SIZE], uint8_t I_du[IMG_SIZE],uint8_t I_dv[IMG_SIZE], int32_t max2[MAX_FEATURE_ARRAY_SZIE], int32_t &num2);
 
-void myComputeFeatures (uint8_t I[IMG_SIZE], int32_t max2[MAX_FEATURE_ARRAY_SZIE],int32_t max2_num[BIN_NUM]);
+void myComputeFeatures (uint8_t I[IMG_SIZE], int32_t max2[MAX_FEATURE_ARRAY_SZIE],int32_t &num2);

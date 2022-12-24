@@ -150,7 +150,7 @@ void myBlob5x5 ( const uint8_t in[IMG_SIZE], int16_t out[IMG_SIZE], int w, int h
     }
 }
 
-void myNonMaximumSuppression_and_ComputeDescriptors (int16_t I_f1[IMG_SIZE],int16_t I_f2[IMG_SIZE],const int32_t dims[IMG_SIZE], uint8_t I_du[IMG_SIZE],uint8_t I_dv[IMG_SIZE], int32_t max2[MAX_FEATURE_ARRAY_SZIE], int32_t max2_num[BIN_NUM]) {
+void myNonMaximumSuppression_and_ComputeDescriptors (int16_t I_f1[IMG_SIZE],int16_t I_f2[IMG_SIZE],const int32_t dims[IMG_SIZE], uint8_t I_du[IMG_SIZE],uint8_t I_dv[IMG_SIZE], int32_t max2[MAX_FEATURE_ARRAY_SZIE], int32_t &num2) {
     int32_t width  = dims[0];
     int32_t height = dims[1];
     int32_t bpl    = dims[2];
@@ -164,11 +164,6 @@ void myNonMaximumSuppression_and_ComputeDescriptors (int16_t I_f1[IMG_SIZE],int1
     int32_t f1mini,f1minj,f1maxi,f1maxj,f2mini,f2minj,f2maxi,f2maxj;
     int32_t f1minval,f1maxval,f2minval,f2maxval;
     int32_t tmp[8];
-
-    int32_t u_bin;
-    int32_t v_bin = 0;
-    int32_t bin_buffer[4*U_BIN_NUM][12*MAX_FP_IN_BIN];
-    int32_t bin_buffer_num[4*U_BIN_NUM] = {0};
 
     // cout   << "[Non] INIT" << endl;
     for (int j=2+margin; j < height-2-margin; j+=2+1) {
@@ -255,101 +250,93 @@ void myNonMaximumSuppression_and_ComputeDescriptors (int16_t I_f1[IMG_SIZE],int1
                 }
             }
             
-            // count bin
-            u_bin = i/BIN_W;
+    // cout   << "[Non] 9*9 bEF PUSH" << endl;
+
+            // push back
+            // f1min
+            // if (f1min_valid && (f1minval <= -tau)) {
+            //     maxima2.push_back(Matcher::maximum(i-3+f1mini,j-3+f1minj,f1minval,0));
+            // }
+
+            //     // f1max
+            // if (f1max_valid && (f1maxval >= tau)) {
+            //     maxima2.push_back(Matcher::maximum(i-3+f1maxi,j-3+f1maxj,f1maxval,1));
+            // }
+
+            // // f2min
+            // if (f2min_valid && (f2minval <= -tau)) {
+            //     maxima2.push_back(Matcher::maximum(i-3+f2mini,j-3+f2minj,f2minval,2));
+            // }
+
+            // // f2max
+            // if (f2max_valid && (f2maxval >= tau)) {
+            //     maxima2.push_back(Matcher::maximum(i-3+f2maxi,j-3+f2maxj,f2maxval,3));
+            // }
+
+
+
+
             // // f1min
             if (f1min_valid && (f1minval <= -tau)) {
-                bin_buffer[4*u_bin+0][12*bin_buffer_num[4*u_bin+0]+0] = i-3+f1mini;
-                bin_buffer[4*u_bin+0][12*bin_buffer_num[4*u_bin+0]+1] = j-3+f1minj;
-                bin_buffer[4*u_bin+0][12*bin_buffer_num[4*u_bin+0]+2] = 0;
-                bin_buffer[4*u_bin+0][12*bin_buffer_num[4*u_bin+0]+3] = 0;
+                max2[12*num2+0] = i-3+f1mini;
+                max2[12*num2+1] = j-3+f1minj;
+                max2[12*num2+2] = 0;
+                max2[12*num2+3] = 0;
                 
                 myComputeDescriptor(du_map, dv_map, 13, f1mini+2, f1minj+2, (uint8_t*) tmp);
                 for (int a=0; a < 8; a++) {
-                    bin_buffer[4*u_bin+0][12*bin_buffer_num[4*u_bin+0]+(4+a)] = tmp[a];
+                    max2[12*num2+(4+a)] = tmp[a];
                 }
-                bin_buffer_num[4*u_bin+0] += 1;
+                num2 += 1;
             }
 
 
             // f1max
             if (f1max_valid && (f1maxval >= tau)) {
-                bin_buffer[4*u_bin+1][12*bin_buffer_num[4*u_bin+1]+0] = i-3+f1maxi;
-                bin_buffer[4*u_bin+1][12*bin_buffer_num[4*u_bin+1]+1] = j-3+f1maxj;
-                bin_buffer[4*u_bin+1][12*bin_buffer_num[4*u_bin+1]+2] = 0;
-                bin_buffer[4*u_bin+1][12*bin_buffer_num[4*u_bin+1]+3] = 1;
+                max2[12*num2+0] = i-3+f1maxi;
+                max2[12*num2+1] = j-3+f1maxj;
+                max2[12*num2+2] = 0;
+                max2[12*num2+3] = 1;
                 
                 myComputeDescriptor(du_map, dv_map, 13, f1maxi+2, f1maxj+2, (uint8_t*) tmp);
                 for (int a=0; a < 8; a++) {
-                    bin_buffer[4*u_bin+1][12*bin_buffer_num[4*u_bin+1]+(4+a)] = tmp[a];
+                    max2[12*num2+(4+a)] = tmp[a];
                 }
-                bin_buffer_num[4*u_bin+1] += 1;
+                num2 += 1;
             }
 
             // f2min
             if (f2min_valid && (f2minval <= -tau)) {
-                bin_buffer[4*u_bin+2][12*bin_buffer_num[4*u_bin+2]+0] = i-3+f2mini;
-                bin_buffer[4*u_bin+2][12*bin_buffer_num[4*u_bin+2]+1] = j-3+f2minj;
-                bin_buffer[4*u_bin+2][12*bin_buffer_num[4*u_bin+2]+2] = 0;
-                bin_buffer[4*u_bin+2][12*bin_buffer_num[4*u_bin+2]+3] = 2;
+                max2[12*num2+0] = i-3+f2mini;
+                max2[12*num2+1] = j-3+f2minj;
+                max2[12*num2+2] = 0;
+                max2[12*num2+3] = 2;
                 
                 myComputeDescriptor(du_map, dv_map, 13, f2mini+2, f2minj+2, (uint8_t*) tmp);
                 for (int a=0; a < 8; a++) {
-                    bin_buffer[4*u_bin+2][12*bin_buffer_num[4*u_bin+2]+(4+a)] = tmp[a];
+                    max2[12*num2+(4+a)] = tmp[a];
                 }
-                bin_buffer_num[4*u_bin+2] += 1;
+                num2 += 1;
             }
 
             // f2max
             if (f2max_valid && (f2maxval >= tau)) {
-                bin_buffer[4*u_bin+3][12*bin_buffer_num[4*u_bin+3]+0] = i-3+f2maxi;
-                bin_buffer[4*u_bin+3][12*bin_buffer_num[4*u_bin+3]+1] = j-3+f2maxj;
-                bin_buffer[4*u_bin+3][12*bin_buffer_num[4*u_bin+3]+2] = 0;
-                bin_buffer[4*u_bin+3][12*bin_buffer_num[4*u_bin+3]+3] = 3;
+                max2[12*num2+0] = i-3+f2maxi;
+                max2[12*num2+1] = j-3+f2maxj;
+                max2[12*num2+2] = 0;
+                max2[12*num2+3] = 3;
                 
                 myComputeDescriptor(du_map, dv_map, 13, f2maxi+2, f2maxj+2, (uint8_t*) tmp);
                 for (int a=0; a < 8; a++) {
-                    bin_buffer[4*u_bin+3][12*bin_buffer_num[4*u_bin+3]+(4+a)] = tmp[a];
+                    max2[12*num2+(4+a)] = tmp[a];
                 }
-                bin_buffer_num[4*u_bin+3] += 1;
+                num2 += 1;
             }
-        }
-        // cout << j << endl;
-
-        if ((j+3) % BIN_H == 0) { // write the buffer
-            v_bin = j/BIN_H;
-            for (int _ubin = 0; _ubin < 4*U_BIN_NUM; _ubin++) {
-                for (int e = 0; e < bin_buffer_num[_ubin]; e++) {
-                    for (int s=0; s < 12; s++) {
-                        max2[MAX2_BIN_OFFSET*((4*U_BIN_NUM)*v_bin+_ubin)+e*12+s] = bin_buffer[_ubin][12*e+s];
-                    }
-                }
-                max2_num[(4*U_BIN_NUM)*v_bin+_ubin] = bin_buffer_num[_ubin];
-            }
-
-            // reset buffer
-            for (int i=0; i < 4*U_BIN_NUM; i++) {
-                bin_buffer_num[i] = 0;
-            } 
-        }
+        }    
     }
-    // write out remain
-    v_bin = 284/BIN_H;
-    for (int _ubin = 0; _ubin < 4*U_BIN_NUM; _ubin++) {
-        for (int e = 0; e < bin_buffer_num[_ubin]; e++) {
-            for (int s=0; s < 12; s++) {
-                max2[MAX2_BIN_OFFSET*((4*U_BIN_NUM)*v_bin+_ubin)+e*12+s] = bin_buffer[_ubin][12*e+s];
-            }
-        }
-        max2_num[(4*U_BIN_NUM)*v_bin+_ubin] = bin_buffer_num[_ubin];
-    }
-    // reset buffer
-    for (int i=0; i < 4*U_BIN_NUM; i++) {
-        bin_buffer_num[i] = 0;
-    } 
 }
 
-void myComputeFeatures (uint8_t I[IMG_SIZE], int32_t max2[MAX_FEATURE_ARRAY_SZIE],int32_t max2_num[BIN_NUM]) {
+void myComputeFeatures (uint8_t I[IMG_SIZE], int32_t max2[MAX_FEATURE_ARRAY_SZIE],int32_t &num2) {
   cout << endl << " MY VERSION" << endl;
 
     int32_t dims[3] = {1024, 284, 1024};
@@ -370,8 +357,9 @@ void myComputeFeatures (uint8_t I[IMG_SIZE], int32_t max2[MAX_FEATURE_ARRAY_SZIE
     myCheckerboard5x5(I,I_f2,dims[2],dims[1]);
     // _mm_free(I_matching);
 
+    num2 = 0;
     // myNonMaximumSuppression(I_f1,I_f2,dims, maxima2);
-    myNonMaximumSuppression_and_ComputeDescriptors(I_f1,I_f2,dims, I_du, I_dv, max2, max2_num);
+    myNonMaximumSuppression_and_ComputeDescriptors(I_f1,I_f2,dims, I_du, I_dv, max2, num2);
     // myComputeDescriptors(I_du,I_dv,dims[2],maxima1);
   
   

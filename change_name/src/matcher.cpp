@@ -34,10 +34,12 @@ using namespace std;
 Matcher::Matcher(parameters param) : param(param) {
 
   // init match ring buffer to zero
+  max2p_num = 0;
   m2p2 = 0; n2p2 = 0;
+  max2c_num = 0;
   m2c2 = 0; n2c2 = 0;
   // margin needed to compute descriptor + sobel responses
-  margin = 7;
+  margin = 8+1;
   
 }
 
@@ -67,9 +69,7 @@ void Matcher::pushBack (uint8_t *I1,uint8_t* I2,int32_t* dims,const bool replace
     for (int i =0; i < MAX_FEATURE_ARRAY_SZIE; i++) {
       max2p[i] = max2c[i];
     }
-    for (int i=0; i < BIN_NUM; i++) {
-      max2p_num[i] = max2c_num[i];
-    }
+    max2p_num = max2c_num;
     m2p2 = m2c2; n2p2 = n2c2;
 
     dims_p[0]   = dims_c[0];
