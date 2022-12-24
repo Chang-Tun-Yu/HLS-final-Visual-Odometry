@@ -4,6 +4,8 @@ backup/
 matlab/
 hls_final/
 2010_03_09_drive_0019_small/
+
+viso2
 *.log
 *.o
 *.zip

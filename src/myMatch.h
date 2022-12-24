@@ -185,7 +185,6 @@ void Matcher::myMatching (int32_t m1p[MAX_FEATURE_ARRAY_SZIE],int32_t m1c[MAX_FE
   int32_t k1c[BIN_NUM][MAX_FP_IN_BIN];
   int32_t num1p[BIN_NUM] = {0};
   int32_t num1c[BIN_NUM] = {0};
-  cout << "init" << endl;
   // loop variables
 //   int32_t* M = (int32_t*)calloc(dims_c[0]*dims_c[1],sizeof(int32_t));
   int32_t M[IMG_SIZE] = {0};
@@ -200,13 +199,10 @@ void Matcher::myMatching (int32_t m1p[MAX_FEATURE_ARRAY_SZIE],int32_t m1c[MAX_FE
     
   // create position/class bin index vectors
 //   myCreateIndexVector(m1p,n1p,k1p, num1p,u_bin_num,v_bin_num);
-//   myCreateIndexVector(m1c,n1c,k1c, num1c,u_bin_num,v_bin_num);
-// todo: reconstruct max2 and num2
-  cout << "create_p" << endl;
+//   myCreateIndexVector(m1c,n1c,k1c, num1c,u_bin_num,v_bin_num);  
+  // TODO: matching change to bucket style
 
   myCreateIndexVector(m1p,nump, k1p, num1p,u_bin_num,v_bin_num,n1p);
-  cout << "create_c" << endl;
-
   myCreateIndexVector(m1c,numc, k1c, num1c,u_bin_num,v_bin_num,n1c);
   // FIND BIN MAX
 //   int max = 0;
@@ -220,11 +216,10 @@ void Matcher::myMatching (int32_t m1p[MAX_FEATURE_ARRAY_SZIE],int32_t m1c[MAX_FE
 //     bin_max = max;
 //     cout << "bin_max " << bin_max << endl;
 //   }
-  cout << "create" << endl;
+//   cout << "create" << endl;
   // for all points do
 //   for (i1c=0; i1c<n1c; i1c++) {
-    cout << "numc" << numc<< endl;
-    cout << "nump" << nump<< endl;
+
   for (i1c=0; i1c<numc; i1c++) {
     // cout << "i1c"<<i1c << endl;
 
