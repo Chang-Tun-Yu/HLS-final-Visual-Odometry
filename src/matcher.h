@@ -27,14 +27,15 @@ Street, Fifth Floor, Boston, MA 02110-1301, USA
 #include <string.h>
 #include <iostream>
 #include <math.h>
-//#include <emmintrin.h>
+#include <emmintrin.h>
 #include <algorithm>
 #include <vector>
 
 #include "matrix.h"
 #include "size.h"
-#include "myComputeFeature.hpp"
 #include "delaunator.hpp"
+#include "myComputeFeature.hpp"
+
 
 class Matcher {
 
@@ -222,10 +223,10 @@ private:
   inline void myFindMatch (int32_t m1[MAX_FEATURE_ARRAY_SZIE],const int32_t &i1,int32_t m2[MAX_FEATURE_ARRAY_SZIE],const int32_t &step_size,int32_t k2[BIN_NUM][MAX_FP_IN_BIN], int32_t k2_num[BIN_NUM], 
                                 const int32_t &u_bin_num,const int32_t &v_bin_num,const int32_t &stat_bin,
                                 int32_t& min_ind,int32_t stage);
-  void myMatching (int32_t m1p[MAX_FEATURE_ARRAY_SZIE],int32_t m1c[MAX_FEATURE_ARRAY_SZIE], int32_t n1p[BIN_NUM],int32_t n1c[BIN_NUM], Matcher::p_match p_matched[POINT_L], int p_matched_num);
+  void myMatching (int32_t m1p[MAX_FEATURE_ARRAY_SZIE],int32_t m1c[MAX_FEATURE_ARRAY_SZIE], int32_t n1p[BIN_NUM],int32_t n1c[BIN_NUM],Matcher::p_match p_matched[POINT_L], int32_t& p_matched_num);
 
   // outlier removal
-  void removeOutliers_gold (Matcher::p_match p_matched[POINT_L], int32_t p_matched_cnt);
+//   void removeOutliers (Vector<Matcher::p_match> &p_matched,int32_t method);
 
 
   // filter
@@ -257,6 +258,9 @@ private:
   Matcher::p_match p_matched_2[POINT_L];
   // std::vector<Matcher::range>   ranges;
 };
+
+
 #include "remove_outliers.hpp"
+
 #endif
 
