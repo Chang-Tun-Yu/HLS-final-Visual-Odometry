@@ -160,7 +160,7 @@ inline void Matcher::myFindMatch (int32_t m1[MAX_FEATURE_ARRAY_SZIE],const int32
   }
 }
 
-void Matcher::myMatching (int32_t m1p[MAX_FEATURE_ARRAY_SZIE],int32_t m1c[MAX_FEATURE_ARRAY_SZIE], int32_t n1p[BIN_NUM],int32_t n1c[BIN_NUM], std::vector<Matcher::p_match> &p_matched) {
+void Matcher::myMatching (int32_t m1p[MAX_FEATURE_ARRAY_SZIE],int32_t m1c[MAX_FEATURE_ARRAY_SZIE], int32_t n1p[BIN_NUM],int32_t n1c[BIN_NUM], Matcher::p_match p_matched[POINT_L], int p_matched_num) {
 // cout << "my" << endl;
 // static int bin_max;
   // descriptor step size (number of int32_t elements in struct)
@@ -197,6 +197,7 @@ void Matcher::myMatching (int32_t m1p[MAX_FEATURE_ARRAY_SZIE],int32_t m1c[MAX_FE
   // method: flow
     int nump = 0;
     int numc = 0;
+    p_matched_num = 0;
     
   // create position/class bin index vectors
 //   myCreateIndexVector(m1p,n1p,k1p, num1p,u_bin_num,v_bin_num);
@@ -251,10 +252,13 @@ void Matcher::myMatching (int32_t m1p[MAX_FEATURE_ARRAY_SZIE],int32_t m1c[MAX_FE
 
       // add match if this pixel isn't matched yet
       if (M[getAddressOffsetImage(u1c,v1c,dims_c[0])]==0) {
-        p_matched.push_back(Matcher::p_match(u1p,v1p,i1p,-1,-1,-1,u1c,v1c,i1c,-1,-1,-1));
+        // p_matched.push_back(Matcher::p_match(u1p,v1p,i1p,-1,-1,-1,u1c,v1c,i1c,-1,-1,-1));
+        p_matched[p_matched_num] = Matcher::p_match(u1p,v1p,i1p,-1,-1,-1,u1c,v1c,i1c,-1,-1,-1);
+        p_matched_num++;
         M[getAddressOffsetImage(u1c,v1c,dims_c[0])] = 1;
       }
     }
   }
+  cout << "p_match_num "  << p_matched_num << endl; 
   
 }

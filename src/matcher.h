@@ -129,7 +129,7 @@ public:
   // feature bucketing: keeps only max_features per bucket, where the domain
   // is split into buckets of size (bucket_width,bucket_height)
   void bucketFeatures(int32_t max_features,float bucket_width,float bucket_height);
-  void random_shuffle( unsigned int &,int len, p_match p_matched[]);
+  void random_shuffle( unsigned &,int len, p_match p_matched[]);
   unsigned int rand_number(unsigned int); //32-bit random number generator
 
 
@@ -222,10 +222,10 @@ private:
   inline void myFindMatch (int32_t m1[MAX_FEATURE_ARRAY_SZIE],const int32_t &i1,int32_t m2[MAX_FEATURE_ARRAY_SZIE],const int32_t &step_size,int32_t k2[BIN_NUM][MAX_FP_IN_BIN], int32_t k2_num[BIN_NUM], 
                                 const int32_t &u_bin_num,const int32_t &v_bin_num,const int32_t &stat_bin,
                                 int32_t& min_ind,int32_t stage);
-  void myMatching (int32_t m1p[MAX_FEATURE_ARRAY_SZIE],int32_t m1c[MAX_FEATURE_ARRAY_SZIE], int32_t n1p[BIN_NUM],int32_t n1c[BIN_NUM], std::vector<Matcher::p_match> &p_matched);
+  void myMatching (int32_t m1p[MAX_FEATURE_ARRAY_SZIE],int32_t m1c[MAX_FEATURE_ARRAY_SZIE], int32_t n1p[BIN_NUM],int32_t n1c[BIN_NUM], Matcher::p_match p_matched[POINT_L], int p_matched_num);
 
   // outlier removal
-//   void removeOutliers (Vector<Matcher::p_match> &p_matched,int32_t method);
+  void removeOutliers_gold (Matcher::p_match p_matched[POINT_L], int32_t p_matched_cnt);
 
 
   // filter
@@ -255,7 +255,7 @@ private:
 //   int p_matched_1_cnt;
   int p_matched_2_cnt;
   Matcher::p_match p_matched_2[POINT_L];
-  std::vector<Matcher::range>   ranges;
+  // std::vector<Matcher::range>   ranges;
 };
 #include "remove_outliers.hpp"
 #endif
