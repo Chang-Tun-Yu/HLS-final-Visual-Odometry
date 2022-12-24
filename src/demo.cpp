@@ -32,9 +32,9 @@ Street, Fifth Floor, Boston, MA 02110-1301, USA
 #include <stdint.h>
 #include <fstream>
 
-#include <viso_stereo.h>
-#include <viso_mono.h>
-#include <png++/png.hpp>
+#include "viso_stereo.h"
+#include "viso_mono.h"
+// #include <png++/png.hpp>
 
 using namespace std;
 

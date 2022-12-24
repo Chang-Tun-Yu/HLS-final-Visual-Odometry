@@ -20,7 +20,6 @@ Street, Fifth Floor, Boston, MA 02110-1301, USA
 */
 
 #include "matcher.h"
-#include "triangle.h"
 #include "filter.h"
 
 using namespace std;
@@ -96,13 +95,39 @@ void Matcher::matchFeatures(int32_t method, Matrix *Tr_delta) {
   cout << "match" << endl;
 
   // clear old matches
-  p_matched_1.clear();
-  p_matched_2.clear();
+  p_matched_2_cnt = 0;
+  //max p_matched cnt after matching: 14002
+  matching(m1p2,0,m1c2,0,n1p2,0,n1c2,0,p_matched_2, p_matched_2_cnt, method,false,Tr_delta);
+  
+  //max p_matched cnt after removeOutliers: 13417
+  removeOutliers(p_matched_2, p_matched_2_cnt);
+}
 
-  // matching(m1p2,m2p2,m1c2,m2c2,n1p2,n2p2,n1c2,n2c2,p_matched_2,method,false,Tr_delta);
-  matching(m1p2,0,m1c2,0,n1p2,0,n1c2,0,p_matched_2,method,false,Tr_delta);
-  removeOutliers(p_matched_2,method);
-  cout << "match done" << endl;
+unsigned int Matcher::rand_number(unsigned int number){
+    unsigned int taps [] = {32,22,2,1};
+    unsigned int new_bit = 0;
+    unsigned int bitwidth = 32;
+    for(int i = 0; i < 4; i++)
+    {
+        new_bit = new_bit  ^ int(floor( number/ (pow(2,bitwidth-taps[i]))));
+    } 
+    new_bit = new_bit & 1;
+    return (floor(number/2) + (new_bit * pow(2, bitwidth-1)));
+
+}
+
+void Matcher::random_shuffle(unsigned &rand_num, int len, p_match p_matched[]){
+    if (len < 1) return;
+    for (int i =  1; i != len; ++i)
+	  {
+        int j = rand_num % ((i+1));
+        // cout << i << " " << j <<endl;
+        rand_num = rand_number(rand_num);
+        p_match tmp = p_matched[i];
+        p_matched[i] = p_matched[j];
+        p_matched[j] = tmp;
+	  }
+
 }
 
 void Matcher::bucketFeatures(int32_t max_features,float bucket_width,float bucket_height) {
@@ -110,42 +135,48 @@ void Matcher::bucketFeatures(int32_t max_features,float bucket_width,float bucke
   // find max values
   float u_max = 0;
   float v_max = 0;
-  for (vector<p_match>::iterator it = p_matched_2.begin(); it!=p_matched_2.end(); it++) {
-    if (it->u1c>u_max) u_max=it->u1c;
-    if (it->v1c>v_max) v_max=it->v1c;
+  for (int it = 0; it < p_matched_2_cnt; it++) {
+    if (p_matched_2[it].u1c>u_max) u_max=p_matched_2[it].u1c;
+    if (p_matched_2[it].v1c>v_max) v_max=p_matched_2[it].v1c;
   }
 
   // allocate number of buckets needed
   int32_t bucket_cols = (int32_t)floor(u_max/bucket_width)+1;
   int32_t bucket_rows = (int32_t)floor(v_max/bucket_height)+1;
-  vector<p_match> *buckets = new vector<p_match>[bucket_cols*bucket_rows];
+
+  p_match buckets[126][256];
+  int buckets_cnt[126];
+
+  for(int i = 0; i < bucket_cols*bucket_rows; i++)
+    buckets_cnt[i] = 0;
 
   // assign matches to their buckets
-  for (vector<p_match>::iterator it=p_matched_2.begin(); it!=p_matched_2.end(); it++) {
-    int32_t u = (int32_t)floor(it->u1c/bucket_width);
-    int32_t v = (int32_t)floor(it->v1c/bucket_height);
-    buckets[v*bucket_cols+u].push_back(*it);
+  for (int it = 0; it < p_matched_2_cnt; it++) {
+    int32_t u = (int32_t)floor(p_matched_2[it].u1c/bucket_width);
+    int32_t v = (int32_t)floor(p_matched_2[it].v1c/bucket_height);
+    buckets[v*bucket_cols+u][buckets_cnt[v*bucket_cols+u]] = p_matched_2[it];
+    buckets_cnt[v*bucket_cols+u] += 1;
   }
   
   // refill p_matched from buckets
-  p_matched_2.clear();
+  p_matched_2_cnt = 0;
+  unsigned int rand = 5;
+
   for (int32_t i=0; i<bucket_cols*bucket_rows; i++) {
-    
+    // cout << buckets_cnt[i] << endl;
     // shuffle bucket indices randomly
-    std::random_shuffle(buckets[i].begin(),buckets[i].end());
+    random_shuffle(rand, buckets_cnt[i], buckets[i]);
     
     // add up to max_features features from this bucket to p_matched
     int32_t k=0;
-    for (vector<p_match>::iterator it=buckets[i].begin(); it!=buckets[i].end(); it++) {
-      p_matched_2.push_back(*it);
+    for (int j = 0; j < buckets_cnt[i]; j++) {
+      p_matched_2[p_matched_2_cnt++] = buckets[i][j];
       k++;
       if (k>=max_features)
         break;
     }
   }
 
-  // free buckets
-  delete []buckets;
 }
 
 
@@ -235,7 +266,7 @@ inline void Matcher::findMatch (int32_t* m1,const int32_t &i1,int32_t* m2,const 
 
 void Matcher::matching (int32_t *m1p,int32_t *m2p,int32_t *m1c,int32_t *m2c,
                         int32_t n1p,int32_t n2p,int32_t n1c,int32_t n2c,
-                        vector<Matcher::p_match> &p_matched,int32_t method,bool use_prior,Matrix *Tr_delta) {
+                        Matcher::p_match p_matched[POINT_L], int32_t & p_matched_cnt, int32_t method,bool use_prior,Matrix *Tr_delta) {
 
   // descriptor step size (number of int32_t elements in struct)
   int32_t step_size = sizeof(Matcher::maximum)/sizeof(int32_t);
@@ -291,7 +322,7 @@ void Matcher::matching (int32_t *m1p,int32_t *m2p,int32_t *m1c,int32_t *m2c,
 
       // add match if this pixel isn't matched yet
       if (*(M+getAddressOffsetImage(u1c,v1c,dims_c[0]))==0) {
-        p_matched.push_back(Matcher::p_match(u1p,v1p,i1p,-1,-1,-1,u1c,v1c,i1c,-1,-1,-1));
+        p_matched[p_matched_cnt++] = (Matcher::p_match(u1p,v1p,i1p,-1,-1,-1,u1c,v1c,i1c,-1,-1,-1));
         *(M+getAddressOffsetImage(u1c,v1c,dims_c[0])) = 1;
       }
     }
@@ -305,177 +336,6 @@ void Matcher::matching (int32_t *m1p,int32_t *m2p,int32_t *m1c,int32_t *m2c,
   delete []k2c;
 }
 
-void Matcher::removeOutliers (vector<Matcher::p_match> &p_matched,int32_t method) {
-
-  // do we have enough points for outlier removal?
-  if (p_matched.size()<=3)
-    return;
-
-  // input/output structure for triangulation
-  struct triangulateio in, out;
-
-  // inputs
-  in.numberofpoints = p_matched.size();
-  in.pointlist = (float*)malloc(in.numberofpoints*2*sizeof(float));
-  int32_t k=0;
-  
-  // create copy of p_matched, init vector with number of support points
-  // and fill triangle point vector for delaunay triangulation
-  vector<Matcher::p_match> p_matched_copy;  
-  vector<int32_t> num_support;
-  for (vector<Matcher::p_match>::iterator it=p_matched.begin(); it!=p_matched.end(); it++) {
-    p_matched_copy.push_back(*it);
-    num_support.push_back(0);
-    in.pointlist[k++] = it->u1c;
-    in.pointlist[k++] = it->v1c;
-  }
-  
-  // input parameters
-  in.numberofpointattributes = 0;
-  in.pointattributelist      = NULL;
-  in.pointmarkerlist         = NULL;
-  in.numberofsegments        = 0;
-  in.numberofholes           = 0;
-  in.numberofregions         = 0;
-  in.regionlist              = NULL;
-  
-  // outputs
-  out.pointlist              = NULL;
-  out.pointattributelist     = NULL;
-  out.pointmarkerlist        = NULL;
-  out.trianglelist           = NULL;
-  out.triangleattributelist  = NULL;
-  out.neighborlist           = NULL;
-  out.segmentlist            = NULL;
-  out.segmentmarkerlist      = NULL;
-  out.edgelist               = NULL;
-  out.edgemarkerlist         = NULL;
-
-  // do triangulation (z=zero-based, n=neighbors, Q=quiet, B=no boundary markers)
-  // attention: not using the B switch or using the n switch creates a memory leak (=> use valgrind!)
-  char parameters[] = "zQB";
-  triangulate(parameters, &in, &out, NULL);
-  
-  // for all triangles do
-  for (int32_t i=0; i<out.numberoftriangles; i++) {
-    
-    // extract triangle corner points
-    int32_t p1 = out.trianglelist[i*3+0];
-    int32_t p2 = out.trianglelist[i*3+1];
-    int32_t p3 = out.trianglelist[i*3+2];
-    
-    // method: flow
-    if (method==0) {
-      
-      // 1. corner disparity and flow
-      float p1_flow_u = p_matched_copy[p1].u1c-p_matched_copy[p1].u1p;
-      float p1_flow_v = p_matched_copy[p1].v1c-p_matched_copy[p1].v1p;
-
-      // 2. corner disparity and flow
-      float p2_flow_u = p_matched_copy[p2].u1c-p_matched_copy[p2].u1p;
-      float p2_flow_v = p_matched_copy[p2].v1c-p_matched_copy[p2].v1p;
-
-      // 3. corner disparity and flow
-      float p3_flow_u = p_matched_copy[p3].u1c-p_matched_copy[p3].u1p;
-      float p3_flow_v = p_matched_copy[p3].v1c-p_matched_copy[p3].v1p;
-
-      // consistency of 1. edge
-      if (fabs(p1_flow_u-p2_flow_u)+fabs(p1_flow_v-p2_flow_v)<param.outlier_flow_tolerance) {
-        num_support[p1]++;
-        num_support[p2]++;
-      }
-
-      // consistency of 2. edge
-      if (fabs(p2_flow_u-p3_flow_u)+fabs(p2_flow_v-p3_flow_v)<param.outlier_flow_tolerance) {
-        num_support[p2]++;
-        num_support[p3]++;
-      }
-
-      // consistency of 3. edge
-      if (fabs(p1_flow_u-p3_flow_u)+fabs(p1_flow_v-p3_flow_v)<param.outlier_flow_tolerance) {
-        num_support[p1]++;
-        num_support[p3]++;
-      }
-      
-    // method: stereo
-    } else if (method==1) {
-      
-      // 1. corner disparity and flow
-      float p1_disp   = p_matched_copy[p1].u1c-p_matched_copy[p1].u2c;
-
-      // 2. corner disparity and flow
-      float p2_disp   = p_matched_copy[p2].u1c-p_matched_copy[p2].u2c;
-
-      // 3. corner disparity and flow
-      float p3_disp   = p_matched_copy[p3].u1c-p_matched_copy[p3].u2c;
-
-      // consistency of 1. edge
-      if (fabs(p1_disp-p2_disp)<param.outlier_disp_tolerance) {
-        num_support[p1]++;
-        num_support[p2]++;
-      }
-
-      // consistency of 2. edge
-      if (fabs(p2_disp-p3_disp)<param.outlier_disp_tolerance) {
-        num_support[p2]++;
-        num_support[p3]++;
-      }
-
-      // consistency of 3. edge
-      if (fabs(p1_disp-p3_disp)<param.outlier_disp_tolerance) {
-        num_support[p1]++;
-        num_support[p3]++;
-      }
-      
-    // method: quad matching
-    } else {
-      
-      // 1. corner disparity and flow
-      float p1_flow_u = p_matched_copy[p1].u1c-p_matched_copy[p1].u1p;
-      float p1_flow_v = p_matched_copy[p1].v1c-p_matched_copy[p1].v1p;
-      float p1_disp   = p_matched_copy[p1].u1p-p_matched_copy[p1].u2p;
-
-      // 2. corner disparity and flow
-      float p2_flow_u = p_matched_copy[p2].u1c-p_matched_copy[p2].u1p;
-      float p2_flow_v = p_matched_copy[p2].v1c-p_matched_copy[p2].v1p;
-      float p2_disp   = p_matched_copy[p2].u1p-p_matched_copy[p2].u2p;
-
-      // 3. corner disparity and flow
-      float p3_flow_u = p_matched_copy[p3].u1c-p_matched_copy[p3].u1p;
-      float p3_flow_v = p_matched_copy[p3].v1c-p_matched_copy[p3].v1p;
-      float p3_disp   = p_matched_copy[p3].u1p-p_matched_copy[p3].u2p;
-
-      // consistency of 1. edge
-      if (fabs(p1_disp-p2_disp)<param.outlier_disp_tolerance && fabs(p1_flow_u-p2_flow_u)+fabs(p1_flow_v-p2_flow_v)<param.outlier_flow_tolerance) {
-        num_support[p1]++;
-        num_support[p2]++;
-      }
-
-      // consistency of 2. edge
-      if (fabs(p2_disp-p3_disp)<param.outlier_disp_tolerance && fabs(p2_flow_u-p3_flow_u)+fabs(p2_flow_v-p3_flow_v)<param.outlier_flow_tolerance) {
-        num_support[p2]++;
-        num_support[p3]++;
-      }
-
-      // consistency of 3. edge
-      if (fabs(p1_disp-p3_disp)<param.outlier_disp_tolerance && fabs(p1_flow_u-p3_flow_u)+fabs(p1_flow_v-p3_flow_v)<param.outlier_flow_tolerance) {
-        num_support[p1]++;
-        num_support[p3]++;
-      }
-    }
-  }
-  
-  // refill p_matched
-  p_matched.clear();
-  for (int i=0; i<in.numberofpoints; i++)
-    if (num_support[i]>=4)
-      p_matched.push_back(p_matched_copy[i]);
-  
-  // free memory used for triangulation
-  free(in.pointlist);
-  free(out.pointlist);
-  free(out.trianglelist);
-}
 
 float Matcher::mean(const uint8_t* I,const int32_t &bpl,const int32_t &u_min,const int32_t &u_max,const int32_t &v_min,const int32_t &v_max) {
   float mean = 0;

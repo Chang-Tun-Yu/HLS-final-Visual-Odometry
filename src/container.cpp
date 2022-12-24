@@ -1,37 +1,43 @@
+#ifndef CONTAINER_CPP
+#define CONTAINER_CPP
+
 #include <iostream>
-#include <iomanip>
-#include <cstdlib>
+//#include <iomanip>
+#include <stdio.h>
+//#include <string.h>
+//#include <stdlib.h>
 //#include "ap_int.h"
 using namespace std;
 
-#define MaxSize 500
+// #define MaxSize 100000
+
 //Vector Class
-//template<class data_T, class flag_T>
-template<class data_T>
+template<class data_T, int length>
 class Vector {
 protected:
-	data_T storage[MaxSize];
+	data_T storage[length];
 	bool empty();
 	bool full();
 	int size;
 
 private:
 public:
+    Vector(){size = 0;}
 	void     clear();
 	void     push_back(data_T element);
 	data_T   fetch(int idx);
 	data_T   front();
 	data_T   back();
-	data_T   *begin();
-	data_T   *end();
+
+    int     get_size();
 
 };
-template<class data_T>
-void   Vector<data_T>::clear() {
+template<class data_T, int length>
+void   Vector<data_T, length>::clear() {
 	size = 0;
 }
-template<class data_T>
-void Vector<data_T>::push_back(data_T element) {
+template<class data_T, int length>
+void Vector<data_T, length>::push_back(data_T element) {
 	bool flag = !full();
 	if (flag)
 	{
@@ -39,8 +45,8 @@ void Vector<data_T>::push_back(data_T element) {
 		size = size + 1;
 	}
 }
-template<class data_T>
-data_T Vector<data_T>::front() {
+template<class data_T, int length>
+data_T Vector<data_T, length>::front() {
 	bool flag = !empty();
 	data_T data;
 	if (flag)
@@ -49,8 +55,8 @@ data_T Vector<data_T>::front() {
 	}
 	return data;
 }
-template<class data_T>
-data_T Vector<data_T>::fetch(int idx) {
+template<class data_T, int length>
+data_T Vector<data_T, length>::fetch(int idx) {
 	bool flag = !((empty()) && (idx < size - 1));
 	data_T data;
 	if (flag)
@@ -59,8 +65,8 @@ data_T Vector<data_T>::fetch(int idx) {
 	}
 	return data;
 }
-template<class data_T>
-data_T Vector<data_T>::back() {
+template<class data_T, int length>
+data_T Vector<data_T, length>::back() {
 	bool flag = !empty();
 	data_T data;
 	if (flag)
@@ -69,31 +75,16 @@ data_T Vector<data_T>::back() {
 	}
 	return data;
 }
-template<class data_T>
-data_T* Vector<data_T>::begin() {
-	bool flag = !empty();
-	data_T* iter = 0;
-	if (flag)
-	{
-		iter = storage;
-	}
-	return iter;
-}
-template<class data_T>
-data_T* Vector<data_T>::end() {
-	bool flag = !empty();
-	data_T* iter = 0;
-	if (flag)
-	{
-		iter = (storage + size);
-	}
-	return iter;
-}
-template<class data_T>
-bool Vector<data_T>::empty() {
+template<class data_T, int length>
+bool Vector<data_T, length>::empty() {
 	return (size == 0);
 }
-template<class data_T>
-bool Vector<data_T>::full() {
-	return (size == MaxSize);
+template<class data_T, int length>
+bool Vector<data_T, length>::full() {
+	return (size == length);
 }
+template<class data_T, int length>
+int Vector<data_T, length>::get_size() {
+	return size;
+}
+#endif

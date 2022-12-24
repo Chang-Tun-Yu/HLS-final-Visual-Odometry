@@ -27,12 +27,13 @@ Street, Fifth Floor, Boston, MA 02110-1301, USA
 #include <string.h>
 #include <iostream>
 #include <math.h>
-#include <emmintrin.h>
+//#include <emmintrin.h>
 #include <algorithm>
 #include <vector>
 
 #include "matrix.h"
 #include "myComputeFeature.hpp"
+#include "delaunator.hpp"
 
 class Matcher {
 
@@ -83,7 +84,8 @@ public:
   }
 
   // structure for storing matches
-  struct p_match {
+  class p_match {
+public:
     float   u1p,v1p; // u,v-coordinates in previous left  image
     int32_t i1p;     // feature index (for tracking)
     float   u2p,v2p; // u,v-coordinates in previous right image
@@ -126,17 +128,25 @@ public:
   // feature bucketing: keeps only max_features per bucket, where the domain
   // is split into buckets of size (bucket_width,bucket_height)
   void bucketFeatures(int32_t max_features,float bucket_width,float bucket_height);
+  void random_shuffle( unsigned int &,int len, p_match p_matched[]);
+  unsigned int rand_number(unsigned int); //32-bit random number generator
+
 
   // return vector with matched feature points and indices
-  std::vector<Matcher::p_match> getMatches() { return p_matched_2; }
+  std::vector<Matcher::p_match> getMatches() {
+    std::vector<Matcher::p_match> tmp;
+    for(int i = 0; i < p_matched_2_cnt; i++)
+        tmp.push_back(p_matched_2[i]);
+    return tmp; 
+  }
 
   // given a vector of inliers computes gain factor between the current and
   // the previous frame. this function is useful if you want to reconstruct 3d
   // and you want to cancel the change of (unknown) camera gain.
   // float getGain (std::vector<int32_t> inliers);
-
+  
 private:
-
+    
   // structure for storing interest points
   struct maximum {
     int32_t u;   // u-coordinate
@@ -205,10 +215,10 @@ private:
                          int32_t& min_ind,int32_t stage,bool flow,bool use_prior,double u_=-1,double v_=-1);
   void matching (int32_t *m1p,int32_t *m2p,int32_t *m1c,int32_t *m2c,
                  int32_t n1p,int32_t n2p,int32_t n1c,int32_t n2c,
-                 std::vector<Matcher::p_match> &p_matched,int32_t method,bool use_prior,Matrix *Tr_delta = 0);
+                 Matcher::p_match p_matched[POINT_L], int32_t &p_matched_cnt, int32_t method,bool use_prior,Matrix *Tr_delta = 0);
 
   // outlier removal
-  void removeOutliers (std::vector<Matcher::p_match> &p_matched,int32_t method);
+//   void removeOutliers (Vector<Matcher::p_match> &p_matched,int32_t method);
 
 
   // filter
@@ -233,10 +243,12 @@ private:
   int32_t m1p2[288000];
   int32_t n1c2, n1p2;
 
-  std::vector<Matcher::p_match> p_matched_1;
-  std::vector<Matcher::p_match> p_matched_2;
+
+//   int p_matched_1_cnt;
+  int p_matched_2_cnt;
+  Matcher::p_match p_matched_2[POINT_L];
   std::vector<Matcher::range>   ranges;
 };
-
+#include "remove_outliers.hpp"
 #endif
 
