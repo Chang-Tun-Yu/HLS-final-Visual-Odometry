@@ -19,7 +19,7 @@ set (LIBVISO2_SRC_DIR src)
 include_directories("${LIBVISO2_SRC_DIR}")
 
 # use sse3 instruction set
-SET(CMAKE_CXX_FLAGS "-msse3 -std=c++11")
+SET(CMAKE_CXX_FLAGS "-msse3")
 
 # sources
 FILE(GLOB LIBVISO2_SRC_FILES "src/*.cpp")

@@ -22,6 +22,7 @@ Street, Fifth Floor, Boston, MA 02110-1301, USA
 #ifndef VISO_H
 #define VISO_H
 
+
 #include "matrix.h"
 #include "matcher.h"
 

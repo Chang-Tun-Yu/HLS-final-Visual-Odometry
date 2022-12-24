@@ -1,0 +1,5577 @@
+========== [MONO VO] ==========
+Processing: Frame: 0
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 1 1
+match done
+ ... failed!
+Processing: Frame: 1
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 6228 4760
+match done
+, Matches: 224, Inliers: 85.7143 %, Current pose: 
+   0.9999868    0.0045011    0.0024911    0.0171825 
+  -0.0044981    0.9999892   -0.0011773   -0.1426982 
+  -0.0024964    0.0011661    0.9999962    1.4368465 
+   0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 2
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 6076 4704
+match done
+, Matches: 211, Inliers: 82.9384 %, Current pose: 
+   0.9999494    0.0086733    0.0050992    0.0384609 
+  -0.0086690    0.9999621   -0.0008491   -0.2903885 
+  -0.0051064    0.0008048    0.9999866    2.8862143 
+   0.0000000   -0.0000000   -0.0000000    1.0000000 
+
+Processing: Frame: 3
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 6128 4787
+match done
+, Matches: 212, Inliers: 79.717 %, Current pose: 
+   0.9999189    0.0114331    0.0056055    0.0879353 
+  -0.0114349    0.9999346    0.0002786   -0.4279441 
+  -0.0056019   -0.0003427    0.9999843    4.2571854 
+   0.0000000   -0.0000000   -0.0000000    1.0000000 
+
+Processing: Frame: 4
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 6267 4902
+match done
+, Matches: 206, Inliers: 81.5534 %, Current pose: 
+   0.9999031    0.0122806    0.0065548    0.1290038 
+  -0.0122975    0.9999211    0.0025468   -0.5682284 
+  -0.0065230   -0.0026272    0.9999753    5.5595142 
+   0.0000000   -0.0000000   -0.0000000    1.0000000 
+
+Processing: Frame: 5
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 6603 5206
+match done
+, Matches: 209, Inliers: 81.8182 %, Current pose: 
+   0.9998955    0.0124788    0.0072956    0.1708486 
+  -0.0125042    0.9999159    0.0034458   -0.7041078 
+  -0.0072520   -0.0035366    0.9999674    6.9054010 
+   0.0000000   -0.0000000   -0.0000000    1.0000000 
+
+Processing: Frame: 6
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 6723 5427
+match done
+, Matches: 209, Inliers: 84.2105 %, Current pose: 
+   0.9998825    0.0135759    0.0071215    0.2216508 
+  -0.0135976    0.9999030    0.0030086   -0.8320317 
+  -0.0070800   -0.0031051    0.9999701    8.1910265 
+   0.0000000   -0.0000000   -0.0000000    1.0000000 
+
+Processing: Frame: 7
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 6994 5675
+match done
+, Matches: 220, Inliers: 90.4545 %, Current pose: 
+   0.9998203    0.0167903    0.0088035    0.2494612 
+  -0.0168199    0.9998531    0.0032952   -0.9581294 
+  -0.0087469   -0.0034427    0.9999558    9.4531590 
+   0.0000000   -0.0000000   -0.0000000    1.0000000 
+
+Processing: Frame: 8
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 7118 5835
+match done
+, Matches: 226, Inliers: 84.0708 %, Current pose: 
+   0.9998931    0.0123141    0.0078824    0.3241179 
+  -0.0123475    0.9999150    0.0041927   -1.0965039 
+  -0.0078301   -0.0042896    0.9999601   10.7697730 
+   0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 9
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 7328 5995
+match done
+, Matches: 225, Inliers: 81.3333 %, Current pose: 
+   0.9998871    0.0125528    0.0082612    0.3692388 
+  -0.0125983    0.9999056    0.0054891   -1.2141303 
+  -0.0081915   -0.0055925    0.9999508   12.0115148 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 10
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 7512 6217
+match done
+, Matches: 233, Inliers: 87.1245 %, Current pose: 
+   0.9998649    0.0131292    0.0098898    0.4043604 
+  -0.0131839    0.9998980    0.0054932   -1.3211755 
+  -0.0098167   -0.0056228    0.9999360   13.1867607 
+  -0.0000000   -0.0000000   -0.0000000    1.0000000 
+
+Processing: Frame: 11
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 7529 6235
+match done
+, Matches: 235, Inliers: 88.9362 %, Current pose: 
+   0.9999061    0.0101488    0.0092066    0.4664421 
+  -0.0101960    0.9999350    0.0050978   -1.4299267 
+  -0.0091542   -0.0051912    0.9999446   14.3636819 
+  -0.0000000   -0.0000000   -0.0000000    1.0000000 
+
+Processing: Frame: 12
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 7562 6301
+match done
+, Matches: 239, Inliers: 86.6109 %, Current pose: 
+   0.9998999    0.0098848    0.0101242    0.5063028 
+  -0.0099352    0.9999385    0.0049373   -1.5350573 
+  -0.0100748   -0.0050374    0.9999366   15.4792481 
+  -0.0000000   -0.0000000   -0.0000000    1.0000000 
+
+Processing: Frame: 13
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 7385 6128
+match done
+, Matches: 224, Inliers: 86.1607 %, Current pose: 
+   0.9998792    0.0110966    0.0108819    0.5470316 
+  -0.0111437    0.9999288    0.0042784   -1.6446368 
+  -0.0108337   -0.0043992    0.9999316   16.5848838 
+  -0.0000000   -0.0000000   -0.0000000    1.0000000 
+
+Processing: Frame: 14
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 7597 6214
+match done
+, Matches: 206, Inliers: 88.835 %, Current pose: 
+   0.9999170    0.0072251    0.0106707    0.6056476 
+  -0.0072631    0.9999674    0.0035268   -1.7514319 
+  -0.0106448   -0.0036040    0.9999368   17.6531473 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 15
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 7698 6483
+match done
+, Matches: 219, Inliers: 87.2146 %, Current pose: 
+   0.9998561    0.0113612    0.0125951    0.6274627 
+  -0.0114011    0.9999302    0.0031070   -1.8533543 
+  -0.0125590   -0.0032502    0.9999159   18.6841898 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 16
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 7822 6655
+match done
+, Matches: 229, Inliers: 87.7729 %, Current pose: 
+   0.9998853    0.0093147    0.0119436    0.6835641 
+  -0.0093547    0.9999508    0.0033012   -1.9584091 
+  -0.0119122   -0.0034126    0.9999232   19.7340493 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 17
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 8112 6920
+match done
+, Matches: 233, Inliers: 81.9742 %, Current pose: 
+   0.9999422    0.0044237    0.0098007    0.7620065 
+  -0.0044370    0.9999893    0.0013367   -2.0603495 
+  -0.0097947   -0.0013801    0.9999511   20.7595398 
+   0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 18
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 8042 6923
+match done
+, Matches: 243, Inliers: 86.4198 %, Current pose: 
+   0.9999412    0.0039777    0.0100904    0.8072267 
+  -0.0039759    0.9999921   -0.0001948   -2.1614194 
+  -0.0100911    0.0001547    0.9999491   21.7501164 
+  -0.0000000    0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 19
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 8231 7154
+match done
+, Matches: 232, Inliers: 87.931 %, Current pose: 
+   0.9999147    0.0061313    0.0115362    0.8356451 
+  -0.0061275    0.9999812   -0.0003634   -2.2590408 
+  -0.0115382    0.0002927    0.9999334   22.6988402 
+  -0.0000000    0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 20
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 8449 7452
+match done
+, Matches: 226, Inliers: 91.5929 %, Current pose: 
+   0.9998988    0.0067904    0.0125038    0.8763393 
+  -0.0067799    0.9999766   -0.0008761   -2.3538893 
+  -0.0125095    0.0007912    0.9999214   23.6306811 
+  -0.0000000    0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 21
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 8868 7988
+match done
+, Matches: 235, Inliers: 88.9362 %, Current pose: 
+   0.9998839    0.0062476    0.0138961    0.9159841 
+  -0.0062643    0.9999797    0.0011591   -2.4431333 
+  -0.0138885   -0.0012460    0.9999028   24.5456098 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 22
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 9061 8188
+match done
+, Matches: 236, Inliers: 91.5254 %, Current pose: 
+   0.9998563    0.0077008    0.0151037    0.9552694 
+  -0.0077499    0.9999649    0.0031950   -2.5364590 
+  -0.0150786   -0.0033116    0.9998808   25.4584654 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 23
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 9473 8531
+match done
+, Matches: 239, Inliers: 94.1423 %, Current pose: 
+   0.9998306    0.0064512    0.0172375    1.0127269 
+  -0.0065087    0.9999734    0.0032826   -2.6235375 
+  -0.0172158   -0.0033943    0.9998460   26.3418616 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 24
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 9616 8653
+match done
+, Matches: 249, Inliers: 96.7871 %, Current pose: 
+   0.9997177    0.0067719    0.0227743    1.0626682 
+  -0.0068487    0.9999711    0.0032973   -2.7096073 
+  -0.0227513   -0.0034523    0.9997352   27.2027453 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 25
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 9931 8999
+match done
+, Matches: 245, Inliers: 96.3265 %, Current pose: 
+   0.9996379    0.0009575    0.0268903    1.1543025 
+  -0.0010261    0.9999963    0.0025361   -2.7943453 
+  -0.0268878   -0.0025628    0.9996352   28.0520554 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 26
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 10116 9226
+match done
+, Matches: 247, Inliers: 95.9514 %, Current pose: 
+   0.9993449    0.0038110    0.0359887    1.1958384 
+  -0.0038676    0.9999914    0.0015032   -2.8765212 
+  -0.0359826   -0.0016414    0.9993511   28.8723867 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 27
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 10308 9453
+match done
+, Matches: 247, Inliers: 92.3077 %, Current pose: 
+   0.9989329    0.0068032    0.0456803    1.2467682 
+  -0.0068237    0.9999767    0.0002942   -2.9631682 
+  -0.0456772   -0.0006056    0.9989561   29.6780726 
+  -0.0000000    0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 28
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 10226 9484
+match done
+, Matches: 251, Inliers: 93.2271 %, Current pose: 
+   0.9985448    0.0031347    0.0538364    1.3398490 
+  -0.0030291    0.9999933   -0.0020429   -3.0428084 
+  -0.0538425    0.0018768    0.9985477   30.4554476 
+  -0.0000000    0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 29
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 10132 9396
+match done
+, Matches: 252, Inliers: 94.4444 %, Current pose: 
+   0.9976755    0.0104890    0.0673325    1.4006683 
+  -0.0102319    0.9999390   -0.0041623   -3.1223447 
+  -0.0673721    0.0034637    0.9977219   31.2292564 
+  -0.0000000    0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 30
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 9999 9269
+match done
+, Matches: 250, Inliers: 96 %, Current pose: 
+   0.9963307    0.0168823    0.0839060    1.4806560 
+  -0.0163514    0.9998417   -0.0070103   -3.2024357 
+  -0.0840111    0.0056126    0.9964490   31.9699778 
+  -0.0000000    0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 31
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 9845 9126
+match done
+, Matches: 246, Inliers: 95.935 %, Current pose: 
+   0.9942830    0.0209406    0.1047034    1.5845089 
+  -0.0200025    0.9997499   -0.0100018   -3.2776534 
+  -0.1048867    0.0078503    0.9944532   32.6650829 
+  -0.0000000    0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 32
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 10019 9356
+match done
+, Matches: 248, Inliers: 94.3548 %, Current pose: 
+   0.9909581    0.0229432    0.1321954    1.7082675 
+  -0.0214889    0.9996920   -0.0124175   -3.3552911 
+  -0.1324395    0.0094645    0.9911459   33.3292205 
+  -0.0000000    0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 33
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 10258 9568
+match done
+, Matches: 242, Inliers: 94.6281 %, Current pose: 
+   0.9865045    0.0197195    0.1625422    1.8851552 
+  -0.0177417    0.9997500   -0.0136109   -3.4231215 
+  -0.1627700    0.0105434    0.9866077   33.9612897 
+  -0.0000000    0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 34
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 10269 9540
+match done
+, Matches: 233, Inliers: 92.7039 %, Current pose: 
+   0.9802533    0.0168893    0.1970235    2.0664706 
+  -0.0145374    0.9998048   -0.0133774   -3.4962266 
+  -0.1972110    0.0102490    0.9803075   34.5735922 
+  -0.0000000    0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 35
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 10070 9412
+match done
+, Matches: 225, Inliers: 92.8889 %, Current pose: 
+   0.9715533    0.0197041    0.2359998    2.2461932 
+  -0.0170368    0.9997659   -0.0133362   -3.5633501 
+  -0.2362073    0.0089361    0.9716616   35.1726826 
+  -0.0000000    0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 36
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 9883 9245
+match done
+, Matches: 226, Inliers: 94.2478 %, Current pose: 
+   0.9602832    0.0232277    0.2780587    2.4480566 
+  -0.0209029    0.9997174   -0.0113226   -3.6322013 
+  -0.2782431    0.0050607    0.9604973   35.7539493 
+  -0.0000000    0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 37
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 9742 9143
+match done
+, Matches: 223, Inliers: 93.722 %, Current pose: 
+   0.9476295    0.0129946    0.3191074    2.7556614 
+  -0.0107545    0.9999036   -0.0087812   -3.7031202 
+  -0.3191908    0.0048895    0.9476779   36.2987302 
+  -0.0000000    0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 38
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 9676 9050
+match done
+, Matches: 220, Inliers: 92.2727 %, Current pose: 
+   0.9315806    0.0007223    0.3635340    3.1044417 
+   0.0029352    0.9999505   -0.0095087   -3.7776366 
+  -0.3635229    0.0099252    0.9315324   36.8425260 
+  -0.0000000    0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 39
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 9599 8991
+match done
+, Matches: 210, Inliers: 90.4762 %, Current pose: 
+   0.9122496   -0.0081678    0.4095535    3.4818507 
+   0.0145425    0.9998167   -0.0124530   -3.8551022 
+  -0.4093767    0.0173162    0.9122011   37.3705501 
+  -0.0000000    0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 40
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 9760 9143
+match done
+, Matches: 213, Inliers: 87.3239 %, Current pose: 
+   0.8884838   -0.0128386    0.4587283    3.8700073 
+   0.0208666    0.9997049   -0.0124363   -3.9296981 
+  -0.4584333    0.0206215    0.8884895   37.8638579 
+  -0.0000000    0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 41
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 9599 8927
+match done
+, Matches: 209, Inliers: 89.4737 %, Current pose: 
+   0.8606828   -0.0170057    0.5088575    4.2860128 
+   0.0258726    0.9996116   -0.0103546   -3.9885126 
+  -0.5084838    0.0220775    0.8607885   38.3312768 
+  -0.0000000    0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 42
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 9371 8721
+match done
+, Matches: 209, Inliers: 92.823 %, Current pose: 
+   0.8302765   -0.0252765    0.5567783    4.7416300 
+   0.0354430    0.9993437   -0.0074851   -4.0408199 
+  -0.5562237    0.0259486    0.8306274   38.7696970 
+  -0.0000000    0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 43
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 9234 8594
+match done
+, Matches: 212, Inliers: 88.2075 %, Current pose: 
+   0.8010388   -0.0500638    0.5965152    5.2851693 
+   0.0720024    0.9973199   -0.0129873   -4.0931714 
+  -0.5942663    0.0533538    0.8024967   39.0544442 
+  -0.0000000    0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 44
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 9402 8754
+match done
+, Matches: 217, Inliers: 88.0184 %, Current pose: 
+   0.7655079   -0.0612263    0.6405068    5.8128188 
+   0.0864481    0.9962235   -0.0080899   -4.1503911 
+  -0.6375926    0.0615635    0.7679099   39.4447036 
+  -0.0000000    0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 45
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 9454 8849
+match done
+, Matches: 214, Inliers: 87.3832 %, Current pose: 
+   0.7273317   -0.0629538    0.6833926    6.3951360 
+   0.0931601    0.9956234   -0.0074335   -4.2059062 
+  -0.6799337    0.0690716    0.7300132   39.8319943 
+  -0.0000000    0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 46
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 9899 9268
+match done
+, Matches: 220, Inliers: 90.4545 %, Current pose: 
+   0.6872425   -0.0621529    0.7237643    6.9777290 
+   0.0995286    0.9949934   -0.0090618   -4.2661247 
+  -0.7195775    0.0782629    0.6899878   40.1784414 
+  -0.0000000    0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 47
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 9956 9387
+match done
+, Matches: 226, Inliers: 93.8053 %, Current pose: 
+   0.6466472   -0.0627754    0.7602017    7.5465470 
+   0.1078304    0.9941226   -0.0096313   -4.3071576 
+  -0.7551291    0.0882009    0.6496157   40.4628461 
+  -0.0000000    0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 48
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 10112 9588
+match done
+, Matches: 232, Inliers: 88.3621 %, Current pose: 
+   0.6016553   -0.0661434    0.7960125    8.1151544 
+   0.1148731    0.9933709   -0.0042827   -4.3512162 
+  -0.7904524    0.0940171    0.6052650   40.7467345 
+  -0.0000000    0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 49
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 9959 9347
+match done
+, Matches: 230, Inliers: 87.3913 %, Current pose: 
+   0.5535882   -0.0686508    0.8299562    8.6888919 
+   0.1182452    0.9929791    0.0032648   -4.3986652 
+  -0.8243532    0.0963310    0.5578191   41.0115293 
+  -0.0000000    0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 50
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 9763 9215
+match done
+, Matches: 234, Inliers: 94.8718 %, Current pose: 
+   0.5057591   -0.0700004    0.8598300    9.2834416 
+   0.1226815    0.9924086    0.0086316   -4.4303529 
+  -0.8539069    0.1011197    0.5105074   41.2168835 
+  -0.0000000    0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 51
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 9431 8854
+match done
+, Matches: 235, Inliers: 90.2128 %, Current pose: 
+   0.4556577   -0.0724403    0.8872026    9.8943617 
+   0.1288514    0.9915537    0.0147839   -4.4640957 
+  -0.8807800    0.1075809    0.4611431   41.4011054 
+  -0.0000000    0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 52
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 9255 8655
+match done
+, Matches: 233, Inliers: 94.4206 %, Current pose: 
+   0.4051876   -0.0736692    0.9112606   10.4915068 
+   0.1299969    0.9912628    0.0223344   -4.4930122 
+  -0.9049441    0.1094114    0.4112242   41.5499857 
+  -0.0000000    0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 53
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 8929 8334
+match done
+, Matches: 233, Inliers: 87.9828 %, Current pose: 
+   0.3522120   -0.0745611    0.9329455   11.1116846 
+   0.1319429    0.9908220    0.0293746   -4.5226081 
+  -0.9265731    0.1127494    0.3588172   41.6919508 
+  -0.0000000    0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 54
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 8558 7911
+match done
+, Matches: 236, Inliers: 91.5254 %, Current pose: 
+   0.3012235   -0.0749148    0.9506062   11.7110979 
+   0.1332458    0.9904351    0.0358314   -4.5440959 
+  -0.9441980    0.1158711    0.3083244   41.7989892 
+  -0.0000000    0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 55
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 8231 7574
+match done
+, Matches: 240, Inliers: 89.1667 %, Current pose: 
+   0.2561334   -0.0760846    0.9636425   12.3415570 
+   0.1405415    0.9892358    0.0407498   -4.5578733 
+  -0.9563701    0.1249944    0.2640694   41.8604363 
+  -0.0000000    0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 56
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 8640 7955
+match done
+, Matches: 234, Inliers: 85.8974 %, Current pose: 
+   0.2164712   -0.0783637    0.9731389   12.9852252 
+   0.1510753    0.9874556    0.0459104   -4.5694474 
+  -0.9645292    0.1370789    0.2255945   41.8947186 
+  -0.0000000    0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 57
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 8576 7892
+match done
+, Matches: 243, Inliers: 85.5967 %, Current pose: 
+   0.1824489   -0.0801885    0.9799399   13.6451613 
+   0.1543719    0.9866437    0.0519956   -4.5840255 
+  -0.9710210    0.1417886    0.1923909   41.9417301 
+  -0.0000000    0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 58
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 8277 7544
+match done
+, Matches: 235, Inliers: 84.6809 %, Current pose: 
+   0.1544463   -0.0799146    0.9847639   14.2896515 
+   0.1592885    0.9856984    0.0550083   -4.5940075 
+  -0.9750762    0.1483657    0.1649669   41.9690420 
+  -0.0000000    0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 59
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 8283 7445
+match done
+, Matches: 238, Inliers: 85.7143 %, Current pose: 
+   0.1335770   -0.0789946    0.9878851   14.9126874 
+   0.1617291    0.9851928    0.0569111   -4.6069740 
+  -0.9777530    0.1521678    0.1443748   41.9856111 
+  -0.0000000    0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 60
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 8824 8012
+match done
+, Matches: 245, Inliers: 90.2041 %, Current pose: 
+   0.1153822   -0.0807951    0.9900299   15.5579100 
+   0.1579286    0.9855009    0.0620199   -4.6167544 
+  -0.9806863    0.1491980    0.1264691   42.0291754 
+  -0.0000000    0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 61
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 8909 8096
+match done
+, Matches: 238, Inliers: 89.4958 %, Current pose: 
+   0.1004894   -0.0856504    0.9912446   16.2030626 
+   0.1582378    0.9849825    0.0690676   -4.6192876 
+  -0.9822742    0.1499118    0.1125334   42.0602120 
+  -0.0000000    0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 62
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 8845 8078
+match done
+, Matches: 243, Inliers: 88.4774 %, Current pose: 
+   0.0902533   -0.0888788    0.9919450   16.8579833 
+   0.1601205    0.9843476    0.0736293   -4.6246420 
+  -0.9829628    0.1521854    0.1030720   42.0789054 
+  -0.0000000    0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 63
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 9037 8328
+match done
+, Matches: 239, Inliers: 89.5397 %, Current pose: 
+   0.0826367   -0.0920033    0.9923238   17.5335289 
+   0.1633465    0.9835135    0.0775836   -4.6332764 
+  -0.9831018    0.1556813    0.0963027   42.0979791 
+  -0.0000000    0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 64
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 9376 8745
+match done
+, Matches: 237, Inliers: 89.4515 %, Current pose: 
+   0.0776093   -0.0924366    0.9926894   18.2433174 
+   0.1594203    0.9840314    0.0791668   -4.6517215 
+  -0.9841554    0.1521108    0.0911063   42.1295187 
+  -0.0000000    0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 65
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 9425 8847
+match done
+, Matches: 235, Inliers: 87.6596 %, Current pose: 
+   0.0742684   -0.0862075    0.9935051   18.9434093 
+   0.1518937    0.9856102    0.0741678   -4.6602584 
+  -0.9856026    0.1453989    0.0862941   42.1728861 
+  -0.0000000    0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 66
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 9321 8692
+match done
+, Matches: 236, Inliers: 91.5254 %, Current pose: 
+   0.0720540   -0.0760354    0.9944983   19.6269651 
+   0.1465453    0.9870759    0.0648503   -4.6761765 
+  -0.9865762    0.1410663    0.0822654   42.2142529 
+  -0.0000000    0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 67
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 8950 8254
+match done
+, Matches: 236, Inliers: 91.9492 %, Current pose: 
+   0.0709553   -0.0682897    0.9951391   20.2941900 
+   0.1477766    0.9873642    0.0572194   -4.6844141 
+  -0.9864722    0.1429982    0.0801504   42.2371095 
+  -0.0000000    0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 68
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 8647 7899
+match done
+, Matches: 231, Inliers: 87.4459 %, Current pose: 
+   0.0695504   -0.0674534    0.9952953   20.9492484 
+   0.1459172    0.9876683    0.0567399   -4.6895512 
+  -0.9868490    0.1412844    0.0785353   42.2605839 
+  -0.0000000    0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 69
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 8458 7685
+match done
+, Matches: 234, Inliers: 89.3162 %, Current pose: 
+   0.0667013   -0.0711956    0.9952297   21.6100966 
+   0.1406648    0.9881601    0.0612624   -4.6983222 
+  -0.9878078    0.1359075    0.0759263   42.2948386 
+  -0.0000000    0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 70
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 8664 8021
+match done
+, Matches: 228, Inliers: 89.0351 %, Current pose: 
+   0.0656247   -0.0774476    0.9948343   22.3388477 
+   0.1384922    0.9880412    0.0677830   -4.7039641 
+  -0.9881869    0.1333286    0.0755658   42.3182705 
+  -0.0000000    0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 71
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 8837 8078
+match done
+, Matches: 236, Inliers: 88.5593 %, Current pose: 
+   0.0626295   -0.0823718    0.9946318   23.0852487 
+   0.1330661    0.9883799    0.0734752   -4.7179686 
+  -0.9891264    0.1277501    0.0728627   42.3593990 
+  -0.0000000    0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 72
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 8801 8076
+match done
+, Matches: 233, Inliers: 88.412 %, Current pose: 
+   0.0608523   -0.0839619    0.9946092   23.8719865 
+   0.1301812    0.9886121    0.0754909   -4.7213075 
+  -0.9896211    0.1248857    0.0710896   42.3757615 
+  -0.0000000    0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 73
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 8726 8033
+match done
+, Matches: 236, Inliers: 87.7119 %, Current pose: 
+   0.0604413   -0.0849368    0.9945515   24.6808533 
+   0.1299754    0.9885596    0.0765261   -4.7223792 
+  -0.9896733    0.1246419    0.0707895   42.3901491 
+  -0.0000000    0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 74
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 8588 7795
+match done
+, Matches: 224, Inliers: 89.7321 %, Current pose: 
+   0.0588464   -0.0857922    0.9945737   25.5287994 
+   0.1362639    0.9876652    0.0771339   -4.7265606 
+  -0.9889233    0.1309854    0.0698109   42.3993570 
+  -0.0000000    0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 75
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 8333 7481
+match done
+, Matches: 228, Inliers: 89.0351 %, Current pose: 
+   0.0555351   -0.0871585    0.9946453   26.4158301 
+   0.1296680    0.9883758    0.0793692   -4.7337754 
+  -0.9900010    0.1245659    0.0661912   42.4416017 
+  -0.0000000    0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 76
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 7911 7081
+match done
+, Matches: 225, Inliers: 86.2222 %, Current pose: 
+   0.0529563   -0.0882284    0.9946916   27.3148158 
+   0.1316065    0.9880175    0.0806298   -4.7367113 
+  -0.9898865    0.1266380    0.0639331   42.4445338 
+  -0.0000000    0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 77
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 7646 6736
+match done
+, Matches: 217, Inliers: 88.0184 %, Current pose: 
+   0.0509972   -0.0926808    0.9943890   28.2015709 
+   0.1302268    0.9878005    0.0853880   -4.7282170 
+  -0.9901718    0.1251416    0.0624445   42.4623972 
+  -0.0000000    0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 78
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 7243 6323
+match done
+, Matches: 217, Inliers: 82.0276 %, Current pose: 
+   0.0485159   -0.0897503    0.9947819   29.0937626 
+   0.1337390    0.9875702    0.0825771   -4.7336100 
+  -0.9898283    0.1290348    0.0599160   42.4712676 
+  -0.0000000    0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 79
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 7725 6926
+match done
+, Matches: 219, Inliers: 88.1279 %, Current pose: 
+   0.0448382   -0.0825078    0.9955812   30.0200939 
+   0.1310858    0.9884526    0.0760133   -4.7442624 
+  -0.9903565    0.1270983    0.0551361   42.4978131 
+  -0.0000000    0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 80
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 8255 7246
+match done
+, Matches: 235, Inliers: 86.383 %, Current pose: 
+   0.0428089   -0.0749917    0.9962648   30.9803477 
+   0.1347165    0.9885054    0.0686189   -4.7538769 
+  -0.9899590    0.1312758    0.0524194   42.5005113 
+  -0.0000000    0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 81
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 8305 7351
+match done
+, Matches: 235, Inliers: 83.8298 %, Current pose: 
+   0.0427828   -0.0693520    0.9966744   31.9056644 
+   0.1321263    0.9892185    0.0631616   -4.7605767 
+  -0.9903092    0.1289847    0.0514848   42.5035527 
+  -0.0000000    0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 82
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 8257 7247
+match done
+, Matches: 244, Inliers: 84.8361 %, Current pose: 
+   0.0407575   -0.0714660    0.9966100   32.8493691 
+   0.1308422    0.9892314    0.0655860   -4.7765221 
+  -0.9905651    0.1277255    0.0496693   42.5173093 
+  -0.0000000    0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 83
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 8112 7032
+match done
+, Matches: 240, Inliers: 90 %, Current pose: 
+   0.0387411   -0.0766193    0.9963075   33.8437981 
+   0.1296774    0.9890099    0.0710156   -4.7854169 
+  -0.9907991    0.1264474    0.0482511   42.5334571 
+  -0.0000000    0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 84
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 7907 6743
+match done
+, Matches: 240, Inliers: 86.25 %, Current pose: 
+   0.0370695   -0.0831260    0.9958493   34.8729318 
+   0.1294442    0.9885380    0.0776973   -4.7936496 
+  -0.9908936    0.1260268    0.0474048   42.5321371 
+  -0.0000000    0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 85
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 7677 6419
+match done
+, Matches: 218, Inliers: 80.2752 %, Current pose: 
+   0.0356107   -0.0875636    0.9955222   35.8811269 
+   0.1249031    0.9887331    0.0824985   -4.8056839 
+  -0.9915297    0.1214060    0.0461464   42.5447822 
+  -0.0000000    0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 86
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 7759 6534
+match done
+, Matches: 225, Inliers: 82.6667 %, Current pose: 
+   0.0333006   -0.0894879    0.9954311   36.9198588 
+   0.1221296    0.9888837    0.0848136   -4.8108478 
+  -0.9919554    0.1187473    0.0438595   42.5533902 
+  -0.0000000    0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 87
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 8030 6925
+match done
+, Matches: 237, Inliers: 81.0127 %, Current pose: 
+   0.0318769   -0.0883904    0.9955757   37.9842232 
+   0.1222732    0.9889450    0.0838867   -4.8158028 
+  -0.9919844    0.1190582    0.0423323   42.5562874 
+  -0.0000000    0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 88
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 7861 6860
+match done
+, Matches: 226, Inliers: 81.8584 %, Current pose: 
+   0.0305810   -0.0852557    0.9958897   39.0255015 
+   0.1199361    0.9894698    0.0810232   -4.8286879 
+  -0.9923105    0.1169653    0.0404842   42.5603715 
+  -0.0000000    0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 89
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 7765 6795
+match done
+, Matches: 233, Inliers: 87.1245 %, Current pose: 
+   0.0291546   -0.0827243    0.9961459   40.0702888 
+   0.1194406    0.9897177    0.0786947   -4.8400726 
+  -0.9924132    0.1166860    0.0387355   42.5536239 
+  -0.0000000    0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 90
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 7543 6606
+match done
+, Matches: 230, Inliers: 83.4783 %, Current pose: 
+   0.0265288   -0.0819640    0.9962822   41.0752570 
+   0.1141746    0.9903595    0.0784365   -4.8484875 
+  -0.9931064    0.1116693    0.0356313   42.5704440 
+  -0.0000000    0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 91
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 7344 6535
+match done
+, Matches: 238, Inliers: 83.6134 %, Current pose: 
+   0.0247679   -0.0844646    0.9961186   42.0970105 
+   0.1130040    0.9902743    0.0811592   -4.8547655 
+  -0.9932858    0.1105552    0.0340718   42.5646501 
+  -0.0000000    0.0000000   -0.0000000    1.0000000 
+
+Processing: Frame: 92
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 7065 6171
+match done
+, Matches: 235, Inliers: 85.1064 %, Current pose: 
+   0.0229836   -0.0858818    0.9960402   43.1426408 
+   0.1153160    0.9898811    0.0826899   -4.8627973 
+  -0.9930629    0.1129589    0.0326546   42.5482838 
+  -0.0000000    0.0000000   -0.0000000    1.0000000 
+
+Processing: Frame: 93
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 6959 6023
+match done
+, Matches: 225, Inliers: 80 %, Current pose: 
+   0.0235754   -0.0872447    0.9959079   44.1290829 
+   0.1178768    0.9894783    0.0838911   -4.8747700 
+  -0.9927483    0.1154167    0.0336115   42.5164252 
+  -0.0000000    0.0000000   -0.0000000    1.0000000 
+
+Processing: Frame: 94
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 6942 5910
+match done
+, Matches: 214, Inliers: 81.7757 %, Current pose: 
+   0.0226072   -0.0891983    0.9957573   45.1139355 
+   0.1154942    0.9895763    0.0860225   -4.8834527 
+  -0.9930509    0.1130595    0.0326734   42.5154437 
+  -0.0000000    0.0000000   -0.0000000    1.0000000 
+
+Processing: Frame: 95
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 6837 5952
+match done
+, Matches: 217, Inliers: 78.8018 %, Current pose: 
+   0.0228011   -0.0913785    0.9955552   46.1470778 
+   0.1179803    0.9891015    0.0880841   -4.8838462 
+  -0.9927541    0.1154475    0.0333334   42.4989496 
+  -0.0000000    0.0000000   -0.0000000    1.0000000 
+
+Processing: Frame: 96
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 6563 5748
+match done
+, Matches: 213, Inliers: 80.7512 %, Current pose: 
+   0.0227499   -0.0935368    0.9953559   47.1277922 
+   0.1225931    0.9883608    0.0900775   -4.8851198 
+  -0.9921962    0.1199745    0.0339520   42.4757287 
+  -0.0000000    0.0000000   -0.0000000    1.0000000 
+
+Processing: Frame: 97
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 6577 5773
+match done
+, Matches: 225, Inliers: 81.3333 %, Current pose: 
+   0.0232027   -0.0962572    0.9950860   48.1314999 
+   0.1226146    0.9881133    0.0927236   -4.8841191 
+  -0.9921831    0.1198606    0.0347295   42.4643633 
+  -0.0000000    0.0000000   -0.0000000    1.0000000 
+
+Processing: Frame: 98
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 6630 5721
+match done
+, Matches: 228, Inliers: 85.0877 %, Current pose: 
+   0.0238877   -0.0951147    0.9951797   49.1852428 
+   0.1221476    0.9882831    0.0915236   -4.8768375 
+  -0.9922244    0.1193725    0.0352258   42.4493871 
+  -0.0000000    0.0000000   -0.0000000    1.0000000 
+
+Processing: Frame: 99
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 6677 5754
+match done
+, Matches: 210, Inliers: 77.619 %, Current pose: 
+   0.0245409   -0.0914938    0.9955032   50.2172369 
+   0.1216453    0.9886767    0.0878676   -4.8744209 
+  -0.9922702    0.1189420    0.0353928   42.4434652 
+  -0.0000000    0.0000000   -0.0000000    1.0000000 
+
+Processing: Frame: 100
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 6900 5850
+match done
+, Matches: 217, Inliers: 74.6544 %, Current pose: 
+   0.0278069   -0.0874040    0.9957848   51.2136703 
+   0.1277910    0.9883070    0.0831791   -4.8811431 
+  -0.9914112    0.1249393    0.0386512   42.3957027 
+  -0.0000000    0.0000000   -0.0000000    1.0000000 
+
+Processing: Frame: 101
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 6958 6041
+match done
+, Matches: 225, Inliers: 79.5556 %, Current pose: 
+   0.0281168   -0.0872837    0.9957866   52.1988665 
+   0.1294362    0.9881116    0.0829562   -4.8841892 
+  -0.9911890    0.1265584    0.0390802   42.3790584 
+  -0.0000000    0.0000000   -0.0000000    1.0000000 
+
+Processing: Frame: 102
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 7179 6161
+match done
+, Matches: 227, Inliers: 81.4978 %, Current pose: 
+   0.0296794   -0.0893091    0.9955617   53.1769169 
+   0.1291947    0.9879886    0.0847782   -4.8915159 
+  -0.9911750    0.1261051    0.0408612   42.3588131 
+  -0.0000000    0.0000000   -0.0000000    1.0000000 
+
+Processing: Frame: 103
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 7104 6061
+match done
+, Matches: 219, Inliers: 85.3881 %, Current pose: 
+   0.0317369   -0.0928758    0.9951718   54.1801295 
+   0.1326791    0.9872532    0.0879055   -4.8989160 
+  -0.9906508    0.1292487    0.0436550   42.3254235 
+  -0.0000000    0.0000000   -0.0000000    1.0000000 
+
+Processing: Frame: 104
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 7343 6306
+match done
+, Matches: 224, Inliers: 84.375 %, Current pose: 
+   0.0322283   -0.0950028    0.9949552   55.2079901 
+   0.1352322    0.9867327    0.0898373   -4.8919748 
+  -0.9902897    0.1316547    0.0446481   42.3187547 
+  -0.0000000    0.0000000   -0.0000000    1.0000000 
+
+Processing: Frame: 105
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 7393 6365
+match done
+, Matches: 231, Inliers: 84.8485 %, Current pose: 
+   0.0327216   -0.1021016    0.9942357   56.2178727 
+   0.1321299    0.9864792    0.0969565   -4.8953897 
+  -0.9906922    0.1281957    0.0457698   42.3068066 
+  -0.0000000    0.0000000   -0.0000000    1.0000000 
+
+Processing: Frame: 106
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 7503 6482
+match done
+, Matches: 219, Inliers: 84.9315 %, Current pose: 
+   0.0297639   -0.1068018    0.9938347   57.2972268 
+   0.1331813    0.9858338    0.1019534   -4.8977794 
+  -0.9906447    0.1293257    0.0435663   42.3087236 
+  -0.0000000    0.0000000   -0.0000000    1.0000000 
+
+Processing: Frame: 107
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 7353 6324
+match done
+, Matches: 224, Inliers: 85.2679 %, Current pose: 
+   0.0274220   -0.1006107    0.9945479   58.4818278 
+   0.1321535    0.9865541    0.0961582   -4.9009531 
+  -0.9908499    0.1287961    0.0403493   42.3365877 
+  -0.0000000    0.0000000   -0.0000000    1.0000000 
+
+Processing: Frame: 108
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 7315 6264
+match done
+, Matches: 221, Inliers: 82.8054 %, Current pose: 
+   0.0273376   -0.0861072    0.9959107   59.5390553 
+   0.1400892    0.9867813    0.0814724   -4.8993698 
+  -0.9897614    0.1372891    0.0390390   42.3011363 
+  -0.0000000    0.0000000   -0.0000000    1.0000000 
+
+Processing: Frame: 109
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 7363 6365
+match done
+, Matches: 234, Inliers: 81.1966 %, Current pose: 
+   0.0264757   -0.0747797    0.9968485   60.5729608 
+   0.1418817    0.9873841    0.0703015   -4.9070565 
+  -0.9895295    0.1395733    0.0367516   42.2818217 
+  -0.0000000    0.0000000   -0.0000000    1.0000000 
+
+Processing: Frame: 110
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 7418 6371
+match done
+, Matches: 240, Inliers: 76.6667 %, Current pose: 
+   0.0259746   -0.0724614    0.9970329   61.5222424 
+   0.1413078    0.9876209    0.0680960   -4.9101582 
+  -0.9896249    0.1391198    0.0358925   42.2751520 
+  -0.0000000    0.0000000   -0.0000000    1.0000000 
+
+Processing: Frame: 111
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 7165 6084
+match done
+, Matches: 238, Inliers: 81.9328 %, Current pose: 
+   0.0261427   -0.0799535    0.9964557   62.4479521 
+   0.1479499    0.9861284    0.0752433   -4.9225559 
+  -0.9886493    0.1454585    0.0376091   42.2472741 
+  -0.0000000    0.0000000   -0.0000000    1.0000000 
+
+Processing: Frame: 112
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 7265 6118
+match done
+, Matches: 235, Inliers: 80.4255 %, Current pose: 
+   0.0269205   -0.0887561    0.9956895   63.4107187 
+   0.1498531    0.9851535    0.0837654   -4.9317770 
+  -0.9883417    0.1469522    0.0398212   42.2199499 
+  -0.0000000    0.0000000   -0.0000000    1.0000000 
+
+Processing: Frame: 113
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 6987 5891
+match done
+, Matches: 241, Inliers: 78.8382 %, Current pose: 
+   0.0247777   -0.0926803    0.9953876   64.3490113 
+   0.1514086    0.9845550    0.0879028   -4.9303778 
+  -0.9881607    0.1485322    0.0384276   42.2073624 
+  -0.0000000    0.0000000   -0.0000000    1.0000000 
+
+Processing: Frame: 114
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 6645 5642
+match done
+, Matches: 235, Inliers: 82.5532 %, Current pose: 
+   0.0233666   -0.0936559    0.9953304   65.3314048 
+   0.1509212    0.9845226    0.0890958   -4.9292738 
+  -0.9882696    0.1481346    0.0371396   42.1917750 
+  -0.0000000    0.0000000   -0.0000000    1.0000000 
+
+Processing: Frame: 115
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 6405 5409
+match done
+, Matches: 239, Inliers: 79.9163 %, Current pose: 
+   0.0217919   -0.0921736    0.9955045   66.3278256 
+   0.1494003    0.9848604    0.0879176   -4.9346013 
+  -0.9885366    0.1468128    0.0352328   42.1824315 
+  -0.0000000    0.0000000   -0.0000000    1.0000000 
+
+Processing: Frame: 116
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 6290 5288
+match done
+, Matches: 225, Inliers: 80.4444 %, Current pose: 
+   0.0204977   -0.0892484    0.9957985   67.2733902 
+   0.1487338    0.9851969    0.0852366   -4.9423850 
+  -0.9886648    0.1463618    0.0334685   42.1755053 
+  -0.0000000    0.0000000   -0.0000000    1.0000000 
+
+Processing: Frame: 117
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 6655 5603
+match done
+, Matches: 240, Inliers: 80 %, Current pose: 
+   0.0209277   -0.0889755    0.9958139   68.1931643 
+   0.1531034    0.9845691    0.0847532   -4.9383398 
+  -0.9879885    0.1506888    0.0342272   42.1360418 
+  -0.0000000    0.0000000   -0.0000000    1.0000000 
+
+Processing: Frame: 118
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 6780 5648
+match done
+, Matches: 237, Inliers: 76.7932 %, Current pose: 
+   0.0200189   -0.0909018    0.9956586   69.0988137 
+   0.1545421    0.9841707    0.0867457   -4.9380817 
+  -0.9877834    0.1521347    0.0337502   42.1155037 
+  -0.0000000    0.0000000   -0.0000000    1.0000000 
+
+Processing: Frame: 119
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 6566 5474
+match done
+, Matches: 234, Inliers: 74.7863 %, Current pose: 
+   0.0197101   -0.0959583    0.9951902   69.9985527 
+   0.1632558    0.9823329    0.0914852   -4.9379273 
+  -0.9863869    0.1606674    0.0350276   42.0742566 
+  -0.0000000    0.0000000   -0.0000000    1.0000000 
+
+Processing: Frame: 120
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 6708 5682
+match done
+, Matches: 236, Inliers: 80.5085 %, Current pose: 
+   0.0203587   -0.0962783    0.9951462   70.9089389 
+   0.1675394    0.9816062    0.0915408   -4.9481981 
+  -0.9856551    0.1648626    0.0361147   42.0315527 
+  -0.0000000    0.0000000   -0.0000000    1.0000000 
+
+Processing: Frame: 121
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 6521 5621
+match done
+, Matches: 228, Inliers: 82.4561 %, Current pose: 
+   0.0187050   -0.0943778    0.9953607   71.7887129 
+   0.1667132    0.9818923    0.0899678   -4.9478526 
+  -0.9858280    0.1642570    0.0341003   42.0189028 
+  -0.0000000    0.0000000   -0.0000000    1.0000000 
+
+Processing: Frame: 122
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 6766 5827
+match done
+, Matches: 239, Inliers: 78.6611 %, Current pose: 
+   0.0180104   -0.0941152    0.9953984   72.6280511 
+   0.1663511    0.9819659    0.0898353   -4.9487215 
+  -0.9859021    0.1639676    0.0333418   42.0064667 
+  -0.0000000    0.0000000   -0.0000000    1.0000000 
+
+Processing: Frame: 123
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 6898 5861
+match done
+, Matches: 245, Inliers: 77.1429 %, Current pose: 
+   0.0172653   -0.0955480    0.9952751   73.4345479 
+   0.1698386    0.9812377    0.0912541   -4.9572501 
+  -0.9853206    0.1674606    0.0331691   41.9922716 
+  -0.0000000    0.0000000   -0.0000000    1.0000000 
+
+Processing: Frame: 124
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 7114 6016
+match done
+, Matches: 242, Inliers: 80.1653 %, Current pose: 
+   0.0176901   -0.0977873    0.9950501   74.2134778 
+   0.1745649    0.9802224    0.0932267   -4.9530769 
+  -0.9844867    0.1720517    0.0344105   41.9592982 
+  -0.0000000    0.0000000   -0.0000000    1.0000000 
+
+Processing: Frame: 125
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 6896 5830
+match done
+, Matches: 222, Inliers: 74.3243 %, Current pose: 
+   0.0170677   -0.0989630    0.9949447   74.9408400 
+   0.1686896    0.9811101    0.0946931   -4.9552413 
+  -0.9855214    0.1662206    0.0334394   41.9602539 
+  -0.0000000    0.0000000   -0.0000000    1.0000000 
+
+Processing: Frame: 126
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 7045 6103
+match done
+, Matches: 234, Inliers: 74.7863 %, Current pose: 
+   0.0176437   -0.1013906    0.9946902   75.6574139 
+   0.1616062    0.9820533    0.0972359   -4.9600081 
+  -0.9866976    0.1590326    0.0337124   41.9647142 
+  -0.0000000    0.0000000   -0.0000000    1.0000000 
+
+Processing: Frame: 127
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 7153 6240
+match done
+, Matches: 227, Inliers: 76.2115 %, Current pose: 
+   0.0187075   -0.1027191    0.9945345   76.3660637 
+   0.1675735    0.9809601    0.0981650   -4.9595302 
+  -0.9856821    0.1648212    0.0355643   41.9268831 
+  -0.0000000    0.0000000   -0.0000000    1.0000000 
+
+Processing: Frame: 128
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 7405 6457
+match done
+, Matches: 230, Inliers: 80.8696 %, Current pose: 
+   0.0191700   -0.1028130    0.9945160   77.0803272 
+   0.1687868    0.9807549    0.0981369   -4.9579338 
+  -0.9854661    0.1659799    0.0361545   41.9258999 
+  -0.0000000    0.0000000   -0.0000000    1.0000000 
+
+Processing: Frame: 129
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 7482 6525
+match done
+, Matches: 228, Inliers: 81.5789 %, Current pose: 
+   0.0202372   -0.1041914    0.9943513   77.7552533 
+   0.1646512    0.9813229    0.0994752   -4.9558300 
+  -0.9861442    0.1617081    0.0370145   41.9404749 
+  -0.0000000    0.0000000   -0.0000000    1.0000000 
+
+Processing: Frame: 130
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 7912 7065
+match done
+, Matches: 234, Inliers: 88.4615 %, Current pose: 
+   0.0215545   -0.1041582    0.9943271   78.4123956 
+   0.1595237    0.9821743    0.0994271   -4.9531105 
+  -0.9869588    0.1564757    0.0377860   41.9661898 
+  -0.0000000    0.0000000   -0.0000000    1.0000000 
+
+Processing: Frame: 131
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 8380 7518
+match done
+, Matches: 238, Inliers: 87.395 %, Current pose: 
+   0.0255320   -0.1031835    0.9943346   79.0619986 
+   0.1547509    0.9830768    0.0980416   -4.9545586 
+  -0.9876235    0.1513710    0.0410677   41.9877659 
+  -0.0000000    0.0000000   -0.0000000    1.0000000 
+
+Processing: Frame: 132
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 8639 7850
+match done
+, Matches: 233, Inliers: 85.4077 %, Current pose: 
+   0.0307086   -0.1012496    0.9943870   79.6809352 
+   0.1544050    0.9833947    0.0953620   -4.9568410 
+  -0.9875303    0.1506099    0.0458321   42.0087374 
+  -0.0000000    0.0000000   -0.0000000    1.0000000 
+
+Processing: Frame: 133
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 8618 7757
+match done
+, Matches: 237, Inliers: 91.1392 %, Current pose: 
+   0.0402024   -0.1004839    0.9941261   80.2675251 
+   0.1590518    0.9828882    0.0929159   -4.9539760 
+  -0.9864514    0.1543821    0.0554966   42.0098709 
+  -0.0000000    0.0000000   -0.0000000    1.0000000 
+
+Processing: Frame: 134
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 8768 7919
+match done
+, Matches: 226, Inliers: 84.5133 %, Current pose: 
+   0.0520497   -0.0992638    0.9936989   80.8317951 
+   0.1520896    0.9842283    0.0903513   -4.9633577 
+  -0.9869952    0.1464286    0.0663258   42.0529531 
+  -0.0000000    0.0000000   -0.0000000    1.0000000 
+
+Processing: Frame: 135
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 9033 8176
+match done
+, Matches: 235, Inliers: 81.2766 %, Current pose: 
+   0.0671069   -0.0983392    0.9928877   81.3486627 
+   0.1437480    0.9857018    0.0879119   -4.9700319 
+  -0.9873364    0.1368261    0.0802835   42.1039557 
+  -0.0000000    0.0000000   -0.0000000    1.0000000 
+
+Processing: Frame: 136
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 9380 8561
+match done
+, Matches: 229, Inliers: 84.7162 %, Current pose: 
+   0.0830945   -0.0967164    0.9918373   81.8488187 
+   0.1364802    0.9870057    0.0848112   -4.9745559 
+  -0.9871517    0.1283188    0.0952146   42.1671490 
+  -0.0000000    0.0000000   -0.0000000    1.0000000 
+
+Processing: Frame: 137
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 9734 8814
+match done
+, Matches: 232, Inliers: 82.3276 %, Current pose: 
+   0.0991808   -0.0937413    0.9906441   82.3228239 
+   0.1335037    0.9878055    0.0801066   -4.9849859 
+  -0.9860730    0.1243097    0.1104861   42.2411969 
+  -0.0000000    0.0000000   -0.0000000    1.0000000 
+
+Processing: Frame: 138
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 9938 9045
+match done
+, Matches: 228, Inliers: 86.8421 %, Current pose: 
+   0.1174331   -0.0922575    0.9887861   82.7738282 
+   0.1365900    0.9877130    0.0759352   -4.9999320 
+  -0.9836425    0.1261410    0.1285917   42.3118945 
+  -0.0000000    0.0000000   -0.0000000    1.0000000 
+
+Processing: Frame: 139
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 10268 9393
+match done
+, Matches: 238, Inliers: 84.4538 %, Current pose: 
+   0.1398856   -0.0919480    0.9858892   83.1888185 
+   0.1403948    0.9874615    0.0721744   -5.0239949 
+  -0.9801639    0.1283176    0.1510406   42.3776119 
+  -0.0000000    0.0000000   -0.0000000    1.0000000 
+
+Processing: Frame: 140
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 10628 9818
+match done
+, Matches: 243, Inliers: 85.1852 %, Current pose: 
+   0.1648519   -0.0902198    0.9821834   83.5875792 
+   0.1404479    0.9878074    0.0671633   -5.0412484 
+  -0.9762675    0.1268736    0.1755131   42.4712265 
+  -0.0000000    0.0000000   -0.0000000    1.0000000 
+
+Processing: Frame: 141
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 10839 10051
+match done
+, Matches: 242, Inliers: 89.6694 %, Current pose: 
+   0.1944345   -0.0894411    0.9768293   83.9626336 
+   0.1383172    0.9883843    0.0629675   -5.0551809 
+  -0.9711146    0.1228692    0.2045473   42.5712225 
+  -0.0000000    0.0000000   -0.0000000    1.0000000 
+
+Processing: Frame: 142
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 10982 10201
+match done
+, Matches: 247, Inliers: 86.2348 %, Current pose: 
+   0.2262971   -0.0862564    0.9702316   84.3168476 
+   0.1323863    0.9895524    0.0570962   -5.0751443 
+  -0.9650199    0.1155247    0.2353520   42.7017524 
+  -0.0000000    0.0000000   -0.0000000    1.0000000 
+
+Processing: Frame: 143
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 11163 10350
+match done
+, Matches: 245, Inliers: 93.0612 %, Current pose: 
+   0.2574355   -0.0772581    0.9632020   84.6361428 
+   0.1198116    0.9916588    0.0475185   -5.0990809 
+  -0.9588390    0.1031698    0.2645446   42.8871117 
+  -0.0000000    0.0000000   -0.0000000    1.0000000 
+
+Processing: Frame: 144
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 11281 10461
+match done
+, Matches: 252, Inliers: 91.2698 %, Current pose: 
+   0.2921150   -0.0671386    0.9540237   84.9241952 
+   0.1053698    0.9937194    0.0376687   -5.1319722 
+  -0.9505609    0.0895217    0.2973548   43.0926376 
+  -0.0000000    0.0000000   -0.0000000    1.0000000 
+
+Processing: Frame: 145
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 11247 10401
+match done
+, Matches: 250, Inliers: 90.8 %, Current pose: 
+   0.3314561   -0.0600855    0.9415554   85.1989300 
+   0.0964774    0.9948971    0.0295265   -5.1686174 
+  -0.9385249    0.0810520    0.3355616   43.2967125 
+  -0.0000000    0.0000000   -0.0000000    1.0000000 
+
+Processing: Frame: 146
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 11170 10325
+match done
+, Matches: 252, Inliers: 87.3016 %, Current pose: 
+   0.3730191   -0.0489820    0.9265298   85.4303762 
+   0.0844831    0.9962503    0.0186552   -5.2097725 
+  -0.9239694    0.0713174    0.3757585   43.5247045 
+  -0.0000000    0.0000000   -0.0000000    1.0000000 
+
+Processing: Frame: 147
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 11095 10246
+match done
+, Matches: 247, Inliers: 87.4494 %, Current pose: 
+   0.4162762   -0.0392407    0.9083910   85.6279817 
+   0.0723081    0.9973327    0.0099471   -5.2589805 
+  -0.9063584    0.0615433    0.4180033   43.7706693 
+  -0.0000000   -0.0000000   -0.0000000    1.0000000 
+
+Processing: Frame: 148
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 10869 10055
+match done
+, Matches: 244, Inliers: 90.1639 %, Current pose: 
+   0.4665158   -0.0360244    0.8837790   85.8506084 
+   0.0646931    0.9978839    0.0065263   -5.2939675 
+  -0.8821439    0.0541297    0.4678591   44.0030251 
+  -0.0000000   -0.0000000   -0.0000000    1.0000000 
+
+Processing: Frame: 149
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 10683 9888
+match done
+, Matches: 235, Inliers: 89.3617 %, Current pose: 
+   0.5146804   -0.0295976    0.8568711   86.0227960 
+   0.0536033    0.9985597    0.0022949   -5.3291142 
+  -0.8557048    0.0447500    0.5155256   44.2711258 
+  -0.0000000   -0.0000000   -0.0000000    1.0000000 
+
+Processing: Frame: 150
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 10785 10055
+match done
+, Matches: 234, Inliers: 84.6154 %, Current pose: 
+   0.5651674   -0.0242986    0.8246183   86.1831298 
+   0.0428058    0.9990834    0.0001017   -5.3629754 
+  -0.8238649    0.0352410    0.5656895   44.5409541 
+  -0.0000000   -0.0000000   -0.0000000    1.0000000 
+
+Processing: Frame: 151
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 10683 9910
+match done
+, Matches: 237, Inliers: 83.5443 %, Current pose: 
+   0.6153419   -0.0128828    0.7881550   86.3221977 
+   0.0266670    0.9996343   -0.0044804   -5.3848752 
+  -0.7878091    0.0237747    0.6154605   44.8359461 
+  -0.0000000   -0.0000000   -0.0000000    1.0000000 
+
+Processing: Frame: 152
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 10707 9927
+match done
+, Matches: 238, Inliers: 87.8151 %, Current pose: 
+   0.6652306   -0.0048773    0.7466221   86.4470610 
+   0.0153142    0.9998574   -0.0071131   -5.4280563 
+  -0.7464809    0.0161658    0.6652104   45.1251358 
+  -0.0000000   -0.0000000   -0.0000000    1.0000000 
+
+Processing: Frame: 153
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 10840 10073
+match done
+, Matches: 244, Inliers: 86.4754 %, Current pose: 
+   0.7127274    0.0059123    0.7014162   86.5509696 
+   0.0025593    0.9999359   -0.0110292   -5.4629877 
+  -0.7014365    0.0096560    0.7126665   45.4211881 
+  -0.0000000   -0.0000000   -0.0000000    1.0000000 
+
+Processing: Frame: 154
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 10595 9697
+match done
+, Matches: 239, Inliers: 88.7029 %, Current pose: 
+   0.7569207    0.0156589    0.6533191   86.6295079 
+  -0.0089371    0.9998674   -0.0136107   -5.4966611 
+  -0.6534456    0.0044635    0.7569603   45.7116056 
+  -0.0000000   -0.0000000   -0.0000000    1.0000000 
+
+Processing: Frame: 155
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 10582 9756
+match done
+, Matches: 240, Inliers: 87.9167 %, Current pose: 
+   0.7981981    0.0253055    0.6018633   86.7000476 
+  -0.0202937    0.9996798   -0.0151180   -5.5190389 
+  -0.6020531   -0.0001469    0.7984560   46.0078576 
+  -0.0000000   -0.0000000   -0.0000000    1.0000000 
+
+Processing: Frame: 156
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 10411 9392
+match done
+, Matches: 240, Inliers: 85 %, Current pose: 
+   0.8353846    0.0342635    0.5485970   86.7290515 
+  -0.0303117    0.9994082   -0.0162621   -5.5498078 
+  -0.5488295   -0.0030438    0.8359288   46.3098172 
+  -0.0000000   -0.0000000   -0.0000000    1.0000000 
+
+Processing: Frame: 157
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 10053 9072
+match done
+, Matches: 242, Inliers: 90.0826 %, Current pose: 
+   0.8704753    0.0405455    0.4905393   86.7611472 
+  -0.0371449    0.9991708   -0.0166717   -5.5757151 
+  -0.4908085   -0.0037088    0.8712596   46.6138488 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 158
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 9870 8870
+match done
+, Matches: 237, Inliers: 86.9198 %, Current pose: 
+   0.9018285    0.0466276    0.4295709   86.7754947 
+  -0.0438635    0.9989039   -0.0163399   -5.6059718 
+  -0.4298620   -0.0041066    0.9028853   46.9370181 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 159
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 9810 8884
+match done
+, Matches: 238, Inliers: 80.2521 %, Current pose: 
+   0.9285555    0.0572836    0.3667470   86.7548827 
+  -0.0548384    0.9983489   -0.0170922   -5.6343267 
+  -0.3671206   -0.0042408    0.9301637   47.2493529 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 160
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 9672 8723
+match done
+, Matches: 235, Inliers: 80 %, Current pose: 
+   0.9511685    0.0664520    0.3014342   86.7268918 
+  -0.0649420    0.9977757   -0.0150396   -5.6579815 
+  -0.3017631   -0.0052705    0.9533684   47.5643743 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 161
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 10134 9215
+match done
+, Matches: 224, Inliers: 79.4643 %, Current pose: 
+   0.9683919    0.0801797    0.2361956   86.6657409 
+  -0.0796563    0.9967529   -0.0117734   -5.6809807 
+  -0.2363726   -0.0074132    0.9716342   47.8770832 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 162
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 10470 9732
+match done
+, Matches: 226, Inliers: 80.531 %, Current pose: 
+   0.9810489    0.0924268    0.1702947   86.5863278 
+  -0.0923770    0.9956901   -0.0082335   -5.7067852 
+  -0.1703217   -0.0076538    0.9853588   48.1777373 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 163
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 10692 10031
+match done
+, Matches: 229, Inliers: 86.4629 %, Current pose: 
+   0.9892459    0.1030631    0.1037811   86.5091640 
+  -0.1031978    0.9946525   -0.0040853   -5.7197179 
+  -0.1036472   -0.0066686    0.9945918   48.5201858 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 164
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 10765 10159
+match done
+, Matches: 223, Inliers: 86.0987 %, Current pose: 
+   0.9922065    0.1167708    0.0434838   86.3919884 
+  -0.1168063    0.9931532   -0.0017332   -5.7337342 
+  -0.0433885   -0.0033595    0.9990526   48.8416321 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 165
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 10850 10188
+match done
+, Matches: 226, Inliers: 85.8407 %, Current pose: 
+   0.9921777    0.1237543   -0.0163781   86.2905612 
+  -0.1237032    0.9923108    0.0041008   -5.7524968 
+   0.0167597   -0.0020427    0.9998575   49.1782566 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 166
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 10810 10229
+match done
+, Matches: 228, Inliers: 92.5439 %, Current pose: 
+   0.9889484    0.1287247   -0.0735603   86.1783047 
+  -0.1282573    0.9916792    0.0110617   -5.7716118 
+   0.0743721   -0.0015048    0.9972294   49.5123353 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 167
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 10607 10019
+match done
+, Matches: 219, Inliers: 87.6712 %, Current pose: 
+   0.9828271    0.1349387   -0.1258668   86.0424872 
+  -0.1339471    0.9908536    0.0163479   -5.7804535 
+   0.1269216    0.0007923    0.9919124   49.8379004 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 168
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 10566 10023
+match done
+, Matches: 222, Inliers: 89.6396 %, Current pose: 
+   0.9744228    0.1412140   -0.1748109   85.8931096 
+  -0.1394277    0.9899761    0.0225212   -5.7962796 
+   0.1762389    0.0024283    0.9843444   50.1867957 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 169
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 10475 9940
+match done
+, Matches: 231, Inliers: 93.0736 %, Current pose: 
+   0.9642503    0.1519805   -0.2170791   85.7052809 
+  -0.1497128    0.9883621    0.0269541   -5.8070567 
+   0.2186492    0.0065090    0.9757818   50.5290921 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 170
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 10193 9606
+match done
+, Matches: 218, Inliers: 91.7431 %, Current pose: 
+   0.9532278    0.1614391   -0.2555274   85.5217484 
+  -0.1581716    0.9868456    0.0334286   -5.8204397 
+   0.2575627    0.0085521    0.9662237   50.9003992 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 171
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 10480 9803
+match done
+, Matches: 234, Inliers: 91.0256 %, Current pose: 
+   0.9425332    0.1627491   -0.2917942   85.3591265 
+  -0.1579806    0.9866318    0.0399987   -5.8417721 
+   0.2944032    0.0083977    0.9556444   51.2848975 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 172
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 10668 10000
+match done
+, Matches: 237, Inliers: 88.6076 %, Current pose: 
+   0.9314356    0.1631366   -0.3252908   85.1803301 
+  -0.1573184    0.9865537    0.0443022   -5.8535207 
+   0.3281442    0.0099096    0.9445757   51.7042328 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 173
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 10880 10094
+match done
+, Matches: 237, Inliers: 91.1392 %, Current pose: 
+   0.9212384    0.1617087   -0.3537939   84.9665947 
+  -0.1557843    0.9867486    0.0453692   -5.8633242 
+   0.3564423    0.0133196    0.9342224   52.1298969 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 174
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 10949 10102
+match done
+, Matches: 238, Inliers: 89.916 %, Current pose: 
+   0.9106706    0.1717648   -0.3757337   84.7050378 
+  -0.1669193    0.9849117    0.0456830   -5.8717840 
+   0.3779113    0.0211150    0.9256010   52.5479153 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 175
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 10865 10058
+match done
+, Matches: 237, Inliers: 86.9198 %, Current pose: 
+   0.9015992    0.1756077   -0.3953236   84.4712322 
+  -0.1702295    0.9841878    0.0489528   -5.8869257 
+   0.3976692    0.0231599    0.9172365   53.0127852 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 176
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 10707 9913
+match done
+, Matches: 243, Inliers: 88.4774 %, Current pose: 
+   0.8950980    0.1828439   -0.4066543   84.2068331 
+  -0.1778867    0.9827631    0.0503284   -5.8928774 
+   0.4088471    0.0272895    0.9121948   53.4793390 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 177
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 10623 9793
+match done
+, Matches: 249, Inliers: 87.5502 %, Current pose: 
+   0.8900960    0.1880561   -0.4151674   83.9423758 
+  -0.1840943    0.9816381    0.0499592   -5.8990503 
+   0.4169393    0.0319614    0.9083722   53.9868052 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 178
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 10482 9620
+match done
+, Matches: 246, Inliers: 86.9919 %, Current pose: 
+   0.8877538    0.1919435   -0.4183908   83.6688157 
+  -0.1891060    0.9807491    0.0486838   -5.9124864 
+   0.4196809    0.0359010    0.9069614   54.5329665 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 179
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 10331 9401
+match done
+, Matches: 245, Inliers: 84.898 %, Current pose: 
+   0.8880479    0.1942930   -0.4166788   83.4082531 
+  -0.1918316    0.9802418    0.0482349   -5.9302705 
+   0.4178177    0.0370973    0.9077732   55.0793344 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 180
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 10056 9071
+match done
+, Matches: 238, Inliers: 87.395 %, Current pose: 
+   0.8888858    0.1947026   -0.4146962   83.1524861 
+  -0.1917626    0.9802084    0.0491784   -5.9565840 
+   0.4160639    0.0358092    0.9086300   55.6757193 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 181
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 10075 8999
+match done
+, Matches: 245, Inliers: 79.5918 %, Current pose: 
+   0.8907142    0.1932306   -0.4114487   82.8867025 
+  -0.1905364    0.9805059    0.0480017   -5.9834211 
+   0.4127033    0.0356401    0.9101680   56.2714338 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 182
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 10250 9204
+match done
+, Matches: 249, Inliers: 84.739 %, Current pose: 
+   0.8919789    0.1917003   -0.4094199   82.6277100 
+  -0.1888439    0.9808416    0.0478307   -6.0058154 
+   0.4107452    0.0346524    0.9110914   56.8880253 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 183
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 10283 9169
+match done
+, Matches: 248, Inliers: 82.2581 %, Current pose: 
+   0.8929829    0.1949509   -0.4056793   82.3381357 
+  -0.1918306    0.9802146    0.0487880   -6.0286808 
+   0.4071641    0.0342548    0.9127125   57.5345420 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 184
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 10205 9109
+match done
+, Matches: 245, Inliers: 81.6327 %, Current pose: 
+   0.8932674    0.2000701   -0.4025485   82.0472907 
+  -0.1966445    0.9791836    0.0503024   -6.0504497 
+   0.4042329    0.0342254    0.9140155   58.1874118 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 185
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 10026 9127
+match done
+, Matches: 244, Inliers: 84.0164 %, Current pose: 
+   0.8939072    0.2025478   -0.3998804   81.7305288 
+  -0.1989802    0.9786800    0.0509144   -6.0766582 
+   0.4016675    0.0340555    0.9151521   58.9132480 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 186
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 9851 8974
+match done
+, Matches: 247, Inliers: 82.996 %, Current pose: 
+   0.8939315    0.2014227   -0.4003941   81.4378521 
+  -0.1977839    0.9789242    0.0508806   -6.1098022 
+   0.4022040    0.0337078    0.9149294   59.6520995 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 187
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 9510 8516
+match done
+, Matches: 251, Inliers: 81.2749 %, Current pose: 
+   0.8947446    0.1999276   -0.3993257   81.1181813 
+  -0.1960340    0.9792678    0.0510418   -6.1403495 
+   0.4012514    0.0326120    0.9153872   60.4382756 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 188
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 9286 8235
+match done
+, Matches: 250, Inliers: 88.4 %, Current pose: 
+   0.8949005    0.1996793   -0.3991006   80.8018797 
+  -0.1957374    0.9793252    0.0510787   -6.1744807 
+   0.4010486    0.0324086    0.9154833   61.2113597 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 189
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 8888 7861
+match done
+, Matches: 245, Inliers: 78.7755 %, Current pose: 
+   0.8955242    0.2015821   -0.3967380   80.4574795 
+  -0.1979440    0.9789075    0.0505789   -6.2027354 
+   0.3985656    0.0332373    0.9165374   62.0002946 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 190
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 8929 7897
+match done
+, Matches: 244, Inliers: 77.459 %, Current pose: 
+   0.8950563    0.2054698   -0.3957984   80.1096044 
+  -0.2022806    0.9780356    0.0502888   -6.2392368 
+   0.3974377    0.0350510    0.9169595   62.8078795 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 191
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 8726 7667
+match done
+, Matches: 236, Inliers: 87.2881 %, Current pose: 
+   0.8954070    0.2021324   -0.3967227   79.7980282 
+  -0.1981030    0.9788223    0.0515950   -6.2786342 
+   0.3987500    0.0323934    0.9164874   63.6089422 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 192
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 8861 7849
+match done
+, Matches: 235, Inliers: 77.8723 %, Current pose: 
+   0.8961152    0.1984448   -0.3969852   79.4619031 
+  -0.1931332    0.9796980    0.0537713   -6.3118528 
+   0.3995963    0.0284857    0.9162485   64.4399448 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 193
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 8986 7936
+match done
+, Matches: 232, Inliers: 75.431 %, Current pose: 
+   0.8961520    0.1995761   -0.3963343   79.1093878 
+  -0.1935470    0.9795137    0.0556097   -6.3484707 
+   0.3993133    0.0268745    0.9164206   65.2670913 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 194
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 9083 7957
+match done
+, Matches: 247, Inliers: 82.1862 %, Current pose: 
+   0.8956143    0.2007158   -0.3969738   78.7373673 
+  -0.1941076    0.9793096    0.0572265   -6.3856905 
+   0.4002466    0.0258028    0.9160442   66.1519507 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 195
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 9172 8029
+match done
+, Matches: 244, Inliers: 86.4754 %, Current pose: 
+   0.8953105    0.2028798   -0.3965588   78.3602535 
+  -0.1963766    0.9788459    0.0574190   -6.4163513 
+   0.3998191    0.0264670    0.9162119   67.0036710 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 196
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 8443 7270
+match done
+, Matches: 246, Inliers: 77.6423 %, Current pose: 
+   0.8945322    0.2041100   -0.3976823   78.0046583 
+  -0.1971331    0.9786091    0.0588460   -6.4527839 
+   0.4011866    0.0257567    0.9156342   67.8472761 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 197
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 8135 6943
+match done
+, Matches: 232, Inliers: 77.5862 %, Current pose: 
+   0.8943261    0.2003059   -0.4000729   77.6663814 
+  -0.1923295    0.9794663    0.0604580   -6.4894781 
+   0.4039680    0.0228767    0.9144870   68.7105048 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 198
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 8508 7365
+match done
+, Matches: 236, Inliers: 80.0847 %, Current pose: 
+   0.8939929    0.2025744   -0.3996752   77.2809934 
+  -0.1945850    0.9789901    0.0609511   -6.5201982 
+   0.4036252    0.0232809    0.9146282   69.5778860 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 199
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 8977 7797
+match done
+, Matches: 238, Inliers: 80.2521 %, Current pose: 
+   0.8930635    0.2039617   -0.4010451   76.8986144 
+  -0.1964435    0.9786608    0.0602745   -6.5566321 
+   0.4047808    0.0249537    0.9140732   70.4612241 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 200
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 9195 8010
+match done
+, Matches: 246, Inliers: 86.9919 %, Current pose: 
+   0.8925454    0.2012993   -0.4035360   76.5318467 
+  -0.1942722    0.9791860    0.0587622   -6.5933480 
+   0.4069656    0.0259479    0.9130749   71.3344201 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 201
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 9167 8037
+match done
+, Matches: 243, Inliers: 86.4198 %, Current pose: 
+   0.8920958    0.1988090   -0.4057586   76.1725987 
+  -0.1906143    0.9797695    0.0609741   -6.6297880 
+   0.4096721    0.0229486    0.9119441   72.2078787 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 202
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 8756 7708
+match done
+, Matches: 247, Inliers: 82.5911 %, Current pose: 
+   0.8910952    0.2021014   -0.4063304   75.7892571 
+  -0.1932993    0.9791099    0.0630802   -6.6562044 
+   0.4105907    0.0223329    0.9115462   73.0775814 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 203
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 8330 7247
+match done
+, Matches: 248, Inliers: 79.8387 %, Current pose: 
+   0.8904341    0.2017253   -0.4079632   75.3925401 
+  -0.1918915    0.9792364    0.0653737   -6.6904744 
+   0.4126800    0.0200737    0.9106549   73.9838331 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 204
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 8106 7054
+match done
+, Matches: 235, Inliers: 77.0213 %, Current pose: 
+   0.8901955    0.2000018   -0.4093303   75.0129125 
+  -0.1896578    0.9796168    0.0661876   -6.7159893 
+   0.4142245    0.0187128    0.9099824   74.8641272 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 205
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 8432 7294
+match done
+, Matches: 241, Inliers: 73.029 %, Current pose: 
+   0.8896153    0.1959710   -0.4125287   74.6357960 
+  -0.1851257    0.9804593    0.0665433   -6.7559274 
+   0.4175082    0.0171717    0.9085109   75.7991848 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 206
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 8616 7489
+match done
+, Matches: 236, Inliers: 80.0847 %, Current pose: 
+   0.8893882    0.1952738   -0.4133483   74.2406359 
+  -0.1839226    0.9806187    0.0675231   -6.7907031 
+   0.4185226    0.0159699    0.9080660   76.7120157 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 207
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 8745 7760
+match done
+, Matches: 234, Inliers: 81.6239 %, Current pose: 
+   0.8886474    0.1957346   -0.4147214   73.8265973 
+  -0.1853402    0.9804813    0.0656153   -6.8317774 
+   0.4194698    0.0185556    0.9075796   77.6530331 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 208
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 8895 7912
+match done
+, Matches: 240, Inliers: 85.4167 %, Current pose: 
+   0.8881725    0.1977861   -0.4147654   73.4190122 
+  -0.1882262    0.9800205    0.0642703   -6.8632691 
+   0.4191903    0.0209866    0.9076558   78.5317850 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 209
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 9190 8098
+match done
+, Matches: 248, Inliers: 83.4677 %, Current pose: 
+   0.8874420    0.1979595   -0.4162436   73.0351396 
+  -0.1888241    0.9799573    0.0634759   -6.8901007 
+   0.4204666    0.0222656    0.9070348   79.4003773 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 210
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 8811 7625
+match done
+, Matches: 252, Inliers: 81.3492 %, Current pose: 
+   0.8869392    0.2027521   -0.4150066   72.6408373 
+  -0.1923508    0.9790215    0.0672163   -6.9159504 
+   0.4199286    0.0202101    0.9073321   80.2694592 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 211
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 8618 7386
+match done
+, Matches: 250, Inliers: 84.4 %, Current pose: 
+   0.8864028    0.2009211   -0.4170380   72.2738409 
+  -0.1898058    0.9794330    0.0684455   -6.9515027 
+   0.4222130    0.0184859    0.9063082   81.1381303 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 212
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 8593 7429
+match done
+, Matches: 234, Inliers: 76.4957 %, Current pose: 
+   0.8854482    0.2045718   -0.4172912   71.8594134 
+  -0.1948402    0.9785909    0.0663114   -6.9787217 
+   0.4219228    0.0225898    0.9063503   82.0166993 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 213
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 8749 7596
+match done
+, Matches: 250, Inliers: 74.8 %, Current pose: 
+   0.8854011    0.1989570   -0.4200964   71.4878814 
+  -0.1884859    0.9798029    0.0667776   -7.0321449 
+   0.4248976    0.0200573    0.9050192   82.9140373 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 214
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 8756 7623
+match done
+, Matches: 249, Inliers: 85.9438 %, Current pose: 
+   0.8855098    0.1957194   -0.4213862   71.1002517 
+  -0.1842920    0.9805069    0.0681367   -7.0665888 
+   0.4265078    0.0173224    0.9043180   83.7909307 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 215
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 8437 7402
+match done
+, Matches: 247, Inliers: 82.1862 %, Current pose: 
+   0.8851038    0.1966870   -0.4217884   70.7004657 
+  -0.1839415    0.9803577    0.0711643   -7.0907369 
+   0.4275006    0.0145966    0.9038972   84.6875576 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 216
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 8218 7156
+match done
+, Matches: 248, Inliers: 79.8387 %, Current pose: 
+   0.8839298    0.2009810   -0.4222261   70.2917049 
+  -0.1877166    0.9794877    0.0732549   -7.1207450 
+   0.4282881    0.0145067    0.9035258   85.5734059 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 217
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 8305 7238
+match done
+, Matches: 239, Inliers: 82.4268 %, Current pose: 
+   0.8832918    0.1991574   -0.4244195   69.8989114 
+  -0.1857906    0.9798638    0.0731347   -7.1537308 
+   0.4304387    0.0142539    0.9025073   86.4567021 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 218
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 8392 7466
+match done
+, Matches: 239, Inliers: 79.9163 %, Current pose: 
+   0.8826167    0.1995724   -0.4256274   69.4927054 
+  -0.1868931    0.9797501    0.0718377   -7.1751840 
+   0.4313453    0.0161417    0.9020425   87.3333468 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 219
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 8137 7212
+match done
+, Matches: 229, Inliers: 84.2795 %, Current pose: 
+   0.8823194    0.1979355   -0.4270058   69.1049426 
+  -0.1854691    0.9800764    0.0710738   -7.2031272 
+   0.4325663    0.0164866    0.9014514   88.2007703 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 220
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 8450 7512
+match done
+, Matches: 239, Inliers: 82.0084 %, Current pose: 
+   0.8814692    0.1987713   -0.4283714   68.7154434 
+  -0.1859811    0.9799119    0.0719977   -7.2405523 
+   0.4340773    0.0162052    0.9007298   89.0811617 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 221
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 8505 7495
+match done
+, Matches: 245, Inliers: 80.8163 %, Current pose: 
+   0.8809566    0.1950632   -0.4311216   68.3382782 
+  -0.1823189    0.9806615    0.0711537   -7.2740740 
+   0.4366638    0.0159183    0.8994839   89.9598516 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 222
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 8325 7228
+match done
+, Matches: 242, Inliers: 85.9504 %, Current pose: 
+   0.8807222    0.1950220   -0.4316189   67.9394639 
+  -0.1825308    0.9806589    0.0706438   -7.2998839 
+   0.4370480    0.0165661    0.8992856   90.8371482 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 223
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 8474 7257
+match done
+, Matches: 240, Inliers: 78.3333 %, Current pose: 
+   0.8810699    0.1924885   -0.4320462   67.5453268 
+  -0.1799378    0.9811704    0.0701920   -7.3296430 
+   0.4374221    0.0158974    0.8991158   91.7227255 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 224
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 8606 7417
+match done
+, Matches: 245, Inliers: 82.449 %, Current pose: 
+   0.8812751    0.1909159   -0.4323254   67.1526088 
+  -0.1785197    0.9814774    0.0695187   -7.3549142 
+   0.4375899    0.0159135    0.8990338   92.6026874 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 225
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 8456 7437
+match done
+, Matches: 248, Inliers: 85.8871 %, Current pose: 
+   0.8811267    0.1944267   -0.4310615   66.7355712 
+  -0.1824640    0.9807608    0.0693918   -7.3822447 
+   0.4362598    0.0175103    0.8996503   93.4990817 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 226
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 8088 7088
+match done
+, Matches: 240, Inliers: 84.5833 %, Current pose: 
+   0.8818044    0.1963063   -0.4288179   66.3417105 
+  -0.1846399    0.9803731    0.0691137   -7.4101472 
+   0.4339690    0.0182322    0.9007433   94.3484445 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 227
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 8193 7218
+match done
+, Matches: 236, Inliers: 84.7458 %, Current pose: 
+   0.8828251    0.1990901   -0.4254210   65.9619931 
+  -0.1877251    0.9797974    0.0689658   -7.4431813 
+   0.4305568    0.0189774    0.9023639   95.1779745 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 228
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 8216 7139
+match done
+, Matches: 243, Inliers: 88.4774 %, Current pose: 
+   0.8853827    0.1962046   -0.4214275   65.5926430 
+  -0.1849236    0.9804018    0.0679385   -7.4751853 
+   0.4264981    0.0177803    0.9043137   96.0359097 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 229
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 8040 7074
+match done
+, Matches: 248, Inliers: 87.5 %, Current pose: 
+   0.8869981    0.1991988   -0.4165985   65.2208217 
+  -0.1882608    0.9797860    0.0676556   -7.5074637 
+   0.4216543    0.0184188    0.9065696   96.8925520 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 230
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 7743 6844
+match done
+, Matches: 239, Inliers: 80.7531 %, Current pose: 
+   0.8896071    0.2004497   -0.4103890   64.8511724 
+  -0.1898575    0.9795309    0.0668831   -7.5368599 
+   0.4153954    0.0184158    0.9094545   97.7547895 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 231
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 7831 6928
+match done
+, Matches: 247, Inliers: 87.0445 %, Current pose: 
+   0.8928554    0.2020837   -0.4024568   64.4936852 
+  -0.1919961    0.9791920    0.0657311   -7.5692002 
+   0.4073656    0.0185818    0.9130761   98.6087058 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 232
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 7820 6923
+match done
+, Matches: 240, Inliers: 79.1667 %, Current pose: 
+   0.8974323    0.2034237   -0.3914512   64.1523612 
+  -0.1940022    0.9789149    0.0639431   -7.6004111 
+   0.3962050    0.0185578    0.9179745   99.4489895 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 233
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 8009 7158
+match done
+, Matches: 239, Inliers: 68.6192 %, Current pose: 
+   0.9034807    0.2051607   -0.3763399   63.8223693 
+  -0.1963866    0.9785647    0.0619957   -7.6431783 
+   0.3809920    0.0178962    0.9244051  100.2800015 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 234
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 8341 7508
+match done
+, Matches: 248, Inliers: 81.4516 %, Current pose: 
+   0.9089189    0.2094878   -0.3605293   63.5019885 
+  -0.2016529    0.9776371    0.0596815   -7.6867531 
+   0.3649693    0.0184562    0.9308366  101.1453965 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 235
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 8497 7676
+match done
+, Matches: 244, Inliers: 80.3279 %, Current pose: 
+   0.9167044    0.2012089   -0.3452073   63.2437328 
+  -0.1938957    0.9794238    0.0559773   -7.7339958 
+   0.3493674    0.0156196    0.9368556  102.0099061 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 236
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 8471 7656
+match done
+, Matches: 249, Inliers: 86.3454 %, Current pose: 
+   0.9237064    0.2034144   -0.3246369   62.9589124 
+  -0.1973848    0.9789578    0.0517763   -7.7728845 
+   0.3283378    0.0162523    0.9444205  102.8738303 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 237
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 8047 7180
+match done
+, Matches: 248, Inliers: 83.871 %, Current pose: 
+   0.9313648    0.2012492   -0.3034113   62.7413963 
+  -0.1963309    0.9794122    0.0469667   -7.8283433 
+   0.3066168    0.0158259    0.9517015  103.7076384 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 238
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 7711 6890
+match done
+, Matches: 244, Inliers: 76.6393 %, Current pose: 
+   0.9393601    0.1989370   -0.2793326   62.5369499 
+  -0.1952973    0.9798825    0.0410994   -7.8885579 
+   0.2818893    0.0159457    0.9593144  104.5501413 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 239
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 7515 6729
+match done
+, Matches: 224, Inliers: 82.1429 %, Current pose: 
+   0.9458687    0.2035902   -0.2527517   62.3144161 
+  -0.2017030    0.9788687    0.0336435   -7.9375913 
+   0.2542602    0.0191585    0.9669461  105.3886663 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 240
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 7759 6971
+match done
+, Matches: 225, Inliers: 81.3333 %, Current pose: 
+   0.9534783    0.1958521   -0.2291749   62.1620535 
+  -0.1946309    0.9804725    0.0281498   -8.0053450 
+   0.2302129    0.0177643    0.9729781  106.2779801 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 241
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 8133 7352
+match done
+, Matches: 238, Inliers: 86.5546 %, Current pose: 
+   0.9592201    0.1984947   -0.2012378   61.9940946 
+  -0.1974311    0.9799837    0.0255503   -8.0734372 
+   0.2022814    0.0152222    0.9792091  107.1382688 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 242
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 8244 7429
+match done
+, Matches: 250, Inliers: 86 %, Current pose: 
+   0.9651403    0.1951572   -0.1744072   61.8871054 
+  -0.1941293    0.9807039    0.0231033   -8.1502518 
+   0.1755506    0.0115597    0.9844025  108.0167171 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 243
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 8317 7467
+match done
+, Matches: 247, Inliers: 88.664 %, Current pose: 
+   0.9698996    0.1939947   -0.1471764   61.7865056 
+  -0.1932402    0.9809567    0.0195472   -8.2309981 
+   0.1481657    0.0094815    0.9889171  108.8974932 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 244
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 8209 7343
+match done
+, Matches: 242, Inliers: 80.9917 %, Current pose: 
+   0.9745296    0.1867041   -0.1242325   61.7515818 
+  -0.1865649    0.9823585    0.0128574   -8.3256351 
+   0.1244413    0.0106475    0.9921698  109.7670756 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 245
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 8223 7414
+match done
+, Matches: 240, Inliers: 84.5833 %, Current pose: 
+   0.9780913    0.1832951   -0.0986929   61.7071919 
+  -0.1836241    0.9829793    0.0058177   -8.4204218 
+   0.0980795    0.0124322    0.9951009  110.6511408 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 246
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 8233 7360
+match done
+, Matches: 237, Inliers: 85.2321 %, Current pose: 
+   0.9810474    0.1797398   -0.0723857   61.6903309 
+  -0.1802220    0.9836260   -0.0001321   -8.5079959 
+   0.0711767    0.0131751    0.9973767  111.5130862 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 247
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 8199 7376
+match done
+, Matches: 238, Inliers: 82.7731 %, Current pose: 
+   0.9821570    0.1826801   -0.0446731   61.6747031 
+  -0.1830120    0.9831047   -0.0034209   -8.5944853 
+   0.0432934    0.0115356    0.9989958  112.3598039 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 248
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 8177 7374
+match done
+, Matches: 237, Inliers: 86.9198 %, Current pose: 
+   0.9829952    0.1826508   -0.0189515   61.6964627 
+  -0.1828098    0.9831233   -0.0070106   -8.6989639 
+   0.0173512    0.0103559    0.9997958  113.2475730 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 249
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 8201 7381
+match done
+, Matches: 238, Inliers: 86.5546 %, Current pose: 
+   0.9832868    0.1820033    0.0046688   61.7528873 
+  -0.1819315    0.9832277   -0.0128144   -8.7972565 
+  -0.0069227    0.0117508    0.9999070  114.1226126 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 250
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 8106 7251
+match done
+, Matches: 247, Inliers: 86.6397 %, Current pose: 
+   0.9834479    0.1791249    0.0272853   61.8298702 
+  -0.1786840    0.9837448   -0.0178400   -8.9164038 
+  -0.0300374    0.0126693    0.9994685  115.0183895 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 251
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 7621 6795
+match done
+, Matches: 236, Inliers: 81.7797 %, Current pose: 
+   0.9837670    0.1726756    0.0488438   61.9242610 
+  -0.1717222    0.9848741   -0.0231170   -9.0313780 
+  -0.0520967    0.0143541    0.9985389  115.8917112 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 252
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 7529 6734
+match done
+, Matches: 230, Inliers: 85.6522 %, Current pose: 
+   0.9831843    0.1692377    0.0686095   62.0163284 
+  -0.1677455    0.9854606   -0.0269985   -9.1448763 
+  -0.0721811    0.0150355    0.9972782  116.7295028 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 253
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 7781 7012
+match done
+, Matches: 218, Inliers: 84.4037 %, Current pose: 
+   0.9828602    0.1632646    0.0856188   62.1351179 
+  -0.1613156    0.9864692   -0.0292555   -9.2690970 
+  -0.0892367    0.0149424    0.9958984  117.5600693 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 254
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 8096 7350
+match done
+, Matches: 229, Inliers: 85.5895 %, Current pose: 
+   0.9815277    0.1638778    0.0987287   62.2554889 
+  -0.1614647    0.9863592   -0.0320102   -9.3840979 
+  -0.1026277    0.0154777    0.9945994  118.3773811 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 255
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 8551 7841
+match done
+, Matches: 235, Inliers: 83.8298 %, Current pose: 
+   0.9801094    0.1648822    0.1104512   62.3598118 
+  -0.1618538    0.9861613   -0.0359072   -9.5014876 
+  -0.1148432    0.0173161    0.9932327  119.1933321 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 256
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 8671 7876
+match done
+, Matches: 247, Inliers: 90.6883 %, Current pose: 
+   0.9797509    0.1611849    0.1187751   62.4852919 
+  -0.1575026    0.9867152   -0.0398256   -9.6261474 
+  -0.1236164    0.0203118    0.9921222  119.9770105 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 257
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 8377 7621
+match done
+, Matches: 245, Inliers: 92.6531 %, Current pose: 
+   0.9785993    0.1621245    0.1267241   62.5863655 
+  -0.1579790    0.9865414   -0.0421737   -9.7349046 
+  -0.1318560    0.0212515    0.9910411  120.7579620 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 258
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 8159 7432
+match done
+, Matches: 246, Inliers: 78.8618 %, Current pose: 
+   0.9780271    0.1602002    0.1334124   62.7053782 
+  -0.1561978    0.9869150   -0.0400137   -9.8474828 
+  -0.1380769    0.0182958    0.9902525  121.5197735 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 259
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 8155 7417
+match done
+, Matches: 245, Inliers: 83.6735 %, Current pose: 
+   0.9776237    0.1587872    0.1379804   62.8469662 
+  -0.1552783    0.9872181   -0.0359028   -9.9619698 
+  -0.1419176    0.0136740    0.9897840  122.2909277 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 260
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 7903 7082
+match done
+, Matches: 242, Inliers: 85.124 %, Current pose: 
+   0.9768354    0.1593050    0.1428792   62.9905279 
+  -0.1562821    0.9871872   -0.0322088  -10.0704974 
+  -0.1461796    0.0091332    0.9892159  123.0831151 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 261
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 7632 6707
+match done
+, Matches: 242, Inliers: 82.2314 %, Current pose: 
+   0.9768171    0.1549166    0.1477468   63.1405084 
+  -0.1519681    0.9878957   -0.0311099  -10.1865585 
+  -0.1507779    0.0079359    0.9885358  123.9076658 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 262
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 7310 6372
+match done
+, Matches: 237, Inliers: 80.5907 %, Current pose: 
+   0.9762305    0.1551588    0.1513265   63.2887613 
+  -0.1521137    0.9878588   -0.0315673  -10.2996483 
+  -0.1543871    0.0077981    0.9879797  124.7294050 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 263
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 7150 6152
+match done
+, Matches: 233, Inliers: 75.9657 %, Current pose: 
+   0.9767272    0.1511398    0.1521867   63.4829965 
+  -0.1478459    0.9884664   -0.0327986  -10.4114093 
+  -0.1553886    0.0095350    0.9878074  125.5794152 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 264
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 7129 6184
+match done
+, Matches: 232, Inliers: 82.3276 %, Current pose: 
+   0.9750738    0.1568625    0.1569244   63.6062733 
+  -0.1530551    0.9875568   -0.0361358  -10.5266163 
+  -0.1606401    0.0112170    0.9869493  126.4242322 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 265
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 7274 6432
+match done
+, Matches: 239, Inliers: 81.1715 %, Current pose: 
+   0.9741352    0.1610146    0.1585402   63.7540709 
+  -0.1566426    0.9868539   -0.0397808  -10.6381691 
+  -0.1628613    0.0139177    0.9865508  127.2681973 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 266
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 7411 6590
+match done
+, Matches: 242, Inliers: 87.6033 %, Current pose: 
+   0.9727269    0.1680208    0.1599103   63.8838734 
+  -0.1629507    0.9856345   -0.0444035  -10.7519372 
+  -0.1650739    0.0171350    0.9861324  128.1155566 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 267
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 7205 6400
+match done
+, Matches: 245, Inliers: 89.3878 %, Current pose: 
+   0.9712095    0.1763621    0.1601516   64.0003983 
+  -0.1703951    0.9840877   -0.0503675  -10.8700728 
+  -0.1664861    0.0216283    0.9858066  128.9087545 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 268
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 6909 6067
+match done
+, Matches: 247, Inliers: 90.2834 %, Current pose: 
+   0.9733150    0.1680512    0.1562586   64.1469443 
+  -0.1614023    0.9853882   -0.0543994  -10.9902713 
+  -0.1631173    0.0277273    0.9862170  129.6533053 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 269
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 6913 6051
+match done
+, Matches: 247, Inliers: 85.83 %, Current pose: 
+   0.9748148    0.1645703    0.1505081   64.2761340 
+  -0.1577103    0.9858668   -0.0565159  -11.1050707 
+  -0.1576818    0.0313559    0.9869920  130.3815872 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 270
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 6820 6035
+match done
+, Matches: 242, Inliers: 84.7107 %, Current pose: 
+   0.9751302    0.1659065    0.1469561   64.3725566 
+  -0.1593307    0.9856626   -0.0555248  -11.2015468 
+  -0.1540611    0.0307293    0.9875834  131.0868620 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 271
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 7039 6241
+match done
+, Matches: 246, Inliers: 88.2114 %, Current pose: 
+   0.9752485    0.1708729    0.1403313   64.4708287 
+  -0.1655015    0.9849825   -0.0491815  -11.2961982 
+  -0.1466276    0.0247391    0.9888824  131.7768637 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 272
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 7030 6191
+match done
+, Matches: 244, Inliers: 84.8361 %, Current pose: 
+   0.9758077    0.1738785    0.1325353   64.5392325 
+  -0.1695154    0.9845622   -0.0436093  -11.3910402 
+  -0.1380720    0.0200875    0.9902185  132.4463084 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 273
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 7076 6308
+match done
+, Matches: 241, Inliers: 86.3071 %, Current pose: 
+   0.9777725    0.1715905    0.1204892   64.6163206 
+  -0.1679515    0.9849911   -0.0398107  -11.4873009 
+  -0.1255119    0.0186895    0.9919161  133.0953553 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 274
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 6987 6220
+match done
+, Matches: 249, Inliers: 83.1325 %, Current pose: 
+   0.9776629    0.1793850    0.1095276   64.6328248 
+  -0.1762729    0.9836251   -0.0375443  -11.5705397 
+  -0.1144690    0.0173989    0.9932744  133.7408082 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 275
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 7120 6351
+match done
+, Matches: 247, Inliers: 85.83 %, Current pose: 
+   0.9789836    0.1811244    0.0937289   64.6674607 
+  -0.1785034    0.9832914   -0.0356997  -11.6591579 
+  -0.0986289    0.0182185    0.9949575  134.3599513 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 276
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 7404 6720
+match done
+, Matches: 250, Inliers: 87.6 %, Current pose: 
+   0.9797189    0.1852312    0.0764219   64.6867629 
+  -0.1830344    0.9824878   -0.0348746  -11.7302796 
+  -0.0815435    0.0201795    0.9964655  134.9679162 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 277
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 7384 6652
+match done
+, Matches: 246, Inliers: 91.4634 %, Current pose: 
+   0.9808100    0.1864142    0.0571096   64.7060475 
+  -0.1848370    0.9822545   -0.0318028  -11.8020228 
+  -0.0620247    0.0206366    0.9978612  135.5592643 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 278
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 7391 6698
+match done
+, Matches: 243, Inliers: 90.1235 %, Current pose: 
+   0.9815750    0.1874252    0.0371794   64.7072331 
+  -0.1864308    0.9820503   -0.0286503  -11.8704315 
+  -0.0418819    0.0211910    0.9988978  136.1311762 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 279
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 7279 6500
+match done
+, Matches: 242, Inliers: 89.2562 %, Current pose: 
+   0.9827298    0.1845822    0.0130981   64.7236284 
+  -0.1842096    0.9825560   -0.0255067  -11.9473523 
+  -0.0175777    0.0226534    0.9995888  136.6971247 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 280
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 7210 6461
+match done
+, Matches: 245, Inliers: 91.8367 %, Current pose: 
+   0.9802451    0.1975668   -0.0093190   64.6453448 
+  -0.1977437    0.9799244   -0.0254073  -12.0057280 
+   0.0041122    0.0267482    0.9996337  137.2312640 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 281
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 6977 6179
+match done
+, Matches: 240, Inliers: 92.5 %, Current pose: 
+   0.9780081    0.2052774   -0.0368953   64.5685583 
+  -0.2062320    0.9782034   -0.0242183  -12.0646848 
+   0.0311197    0.0312947    0.9990256  137.7437511 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 282
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 6843 6074
+match done
+, Matches: 241, Inliers: 86.722 %, Current pose: 
+   0.9757742    0.2071089   -0.0705020   64.5140601 
+  -0.2089378    0.9777334   -0.0195572  -12.1196326 
+   0.0648817    0.0338140    0.9973199  138.2383705 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 283
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 6888 6043
+match done
+, Matches: 240, Inliers: 90 %, Current pose: 
+   0.9711876    0.2142670   -0.1043277   64.4103196 
+  -0.2168376    0.9761099   -0.0138206  -12.1568750 
+   0.0988740    0.0360445    0.9944469  138.7150943 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 284
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 6929 6126
+match done
+, Matches: 240, Inliers: 87.0833 %, Current pose: 
+   0.9652633    0.2207856   -0.1397160   64.2883400 
+  -0.2237299    0.9746355   -0.0055311  -12.1888537 
+   0.1349510    0.0365976    0.9901762  139.1794735 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 285
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 7072 6213
+match done
+, Matches: 244, Inliers: 90.1639 %, Current pose: 
+   0.9566551    0.2318976   -0.1761664   64.1378850 
+  -0.2348861    0.9720147    0.0039897  -12.2145780 
+   0.1721616    0.0375623    0.9843523  139.6180940 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 286
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 7065 6157
+match done
+, Matches: 242, Inliers: 88.0165 %, Current pose: 
+   0.9471988    0.2392571   -0.2134726   63.9767801 
+  -0.2414538    0.9702784    0.0161201  -12.2341544 
+   0.2109847    0.0362749    0.9768160  140.0511460 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 287
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 7145 6265
+match done
+, Matches: 240, Inliers: 88.75 %, Current pose: 
+   0.9358148    0.2483492   -0.2501468   63.7931991 
+  -0.2497233    0.9679474    0.0267608  -12.2428004 
+   0.2487750    0.0374243    0.9678380  140.4698918 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 288
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 7360 6454
+match done
+, Matches: 241, Inliers: 88.7967 %, Current pose: 
+   0.9221980    0.2618557   -0.2845742   63.5727922 
+  -0.2624190    0.9642494    0.0368687  -12.2398858 
+   0.2840548    0.0406775    0.9579448  140.8605895 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 289
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 7476 6507
+match done
+, Matches: 237, Inliers: 91.9831 %, Current pose: 
+   0.9082145    0.2671293   -0.3221620   63.3783693 
+  -0.2651691    0.9628608    0.0508375  -12.2469960 
+   0.3237773    0.0392560    0.9453186  141.2629138 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 290
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 7601 6667
+match done
+, Matches: 242, Inliers: 89.2562 %, Current pose: 
+   0.8926334    0.2728315   -0.3588433   63.1641938 
+  -0.2683324    0.9612408    0.0633543  -12.2456497 
+   0.3622199    0.0397372    0.9312452  141.6507517 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 291
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 7861 6953
+match done
+, Matches: 247, Inliers: 90.2834 %, Current pose: 
+   0.8752602    0.2807699   -0.3938119   62.9195159 
+  -0.2741481    0.9588140    0.0742874  -12.2270402 
+   0.3984500    0.0429420    0.9161842  142.0187968 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 292
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 7837 6947
+match done
+, Matches: 249, Inliers: 89.5582 %, Current pose: 
+   0.8571374    0.2855620   -0.4286837   62.6625940 
+  -0.2769436    0.9572164    0.0838985  -12.2100174 
+   0.4343013    0.0468087    0.8995506  142.3689139 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 293
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 7774 6889
+match done
+, Matches: 240, Inliers: 91.6667 %, Current pose: 
+   0.8365690    0.2920938   -0.4635014   62.3738438 
+  -0.2828542    0.9548177    0.0911955  -12.1810260 
+   0.4691970    0.0548120    0.8813909  142.7095059 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 294
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 7689 6874
+match done
+, Matches: 240, Inliers: 86.6667 %, Current pose: 
+   0.8144390    0.2981152   -0.4978117   62.0833175 
+  -0.2860385    0.9527133    0.1025636  -12.1541699 
+   0.5048476    0.0588615    0.8611993  143.0522728 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 295
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 7586 6830
+match done
+, Matches: 242, Inliers: 88.0165 %, Current pose: 
+   0.7902221    0.3043441   -0.5319058   61.7744442 
+  -0.2886243    0.9505033    0.1150632  -12.1082826 
+   0.5405970    0.0625954    0.8389498  143.3951734 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 296
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 7551 6890
+match done
+, Matches: 243, Inliers: 89.7119 %, Current pose: 
+   0.7639607    0.3132940   -0.5641019   61.4339022 
+  -0.2924074    0.9473941    0.1301629  -12.0623978 
+   0.5752060    0.0655083    0.8153813  143.7350888 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 297
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 7770 7027
+match done
+, Matches: 244, Inliers: 84.0164 %, Current pose: 
+   0.7360115    0.3211052   -0.5959685   61.0736050 
+  -0.2932745    0.9446895    0.1468054  -12.0151202 
+   0.6101452    0.0667319    0.7894743  144.0800571 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 298
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 7739 6994
+match done
+, Matches: 241, Inliers: 82.5726 %, Current pose: 
+   0.7068501    0.3236000   -0.6290039   60.7014957 
+  -0.2881749    0.9438225    0.1617232  -11.9546796 
+   0.6460017    0.0669491    0.7603944  144.4467916 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 299
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 7876 7051
+match done
+, Matches: 235, Inliers: 82.5532 %, Current pose: 
+   0.6762883    0.3272104   -0.6599753   60.3053974 
+  -0.2828472    0.9425991    0.1774946  -11.8902122 
+   0.6801703    0.0666346    0.7300193  144.8093870 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 300
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 7983 7215
+match done
+, Matches: 242, Inliers: 85.5372 %, Current pose: 
+   0.6456307    0.3289244   -0.6891805   59.8799015 
+  -0.2747326    0.9421022    0.1922640  -11.8168872 
+   0.7125187    0.0652088    0.6986164  145.1821133 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 301
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 8190 7519
+match done
+, Matches: 244, Inliers: 86.4754 %, Current pose: 
+   0.6126504    0.3338505   -0.7163821   59.4176134 
+  -0.2727673    0.9400284    0.2048040  -11.7417091 
+   0.7417934    0.0699324    0.6669723  145.5537305 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 302
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 8177 7507
+match done
+, Matches: 247, Inliers: 88.2591 %, Current pose: 
+   0.5818350    0.3372557   -0.7400856   58.9244249 
+  -0.2701192    0.9384488    0.2152892  -11.6483856 
+   0.7671399    0.0746486    0.6371216  145.9137301 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 303
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 8112 7425
+match done
+, Matches: 236, Inliers: 91.1017 %, Current pose: 
+   0.5520872    0.3430442   -0.7599476   58.4020945 
+  -0.2717443    0.9357059    0.2249655  -11.5401303 
+   0.7882606    0.0823109    0.6098116  146.2484837 
+  -0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 304
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 8289 7541
+match done
+, Matches: 242, Inliers: 88.843 %, Current pose: 
+   0.5253134    0.3433950   -0.7785407   57.8717141 
+  -0.2611639    0.9358579    0.2365658  -11.4333111 
+   0.8098390    0.0790556    0.5813011  146.6085726 
+   0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 305
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 8275 7528
+match done
+, Matches: 249, Inliers: 93.1727 %, Current pose: 
+   0.4981157    0.3474734   -0.7944451   57.2834505 
+  -0.2586883    0.9340257    0.2463259  -11.3136187 
+   0.8276238    0.0828149    0.5551401  146.9365789 
+   0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 306
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 8267 7558
+match done
+, Matches: 246, Inliers: 88.6179 %, Current pose: 
+   0.4710419    0.3519380   -0.8088629   56.6545426 
+  -0.2633256    0.9312544    0.2518430  -11.1709597 
+   0.8418902    0.0943657    0.5313341  147.2354375 
+   0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 307
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 8127 7360
+match done
+, Matches: 244, Inliers: 89.3443 %, Current pose: 
+   0.4446127    0.3522047   -0.8235723   56.0143732 
+  -0.2626486    0.9302970    0.2560529  -11.0337588 
+   0.8563500    0.1024658    0.5061280  147.5528811 
+   0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 308
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 8005 7253
+match done
+, Matches: 231, Inliers: 85.7143 %, Current pose: 
+   0.4198788    0.3480336   -0.8381972   55.3656133 
+  -0.2595888    0.9310215    0.2565397  -10.8962932 
+   0.8696640    0.1098711    0.4812618  147.8620803 
+   0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 309
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 7842 7095
+match done
+, Matches: 231, Inliers: 85.2814 %, Current pose: 
+   0.3954541    0.3422866   -0.8523238   54.7255917 
+  -0.2539988    0.9325319    0.2566493  -10.7700845 
+   0.8826668    0.1149962    0.4557140  148.1903650 
+   0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 310
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 7622 6758
+match done
+, Matches: 234, Inliers: 83.3333 %, Current pose: 
+   0.3727741    0.3419926   -0.8626010   54.0895019 
+  -0.2543020    0.9316661    0.2594777  -10.6349489 
+   0.8923956    0.1226346    0.4342704  148.4792153 
+   0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 311
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 7606 6757
+match done
+, Matches: 231, Inliers: 83.1169 %, Current pose: 
+   0.3519972    0.3466690   -0.8694358   53.4635320 
+  -0.2502923    0.9299188    0.2694527  -10.4954913 
+   0.9019156    0.1227665    0.4140974  148.7669633 
+   0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 312
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 7430 6484
+match done
+, Matches: 231, Inliers: 83.1169 %, Current pose: 
+   0.3343879    0.3572149   -0.8721137   52.8275002 
+  -0.2525119    0.9255072    0.2822660  -10.3345744 
+   0.9079771    0.1258328    0.3996794  148.9949279 
+   0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 313
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 7326 6382
+match done
+, Matches: 231, Inliers: 87.4459 %, Current pose: 
+   0.3175326    0.3670117   -0.8743429   52.1614452 
+  -0.2496475    0.9218888    0.2963057  -10.1874654 
+   0.9147946    0.1241907    0.3843533  149.2573795 
+   0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 314
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 7448 6563
+match done
+, Matches: 244, Inliers: 86.0656 %, Current pose: 
+   0.3013911    0.3725905   -0.8776900   51.4638515 
+  -0.2498673    0.9191868    0.3044042  -10.0330563 
+   0.9201792    0.1275614    0.3701329  149.5067155 
+   0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 315
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 7532 6637
+match done
+, Matches: 237, Inliers: 83.5443 %, Current pose: 
+   0.2853224    0.3714205   -0.8835372   50.7357752 
+  -0.2554024    0.9179883    0.3034255   -9.8523529 
+   0.9237753    0.1390834    0.3567843  149.7437043 
+   0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 316
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 7603 6728
+match done
+, Matches: 236, Inliers: 86.8644 %, Current pose: 
+   0.2710758    0.3651347   -0.8906147   50.0374500 
+  -0.2525786    0.9198183    0.3002304   -9.6933599 
+   0.9288282    0.1435650    0.3415658  149.9954834 
+   0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 317
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 7899 7082
+match done
+, Matches: 237, Inliers: 88.1857 %, Current pose: 
+   0.2581916    0.3614423   -0.8959334   49.3574021 
+  -0.2537581    0.9201870    0.2980984   -9.5332482 
+   0.9321716    0.1503838    0.3293034  150.1995324 
+   0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 318
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 8208 7444
+match done
+, Matches: 246, Inliers: 86.9919 %, Current pose: 
+   0.2466198    0.3593867   -0.9000110   48.7049786 
+  -0.2462321    0.9214568    0.3004781   -9.3844182 
+   0.9373091    0.1475077    0.3157421  150.4280382 
+   0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 319
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 8299 7555
+match done
+, Matches: 249, Inliers: 89.9598 %, Current pose: 
+   0.2339493    0.3621876   -0.9022682   48.0347618 
+  -0.2561471    0.9181965    0.3021651   -9.2136786 
+   0.9379000    0.1604221    0.3075847  150.5826723 
+   0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 320
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 8179 7447
+match done
+, Matches: 252, Inliers: 90.0794 %, Current pose: 
+   0.2216548    0.3640624   -0.9046147   47.3647760 
+  -0.2645079    0.9153569    0.3035741   -9.0437861 
+   0.9385653    0.1719891    0.2991906  150.7413503 
+   0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 321
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 8104 7410
+match done
+, Matches: 251, Inliers: 88.8446 %, Current pose: 
+   0.2093990    0.3661932   -0.9066723   46.7102757 
+  -0.2649799    0.9137850    0.3078679   -8.8938421 
+   0.9412426    0.1757827    0.2883795  150.9359941 
+   0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 322
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 7890 7172
+match done
+, Matches: 248, Inliers: 87.0968 %, Current pose: 
+   0.2021430    0.3685577   -0.9073607   46.0513782 
+  -0.2595294    0.9135227    0.3132424   -8.7393686 
+   0.9443425    0.1721670    0.2803138  151.1493466 
+   0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 323
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 7901 7165
+match done
+, Matches: 234, Inliers: 84.188 %, Current pose: 
+   0.1974124    0.3710176   -0.9073997   45.3744073 
+  -0.2591350    0.9124412    0.3167020   -8.5663045 
+   0.9454509    0.1726181    0.2762708  151.3482158 
+   0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 324
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 8013 7247
+match done
+, Matches: 237, Inliers: 88.1857 %, Current pose: 
+   0.1926817    0.3751522   -0.9067164   44.7062321 
+  -0.2577436    0.9109353    0.3221260   -8.4080574 
+   0.9468062    0.1716325    0.2722136  151.5809024 
+   0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 325
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 8354 7578
+match done
+, Matches: 231, Inliers: 91.7749 %, Current pose: 
+   0.1910920    0.3780529   -0.9058476   44.0386807 
+  -0.2576455    0.9098141    0.3253570   -8.2562482 
+   0.9471550    0.1712144    0.2712619  151.8010474 
+   0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 326
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 9075 8222
+match done
+, Matches: 240, Inliers: 90 %, Current pose: 
+   0.1950114    0.3751314   -0.9062268   43.3972293 
+  -0.2531153    0.9119164    0.3230187   -8.1078629 
+   0.9475775    0.1663875    0.2727856  152.0196865 
+   0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 327
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 9505 8611
+match done
+, Matches: 238, Inliers: 88.2353 %, Current pose: 
+   0.1994357    0.3733452   -0.9060015   42.7782280 
+  -0.2510829    0.9131788    0.3210325   -7.9685072 
+   0.9471973    0.1634561    0.2758610  152.2382852 
+   0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 328
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 10040 9209
+match done
+, Matches: 248, Inliers: 91.129 %, Current pose: 
+   0.2063802    0.3708378   -0.9054758   42.1720514 
+  -0.2539137    0.9139941    0.3164533   -7.8337517 
+   0.9449524    0.1646030    0.2827911  152.4333535 
+   0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 329
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 10466 9715
+match done
+, Matches: 246, Inliers: 90.2439 %, Current pose: 
+   0.2105689    0.3706449   -0.9045900   41.6002327 
+  -0.2639045    0.9125338    0.3124685   -7.6982278 
+   0.9412838    0.1729292    0.2899661  152.6161018 
+   0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 330
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 11084 10304
+match done
+, Matches: 244, Inliers: 89.7541 %, Current pose: 
+   0.2187106    0.3690216   -0.9033210   41.0688502 
+  -0.2674950    0.9129441    0.3081873   -7.5814532 
+   0.9384093    0.1742300    0.2983820  152.7872533 
+   0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 331
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 11548 10771
+match done
+, Matches: 250, Inliers: 89.6 %, Current pose: 
+   0.2275033    0.3625374   -0.9037748   40.5618599 
+  -0.2695811    0.9152862    0.2992946   -7.4762177 
+   0.9357180    0.1755501    0.3059639  152.9566321 
+   0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 332
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 12448 11645
+match done
+, Matches: 250, Inliers: 88 %, Current pose: 
+   0.2368466    0.3556289   -0.9041193   40.1039677 
+  -0.2739240    0.9172871    0.2890502   -7.3705823 
+   0.9321316    0.1791994    0.3146716  153.1020654 
+   0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 333
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 13025 12246
+match done
+, Matches: 252, Inliers: 92.4603 %, Current pose: 
+   0.2453862    0.3542358   -0.9023872   39.6900943 
+  -0.2821319    0.9166502    0.2831147   -7.2737284 
+   0.9274628    0.1851198    0.3248745  153.2251807 
+   0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 334
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 13011 12238
+match done
+, Matches: 252, Inliers: 95.2381 %, Current pose: 
+   0.2511062    0.3557146   -0.9002293   39.3095720 
+  -0.2869309    0.9155818    0.2817457   -7.1907044 
+   0.9244546    0.1875555    0.3319738  153.3687007 
+   0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 335
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 12886 12186
+match done
+, Matches: 251, Inliers: 93.2271 %, Current pose: 
+   0.2557523    0.3551389   -0.8991480   38.9503008 
+  -0.2931311    0.9147818    0.2779360   -7.1031415 
+   0.9212301    0.1924854    0.3380598  153.5169397 
+   0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 336
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 13073 12387
+match done
+, Matches: 250, Inliers: 90.8 %, Current pose: 
+   0.2614724    0.3570703   -0.8967346   38.6029977 
+  -0.3122882    0.9103807    0.2714461   -7.0132153 
+   0.9132953    0.2090640    0.3495483  153.5700659 
+   0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 337
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 13350 12680
+match done
+, Matches: 252, Inliers: 94.0476 %, Current pose: 
+   0.2663697    0.3577730   -0.8950115   38.2465663 
+  -0.3396479    0.9038397    0.2602174   -6.9113991 
+   0.9020457    0.2346747    0.3622723  153.5598219 
+   0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 338
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 13367 12641
+match done
+, Matches: 252, Inliers: 92.0635 %, Current pose: 
+   0.2741691    0.3544128   -0.8939927   37.9656675 
+  -0.3253093    0.9089912    0.2605931   -6.8865826 
+   0.9049890    0.2193776    0.3645111  153.7412667 
+   0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 339
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 13259 12542
+match done
+, Matches: 252, Inliers: 93.254 %, Current pose: 
+   0.2796842    0.3542856   -0.8923332   37.6597999 
+  -0.3249237    0.9095091    0.2592641   -6.8417051 
+   0.9034386    0.2174281    0.3694911  153.8764255 
+   0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 340
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 13361 12597
+match done
+, Matches: 252, Inliers: 91.2698 %, Current pose: 
+   0.2823561    0.3419598   -0.8962915   37.3299743 
+  -0.3603116    0.9037061    0.2312808   -6.7273537 
+   0.8890729    0.2576407    0.3783790  153.7948785 
+   0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 341
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 13351 12568
+match done
+, Matches: 252, Inliers: 96.0317 %, Current pose: 
+   0.2853321    0.3213198   -0.9029613   37.1036068 
+  -0.3368403    0.9156447    0.2193931   -6.7452931 
+   0.8972871    0.2415539    0.3694963  154.0567019 
+   0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 342
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 13594 12914
+match done
+, Matches: 252, Inliers: 96.4286 %, Current pose: 
+   0.2891497    0.3010632   -0.9087097   36.8651276 
+  -0.3106601    0.9273936    0.2084018   -6.7601154 
+   0.9054737    0.2220406    0.3616840  154.3270332 
+   0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 343
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 13564 12793
+match done
+ ... failed!
+Processing: Frame: 344
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 13572 12791
+match done
+, Matches: 252, Inliers: 92.4603 %, Current pose: 
+   0.2895589    0.2682164   -0.9188121   36.7443412 
+  -0.2831968    0.9409641    0.1854349   -6.7945511 
+   0.9143058    0.2065103    0.3484226  154.5778736 
+   0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 345
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 13754 13053
+match done
+, Matches: 252, Inliers: 95.2381 %, Current pose: 
+   0.3000321    0.2631330   -0.9169197   36.4174968 
+  -0.3121027    0.9353794    0.1663050   -6.7157724 
+   0.9014281    0.2362763    0.3627684  154.5209811 
+   0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 346
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 13770 13084
+match done
+, Matches: 252, Inliers: 96.4286 %, Current pose: 
+   0.3012166    0.2147329   -0.9290631   36.3522551 
+  -0.2859026    0.9498273    0.1268381   -6.7778646 
+   0.9096858    0.2274158    0.3474965  154.7857217 
+   0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 347
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 13640 12959
+match done
+, Matches: 252, Inliers: 95.6349 %, Current pose: 
+   0.3012134    0.1787935   -0.9366447   36.2088366 
+  -0.2578969    0.9609320    0.1004932   -6.8351646 
+   0.9180194    0.2112879    0.3355559  155.0661202 
+   0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 348
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 13905 13293
+match done
+, Matches: 252, Inliers: 96.4286 %, Current pose: 
+   0.3006044    0.1440482   -0.9428081   36.0775303 
+  -0.2307000    0.9701556    0.0746703   -6.8875524 
+   0.9254267    0.1950596    0.3248650  155.3132606 
+   0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 349
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 14002 13417
+match done
+, Matches: 252, Inliers: 95.2381 %, Current pose: 
+   0.3141587    0.1364375   -0.9395154   35.7469798 
+  -0.2609389    0.9639143    0.0527270   -6.8505688 
+   0.9128062    0.2285915    0.3384239  155.2356971 
+   0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 350
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 13857 13174
+match done
+ ... failed!
+Processing: Frame: 351
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 13848 13171
+match done
+, Matches: 252, Inliers: 90.873 %, Current pose: 
+   0.3114699    0.1027828   -0.9446810   35.6124628 
+  -0.2342977    0.9717477    0.0284776   -6.9113896 
+   0.9209186    0.2124667    0.3267520  155.4963388 
+   0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 352
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 13760 13066
+match done
+ ... failed!
+Processing: Frame: 353
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 13725 13008
+match done
+, Matches: 252, Inliers: 96.4286 %, Current pose: 
+   0.3246140    0.1044593   -0.9400606   35.3016415 
+  -0.2551299    0.9667137    0.0193216   -6.9195879 
+   0.9107878    0.2335655    0.3404595  155.5151349 
+   0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 354
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 13568 12899
+match done
+, Matches: 252, Inliers: 96.8254 %, Current pose: 
+   0.3239868    0.0723156   -0.9432937   35.1506982 
+  -0.2310105    0.9729396   -0.0047553   -6.9781410 
+   0.9174239    0.2194514    0.3319253  155.7822200 
+   0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 355
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 13509 12844
+match done
+, Matches: 252, Inliers: 93.6508 %, Current pose: 
+   0.3338848    0.0668079   -0.9402434   34.8648429 
+  -0.2224111    0.9749046   -0.0097085   -7.0258823 
+   0.9159990    0.2123621    0.3403647  155.9560960 
+   0.0000000   -0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 356
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 13367 12733
+match done
+, Matches: 252, Inliers: 93.6508 %, Current pose: 
+   0.3485024    0.0109800   -0.9372436   34.9709300 
+  -0.2241025    0.9719065   -0.0719436   -7.0772767 
+   0.9101232    0.2351111    0.3411723  156.1885980 
+   0.0000000    0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 357
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 13320 12599
+match done
+, Matches: 250, Inliers: 92.4 %, Current pose: 
+   0.3612269    0.0048881   -0.9324652   34.6980993 
+  -0.2121266    0.9741985   -0.0770686   -7.1520002 
+   0.9080294    0.2256399    0.3529436  156.3801152 
+   0.0000000    0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 358
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 13282 12531
+match done
+, Matches: 247, Inliers: 96.3563 %, Current pose: 
+   0.3687714   -0.0164153   -0.9293752   34.4804965 
+  -0.1883713    0.9777778   -0.0920150   -7.2470215 
+   0.9102329    0.2090001    0.3574843  156.6576559 
+   0.0000000    0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 359
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 13241 12468
+match done
+, Matches: 248, Inliers: 96.371 %, Current pose: 
+   0.3843850   -0.0247252   -0.9228417   34.2022574 
+  -0.1747130    0.9796278   -0.0990187   -7.3281128 
+   0.9064897    0.1992938    0.3722344  156.8646333 
+   0.0000000    0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 360
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 13338 12562
+match done
+, Matches: 246, Inliers: 94.7154 %, Current pose: 
+   0.4070798   -0.0260505   -0.9130210   33.8769337 
+  -0.1734184    0.9792071   -0.1052592   -7.4068037 
+   0.8967787    0.2011835    0.3940978  157.0320782 
+   0.0000000    0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 361
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 13124 12337
+match done
+, Matches: 245, Inliers: 94.2857 %, Current pose: 
+   0.4263355   -0.0339983   -0.9039259   33.5888962 
+  -0.1612301    0.9804356   -0.1129200   -7.4967012 
+   0.8900803    0.1938818    0.4125130  157.2572882 
+   0.0000000    0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 362
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 13039 12292
+match done
+, Matches: 246, Inliers: 92.6829 %, Current pose: 
+   0.4533244   -0.0332599   -0.8907249   33.2482033 
+  -0.1631259    0.9793305   -0.1195896   -7.5769756 
+   0.8762916    0.1995131    0.4385288  157.4329497 
+   0.0000000    0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 363
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 12926 12170
+match done
+, Matches: 246, Inliers: 92.2764 %, Current pose: 
+   0.4760922   -0.0382731   -0.8785621   32.9421765 
+  -0.1548330    0.9797971   -0.1265871   -7.6645509 
+   0.8656575    0.1962976    0.4605478  157.6739402 
+   0.0000000    0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 364
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 12855 12125
+match done
+, Matches: 244, Inliers: 92.2131 %, Current pose: 
+   0.4975756   -0.0476459   -0.8661111   32.6630817 
+  -0.1399669    0.9809956   -0.1343760   -7.7600195 
+   0.8560536    0.1880891    0.4814506  157.9622618 
+   0.0000000    0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 365
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 12703 11908
+match done
+, Matches: 244, Inliers: 90.5738 %, Current pose: 
+   0.5232144   -0.0555776   -0.8503869   32.3691409 
+  -0.1258723    0.9818864   -0.1416168   -7.8568782 
+   0.8428540    0.1811361    0.5067414  158.2599638 
+   0.0000000    0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 366
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 12621 11813
+match done
+, Matches: 244, Inliers: 94.6721 %, Current pose: 
+   0.5539469   -0.0585890   -0.8304879   32.0575142 
+  -0.1158450    0.9823927   -0.1465758   -7.9643965 
+   0.8244530    0.1774031    0.5374062  158.5473577 
+  -0.0000000    0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 367
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 12386 11591
+match done
+, Matches: 243, Inliers: 90.9465 %, Current pose: 
+   0.5833976   -0.0662991   -0.8094762   31.7632797 
+  -0.0988325    0.9834609   -0.1517787   -8.0699708 
+   0.8061510    0.1685499    0.5671962  158.8819575 
+  -0.0000000    0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 368
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 12260 11434
+match done
+, Matches: 242, Inliers: 93.8017 %, Current pose: 
+   0.6174179   -0.0650519   -0.7839409   31.4346298 
+  -0.0907375    0.9840332   -0.1531190   -8.1842611 
+   0.7813846    0.1656712    0.6016570  159.2137465 
+  -0.0000000    0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 369
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 11986 11168
+match done
+, Matches: 244, Inliers: 91.3934 %, Current pose: 
+   0.6504756   -0.0696897   -0.7563232   31.1278748 
+  -0.0748298    0.9850570   -0.1551232   -8.3101514 
+   0.7558320    0.1574994    0.6355407  159.5935793 
+  -0.0000000    0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 370
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 11749 10828
+match done
+, Matches: 242, Inliers: 94.2149 %, Current pose: 
+   0.6841544   -0.0731611   -0.7256584   30.8272589 
+  -0.0620417    0.9855117   -0.1578528   -8.4334589 
+   0.7266936    0.1530168    0.6697032  159.9899562 
+  -0.0000000    0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 371
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 11441 10555
+match done
+, Matches: 240, Inliers: 90 %, Current pose: 
+   0.7182085   -0.0743871   -0.6918404   30.5296765 
+  -0.0523568    0.9856735   -0.1603324   -8.5698493 
+   0.6938554    0.1513746    0.7040244  160.4000510 
+  -0.0000000    0.0000000    0.0000000    1.0000000 
+
+Processing: Frame: 372
+push back
+
+ MY VERSION
+
+end compute
+match
+before vs after: 11148 10267
+match done
+, Matches: 238, Inliers: 89.4958 %, Current pose: 
+   0.7504525   -0.0779788   -0.6563081   30.2548545 
+  -0.0399592    0.9858457   -0.1628238   -8.7060695 
+   0.6597153    0.1484171    0.7367144  160.8433816 
+  -0.0000000    0.0000000    0.0000000    1.0000000 
+
+Demo complete! Exiting ...
