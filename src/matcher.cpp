@@ -21,6 +21,7 @@ Street, Fifth Floor, Boston, MA 02110-1301, USA
 
 #include "matcher.h"
 #include "filter.h"
+#include "myMatch.h"
 
 using namespace std;
 
@@ -64,7 +65,7 @@ void Matcher::pushBack (uint8_t *I1,uint8_t* I2,int32_t* dims,const bool replace
     if (m2c2)        _mm_free(m2c2);
   } else {
     if (m2p2)        _mm_free(m2p2);
-    for (int i =0; i < 288000; i++) {
+    for (int i =0; i < MAX_FEATURE_ARRAY_SZIE; i++) {
       m1p2[i] = m1c2[i];
     }
     n1p2 = n1c2;
@@ -83,7 +84,8 @@ void Matcher::pushBack (uint8_t *I1,uint8_t* I2,int32_t* dims,const bool replace
 
   // compute new features for current frame
   // computeFeatures(I1c,dims_c,m1c1,n1c1,m1c2,n1c2,I1c_du,I1c_dv,I1c_du_full,I1c_dv_full);
-  myComputeFeatures(I1,dims_c, m1c2,n1c2);
+  // myComputeFeatures(I1,dims_c, m1c2,n1c2);
+  myComputeFeatures(I1, m1c2,n1c2);
 }
 
 void Matcher::matchFeatures(int32_t method, Matrix *Tr_delta) {
@@ -97,7 +99,8 @@ void Matcher::matchFeatures(int32_t method, Matrix *Tr_delta) {
   // clear old matches
   p_matched_2_cnt = 0;
   //max p_matched cnt after matching: 14002
-  matching(m1p2,0,m1c2,0,n1p2,0,n1c2,0,p_matched_2, p_matched_2_cnt, method,false,Tr_delta);
+   myMatching(m1p2,m1c2,n1p2,n1c2,p_matched_2, p_matched_2_cnt);
+//   matching(m1p2,0,m1c2,0,n1p2,0,n1c2,0,p_matched_2, p_matched_2_cnt, method,false,Tr_delta);
   
   //max p_matched cnt after removeOutliers: 13417
   removeOutliers(p_matched_2, p_matched_2_cnt);

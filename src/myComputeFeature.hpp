@@ -1,18 +1,18 @@
 #include <iostream>
 #include <stdint.h>
 
+#include "size.h"
 
-inline int32_t myGetAddressOffsetImage (const int32_t& u,const int32_t& v,const int32_t& width);
+inline int32_t myGetAddressOffsetImage (const int32_t u,const int32_t v,const int32_t width);
 
-void myComputeDescriptor (const uint8_t* I_du,const uint8_t* I_dv,const int32_t &bpl,const int32_t &u,const int32_t &v,uint8_t *desc_addr);
+void myComputeDescriptor (const uint8_t I_du[IMG_SIZE],const uint8_t I_dv[IMG_SIZE],const int32_t bpl,const int32_t u,const int32_t v,uint8_t desc_addr[32]);
 
+void mySobel5x5 ( const uint8_t in[IMG_SIZE], uint8_t out_v[IMG_SIZE], uint8_t out_h[IMG_SIZE], int w, int h );
 
-void  mySobel5x5 ( const uint8_t* in, uint8_t* out_v, uint8_t* out_h, int w, int h );
+void myCheckerboard5x5 ( const uint8_t in[IMG_SIZE], int16_t out[IMG_SIZE], int w, int h );
 
-void  myCheckerboard5x5 ( const uint8_t* in, int16_t* out, int w, int h );
+void myBlob5x5 ( const uint8_t in[IMG_SIZE], int16_t out[IMG_SIZE], int w, int h );
 
-void myBlob5x5 ( const uint8_t* in, int16_t* out, int w, int h );
+void myNonMaximumSuppression_and_ComputeDescriptors (int16_t I_f1[IMG_SIZE],int16_t I_f2[IMG_SIZE],const int32_t dims[IMG_SIZE], uint8_t I_du[IMG_SIZE],uint8_t I_dv[IMG_SIZE], int32_t max2[MAX_FEATURE_ARRAY_SZIE], int32_t &num2);
 
-void myNonMaximumSuppression_and_ComputeDescriptors (int16_t* I_f1,int16_t* I_f2,const int32_t* dims, uint8_t* I_du,uint8_t* I_dv, int32_t* max2, int32_t &num2);
-
-void myComputeFeatures (uint8_t *I,const int32_t* dims, int32_t* max2,int32_t &num2);
+void myComputeFeatures (uint8_t I[IMG_SIZE], int32_t max2[MAX_FEATURE_ARRAY_SZIE],int32_t &num2);
