@@ -92,8 +92,8 @@ int main_mono (int argc, char** argv) {
       // image dimensions
       // int32_t width  = Img.get_width();
       // int32_t height = Img.get_height();
-      int32_t width  = 1024;
-      int32_t height = 284;
+      int32_t width  = IMG_W;
+      int32_t height = IMG_H;
 
       // convert input images to uint8_t buffer
       uint8_t* Img_data  = (uint8_t*)malloc(width*height*sizeof(uint8_t));
@@ -196,8 +196,8 @@ int main_stereo (int argc, char** argv) {
       // image dimensions
       // int32_t width  = left_img.get_width();
       // int32_t height = left_img.get_height();
-      int32_t width  = 1024;
-      int32_t height = 284;
+      int32_t width  = IMG_W;
+      int32_t height = IMG_H;
 
       // convert input images to uint8_t buffer
       uint8_t* left_img_data  = (uint8_t*)malloc(width*height*sizeof(uint8_t));

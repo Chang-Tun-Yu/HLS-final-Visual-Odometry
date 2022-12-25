@@ -334,7 +334,7 @@ void myNonMaximumSuppression_and_ComputeDescriptors (int16_t I_f1[IMG_SIZE],int1
         }
     }
     // write out remain
-    v_bin = 284/BIN_H;
+    v_bin = IMG_H/BIN_H;
     for (int _ubin = 0; _ubin < 4*U_BIN_NUM; _ubin++) {
         for (int e = 0; e < bin_buffer_num[_ubin]; e++) {
             for (int s=0; s < 12; s++) {
@@ -352,7 +352,7 @@ void myNonMaximumSuppression_and_ComputeDescriptors (int16_t I_f1[IMG_SIZE],int1
 void myComputeFeatures (uint8_t I[IMG_SIZE], int32_t max2[MAX_FEATURE_ARRAY_SZIE],int32_t max2_num[BIN_NUM]) {
   cout << endl << " MY VERSION" << endl;
 
-    int32_t dims[3] = {1024, 284, 1024};
+    int32_t dims[3] = {IMG_W, IMG_H, IMG_W};
   
   // allocate memory for sobel images and filter images
     uint8_t I_du[IMG_SIZE];

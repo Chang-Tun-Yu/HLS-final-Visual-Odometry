@@ -1,21 +1,25 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <iostream>
-#include <math.h>
-#include <emmintrin.h>
-#include <algorithm>
-#include <vector>
-#include <cassert>
+// #include <stdio.h>
+// #include <stdlib.h>
+// #include <string.h>
+// #include <iostream>
+// #include <math.h>
+// #include <emmintrin.h>
+// #include <algorithm>
+// #include <vector>
+// #include <cassert>
 
-#include "matrix.h"
-#include "size.h"
+// #include "matrix.h"
+// #include "size.h"
+
+#include "myMatch.hpp"
 
 using namespace std;
 
-#define ABS(a, b) ((a > b)? a-b:b-a);
+inline int32_t getAddressOffsetImage (const int32_t& u,const int32_t& v,const int32_t& width) {
+    return v*width+u;
+  }
 
-void Matcher::myCreateIndexVector (int32_t m[MAX_FEATURE_ARRAY_SZIE],int32_t& n,int32_t k[BIN_NUM][MAX_FP_IN_BIN], int32_t k_num[BIN_NUM],const int32_t &u_bin_num,const int32_t &v_bin_num, int32_t m_num[BIN_NUM]) {
+void myCreateIndexVector (int32_t m[MAX_FEATURE_ARRAY_SZIE],int32_t& n,int32_t k[BIN_NUM][MAX_FP_IN_BIN], int32_t k_num[BIN_NUM],const int32_t &u_bin_num,const int32_t &v_bin_num, int32_t m_num[BIN_NUM]) {
   // 
   int32_t fp_cnt = 0;
   int32_t max_tmp[MAX_FEATURE_ARRAY_SZIE];
@@ -83,7 +87,7 @@ void Matcher::myCreateIndexVector (int32_t m[MAX_FEATURE_ARRAY_SZIE],int32_t& n,
 //   }
 }
 
-inline void Matcher::myFindMatch (int32_t m1[MAX_FEATURE_ARRAY_SZIE],const int32_t &i1,int32_t m2[MAX_FEATURE_ARRAY_SZIE],const int32_t &step_size,int32_t k2[BIN_NUM][MAX_FP_IN_BIN], int32_t k2_num[BIN_NUM], 
+inline void myFindMatch (int32_t m1[MAX_FEATURE_ARRAY_SZIE],const int32_t &i1,int32_t m2[MAX_FEATURE_ARRAY_SZIE],const int32_t &step_size,int32_t k2[BIN_NUM][MAX_FP_IN_BIN], int32_t k2_num[BIN_NUM], 
                                 const int32_t &u_bin_num,const int32_t &v_bin_num,const int32_t &stat_bin,
                                 int32_t& min_ind,int32_t stage) {
   
@@ -160,11 +164,11 @@ inline void Matcher::myFindMatch (int32_t m1[MAX_FEATURE_ARRAY_SZIE],const int32
   }
 }
 
-void Matcher::myMatching (int32_t m1p[MAX_FEATURE_ARRAY_SZIE],int32_t m1c[MAX_FEATURE_ARRAY_SZIE], int32_t n1p[BIN_NUM],int32_t n1c[BIN_NUM],Matcher::p_match p_matched[POINT_L], int32_t& p_matched_num) {
+void myMatching (int32_t m1p[MAX_FEATURE_ARRAY_SZIE],int32_t m1c[MAX_FEATURE_ARRAY_SZIE], int32_t n1p[BIN_NUM],int32_t n1c[BIN_NUM],Matcher::p_match p_matched[POINT_L], int32_t& p_matched_num) {
 // cout << "my" << endl;
 // static int bin_max;
   // descriptor step size (number of int32_t elements in struct)
-  int32_t step_size = sizeof(Matcher::maximum)/sizeof(int32_t);
+  int32_t step_size = 12;
   
   // compute number of bins
 //   int32_t u_bin_num = (int32_t)ceil((float)dims_c[0]/(float)BIN_W);
@@ -245,11 +249,11 @@ void Matcher::myMatching (int32_t m1p[MAX_FEATURE_ARRAY_SZIE],int32_t m1c[MAX_FE
       v1p = *(m1p+step_size*i1p+1);
 
       // add match if this pixel isn't matched yet
-      if (M[getAddressOffsetImage(u1c,v1c,dims_c[0])]==0) {
+      if (M[getAddressOffsetImage(u1c,v1c,IMG_W)]==0) {
         // p_matched.push_back(Matcher::p_match(u1p,v1p,i1p,-1,-1,-1,u1c,v1c,i1c,-1,-1,-1));
         p_matched[p_matched_num] = Matcher::p_match(u1p,v1p,i1p,-1,-1,-1,u1c,v1c,i1c,-1,-1,-1);
         p_matched_num += 1;
-        M[getAddressOffsetImage(u1c,v1c,dims_c[0])] = 1;
+        M[getAddressOffsetImage(u1c,v1c,IMG_W)] = 1;
       }
     }
   }

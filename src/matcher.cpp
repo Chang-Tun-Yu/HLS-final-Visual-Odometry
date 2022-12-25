@@ -21,7 +21,6 @@ Street, Fifth Floor, Boston, MA 02110-1301, USA
 
 #include "matcher.h"
 #include "filter.h"
-#include "myMatch.h"
 
 using namespace std;
 

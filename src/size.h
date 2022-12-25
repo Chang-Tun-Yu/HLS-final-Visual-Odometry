@@ -1,6 +1,8 @@
 #ifndef __SIZE_H__
 #define __SIZE_H__
 
+#define IMG_W                   1024
+#define IMG_H                   284
 #define IMG_SIZE                290816
 #define MAX_FEATURE_POINT_SZIE  24000
 
