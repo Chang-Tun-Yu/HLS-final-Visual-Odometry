@@ -21,4 +21,10 @@
 
 #define COL_BIN_FEATURE_MAX     608
 
+#define POINT_L     14002
+#define TRIANGLE_L  83598
+#define HASH_L      119
+#define EDGE_L      13
+
+
 #endif

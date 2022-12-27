@@ -36,8 +36,8 @@ Matcher::Matcher(parameters param) : param(param) {
   m2c2 = 0; n2c2 = 0;
   // margin needed to compute descriptor + sobel responses
   margin = 7;
-  max2p = (int32_t*)malloc(4*MAX_FEATURE_ARRAY_SZIE);
-  max2c = (int32_t*)malloc(4*MAX_FEATURE_ARRAY_SZIE);
+  max2p = (int32_t*)malloc(4*MAX_FEATURE_ARRAY_SIZE);
+  max2c = (int32_t*)malloc(4*MAX_FEATURE_ARRAY_SIZE);
 }
 
 // deconstructor
@@ -65,7 +65,7 @@ void Matcher::pushBack (uint8_t *I1,uint8_t* I2,int32_t* dims,const bool replace
     if (m2c2)        _mm_free(m2c2);
   } else {
     if (m2p2)        _mm_free(m2p2);
-    for (int i =0; i < MAX_FEATURE_ARRAY_SZIE; i++) {
+    for (int i =0; i < MAX_FEATURE_ARRAY_SIZE; i++) {
       max2p[i] = max2c[i];
     }
     for (int i=0; i < BIN_NUM; i++) {

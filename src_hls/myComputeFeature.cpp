@@ -1,5 +1,3 @@
-#include <iostream>
-#include <stdint.h>
 #include "myComputeFeature.hpp"
 
 using namespace std;
@@ -150,7 +148,7 @@ void myBlob5x5 ( const uint8_t in[IMG_SIZE], int16_t out[IMG_SIZE], int w, int h
     }
 }
 
-void myNonMaximumSuppression_and_ComputeDescriptors (int16_t I_f1[IMG_SIZE],int16_t I_f2[IMG_SIZE],const int32_t dims[IMG_SIZE], uint8_t I_du[IMG_SIZE],uint8_t I_dv[IMG_SIZE], int32_t max2[MAX_FEATURE_ARRAY_SIZE], int32_t max2_num[BIN_NUM]) {
+void myNonMaximumSuppression_and_ComputeDescriptors (int16_t I_f1[IMG_SIZE],int16_t I_f2[IMG_SIZE],const int32_t dims[3], uint8_t I_du[IMG_SIZE],uint8_t I_dv[IMG_SIZE], int32_t max2[MAX_FEATURE_ARRAY_SIZE], int32_t max2_num[BIN_NUM]) {
     int32_t width  = dims[0];
     int32_t height = dims[1];
     int32_t bpl    = dims[2];
@@ -334,7 +332,7 @@ void myNonMaximumSuppression_and_ComputeDescriptors (int16_t I_f1[IMG_SIZE],int1
         }
     }
     // write out remain
-    v_bin = IMG_H/BIN_H;
+    v_bin = 284/BIN_H;
     for (int _ubin = 0; _ubin < 4*U_BIN_NUM; _ubin++) {
         for (int e = 0; e < bin_buffer_num[_ubin]; e++) {
             for (int s=0; s < 12; s++) {
@@ -350,9 +348,8 @@ void myNonMaximumSuppression_and_ComputeDescriptors (int16_t I_f1[IMG_SIZE],int1
 }
 
 void myComputeFeatures (uint8_t I[IMG_SIZE], int32_t max2[MAX_FEATURE_ARRAY_SIZE],int32_t max2_num[BIN_NUM]) {
-  cout << endl << " MY VERSION" << endl;
 
-    int32_t dims[3] = {IMG_W, IMG_H, IMG_W};
+    int32_t dims[3] = {1024, 284, 1024};
   
   // allocate memory for sobel images and filter images
     uint8_t I_du[IMG_SIZE];
@@ -360,20 +357,13 @@ void myComputeFeatures (uint8_t I[IMG_SIZE], int32_t max2[MAX_FEATURE_ARRAY_SIZE
     int16_t I_f1[IMG_SIZE];
     int16_t I_f2[IMG_SIZE];
 
-    // cout  << endl<<"start Sobel!" << endl;
-   mySobel5x5(I,I_du,I_dv,dims[2],dims[1]);
-    // cout  << endl<<"start myBlob5x5!" << endl;
+
+    mySobel5x5(I,I_du,I_dv,dims[2],dims[1]);
 
     myBlob5x5(I,I_f1,dims[2],dims[1]);
-    // cout  << endl<<"start myCheckerboard5x5!" << endl;
 
     myCheckerboard5x5(I,I_f2,dims[2],dims[1]);
-    // _mm_free(I_matching);
 
-    // myNonMaximumSuppression(I_f1,I_f2,dims, maxima2);
     myNonMaximumSuppression_and_ComputeDescriptors(I_f1,I_f2,dims, I_du, I_dv, max2, max2_num);
-    // myComputeDescriptors(I_du,I_dv,dims[2],maxima1);
-  
-  
-   cout << endl<<"end compute" << endl;
+
 }

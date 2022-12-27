@@ -4,7 +4,7 @@
 #include <iostream>
 #include <stdint.h>
 
-#include "size.h"
+#include "size.hpp"
 #include "delaunator.hpp"
 #include "matcher.h"
 
