@@ -247,8 +247,9 @@ private:
   
   int32_t dims_p[3],dims_c[3];
 
-  int32_t max2c[MAX_FEATURE_ARRAY_SZIE];
-  int32_t max2p[MAX_FEATURE_ARRAY_SZIE];
+  // int32_t max2c[MAX_FEATURE_ARRAY_SZIE];
+  // int32_t max2p[MAX_FEATURE_ARRAY_SZIE];
+  int32_t* max2p, *max2c;
   int32_t max2c_num[BIN_NUM];
   int32_t max2p_num[BIN_NUM];
 

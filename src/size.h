@@ -19,6 +19,6 @@
 #define MAX2_BIN_OFFSET         MAX_FP_IN_BIN*12 
 #define MAX_FEATURE_ARRAY_SZIE  BIN_NUM*MAX_FP_IN_BIN*12
 
-
+#define COL_BIN_FEATURE_MAX     608
 
 #endif

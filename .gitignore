@@ -9,6 +9,7 @@ viso2
 *.log
 *.o
 *.zip
+*.tar
 .vscode/
 
 # cmake

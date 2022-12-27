@@ -36,13 +36,16 @@ Matcher::Matcher(parameters param) : param(param) {
   m2c2 = 0; n2c2 = 0;
   // margin needed to compute descriptor + sobel responses
   margin = 7;
-  
+  max2p = (int32_t*)malloc(4*MAX_FEATURE_ARRAY_SZIE);
+  max2c = (int32_t*)malloc(4*MAX_FEATURE_ARRAY_SZIE);
 }
 
 // deconstructor
 Matcher::~Matcher() {
   if (m2p2)         _mm_free(m2p2);
   if (m2c2)         _mm_free(m2c2);
+  if (max2p)        free(max2p);
+  if (max2c)        free(max2c);
 }
 
 void Matcher::pushBack (uint8_t *I1,uint8_t* I2,int32_t* dims,const bool replace) {
