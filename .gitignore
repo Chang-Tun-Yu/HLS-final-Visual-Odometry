@@ -4,6 +4,7 @@ backup/
 matlab/
 hls_final/
 2010_03_09_drive_0019_small/
+vitis_hls/
 
 viso2
 *.log

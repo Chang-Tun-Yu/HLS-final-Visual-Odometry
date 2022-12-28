@@ -38,7 +38,7 @@ Street, Fifth Floor, Boston, MA 02110-1301, USA
 #include "remove_outliers.hpp"
 #include "viso_mono.h"
 
-//#define QUIET
+#define QUIET
 
 using namespace std;
 
@@ -106,7 +106,6 @@ int main (int argc, char** argv) {
             ifs.open(img_binary_name.c_str(), ifstream::binary | ifstream::in);
             ifs.read((char*) Img_data, width*height*sizeof(uint8_t));
             ifs.close();
-            cout << "finish read image" << endl;
 
             //STEP 1: PUSH_BACK
             for (int j =0; j < MAX_FEATURE_ARRAY_SIZE; j++) {
@@ -119,28 +118,25 @@ int main (int argc, char** argv) {
               max2c_num[j] = 0;
             }
             myComputeFeatures(Img_data, max2c,max2c_num);
-            cout << "finish myComputeFeatures " << endl;
+            // cout << "finish myComputeFeatures " << endl;
 
             //STEP 2: MATCH FEATURE
             p_matched_2_cnt = 0;
-            cout << "start myMatching " << endl;
-            if (i==0) max2p_num[0] = -1;
             myMatching(max2p,max2c,max2p_num,max2c_num,p_matched_2,p_matched_2_cnt);
-            cout << "finish myMatching " << endl;
+            // cout << "finish myMatching " << endl;
 
             //STEP 3: REMOVE OUTLIERS
             removeOutliers (p_matched_2, p_matched_2_cnt, param.bucket.max_features,param.bucket.bucket_width,param.bucket.bucket_height);
-            cout << "finish removeOutliers " << endl;
+            // cout << "finish removeOutliers " << endl;
 
             //STEP 4: GET MATCHES
             std::vector<Matcher::p_match> p_match_vec;
             for(int j = 0; j < p_matched_2_cnt; j++)
                 p_match_vec.push_back(p_matched_2[j]);
-            cout << "finish get_matches " << endl;
+            // cout << "finish get_matches " << endl;
 
             //STEP 5: UPDATE MOTION
             bool update_success = viso.updateMotion(p_match_vec);
-            cout << "finish updateMotion " << endl;
 
             if (update_success) {
                 // on success, update current pose

@@ -13,7 +13,6 @@
 
 #include "myMatch.hpp"
 
-using namespace std;
 
 void fetch_col_bin (int32_t m1p[MAX_FEATURE_ARRAY_SIZE],int32_t m1c[MAX_FEATURE_ARRAY_SIZE], int32_t n1p[BIN_NUM],int32_t n1c[BIN_NUM], 
                     Feature_Point mc_buffer[4][COL_BIN_FEATURE_MAX], 
@@ -121,7 +120,6 @@ inline void find_match (
 
 
 void myMatching (int32_t m1p[MAX_FEATURE_ARRAY_SIZE],int32_t m1c[MAX_FEATURE_ARRAY_SIZE], int32_t n1p[BIN_NUM],int32_t n1c[BIN_NUM],Matcher::p_match p_matched[POINT_L], int32_t& p_matched_num) {
-  cout << "enter matching" << endl;
   int32_t step_size = 12;
   Feature_Point mc_buffer[7][4][COL_BIN_FEATURE_MAX];
   int32_t       mc_buffer_num[7][4][V_BIN_NUM+1];
@@ -199,7 +197,6 @@ void myMatching (int32_t m1p[MAX_FEATURE_ARRAY_SIZE],int32_t m1c[MAX_FEATURE_ARR
     }
   }
 
-  cout << "p_matched_num" << p_matched_num << endl;
   if (p_matched_num < 5) {
     p_matched_num = 0;
   }  

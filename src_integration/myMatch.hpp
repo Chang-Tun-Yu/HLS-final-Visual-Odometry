@@ -3,7 +3,6 @@
 
 #include <iostream>
 #include <stdint.h>
-#include "ap_int.h"
 
 #include "size.hpp"
 #include "delaunator.hpp"
@@ -13,13 +12,10 @@ using namespace std;
 
 #define ABS(a, b) ((a > b)? a-b:b-a);
 
-extern "C" {
-
-
 struct Feature_Point
 {
     int32_t u, v, val, type;
-    ap_int<256> d;
+    uint8_t d[32];
 };
 
 struct Matching_cand
@@ -37,7 +33,7 @@ void fetch_col_bin (int32_t m1p[MAX_FEATURE_ARRAY_SIZE],int32_t m1c[MAX_FEATURE_
                     int32_t       u_bin
 );
 
-void find_match (
+inline void find_match (
   Feature_Point origin,
   int origin_u_bin,
   int origin_v_bin,
@@ -49,5 +45,4 @@ void find_match (
 
 void myMatching (int32_t m1p[MAX_FEATURE_ARRAY_SIZE],int32_t m1c[MAX_FEATURE_ARRAY_SIZE], int32_t n1p[BIN_NUM],int32_t n1c[BIN_NUM],Matcher::p_match p_matched[POINT_L], int32_t& p_matched_num);
 
-}
 #endif
