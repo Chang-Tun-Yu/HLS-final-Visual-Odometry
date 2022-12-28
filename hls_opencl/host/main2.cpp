@@ -44,6 +44,11 @@ using namespace std;
 //ref: https://docs.xilinx.com/r/en-US/ug1393-vitis-application-acceleration/Overlapping-Data-Transfers-with-Kernel-Computation
 //ref: https://github.com/Xilinx/Vitis_Accel_Examples/blob/master/host/overlap/src/host.cpp
 
+unsigned long diff(const struct timeval *newTime, const struct timeval *oldTime)
+{
+    return (newTime->tv_sec - oldTime->tv_sec) * 1000000 + (newTime->tv_usec - oldTime->tv_usec);
+}
+
 void compute_pose(int iteration_idx, std::vector<cl::Event> &events_read_res, Matcher::p_match* p_matched_res, int32_t *p_matched_res_cnt, VisualOdometryMono &viso, Matrix &pose)
 {
     
@@ -55,6 +60,14 @@ void compute_pose(int iteration_idx, std::vector<cl::Event> &events_read_res, Ma
 #endif  
     events_read_res[iteration_idx].wait();
 
+    if(iteration_idx == 0)
+    {
+#ifdef MUTE
+        cout << endl << endl;
+#else
+        cout << " ... failed!" << endl << endl;
+#endif        
+    }
     //STEP 4: GET MATCHES
     std::vector<Matcher::p_match> p_match_vec;
     for(int j = 0; j < p_matched_res_cnt[iteration_idx*DUMMY_L]; j++)
@@ -267,7 +280,7 @@ int main(int argc, const char *argv[])
     param.calib.cv = 147.888234; // principal point (v-coordinate) in pixels
     param.height   = 1.6;
     param.pitch    = -0.08;
-    unsigned numImg = 3; //373;
+    unsigned numImg = 5; //373;
     unsigned width  = 1024;
     unsigned height = 284;
 
@@ -385,7 +398,7 @@ int main(int argc, const char *argv[])
         if (iteration_idx >= 2) {
             OCL_CHECK(err, err = events_read_res[iteration_idx-2].wait());
             cout << "[Result] p_matched cnt " << iteration_idx-2 << ": " << p_matched_res_cnt[(iteration_idx-2)*DUMMY_L] << endl;
-            //compute_pose(iteration_idx, events_read_res, p_matched_res, p_matched_res_cnt, viso, pose);
+            compute_pose(iteration_idx-2, events_read_res, p_matched_res, p_matched_res_cnt, viso, pose);
         }
 
         bool flag = iteration_idx % 2;
@@ -506,80 +519,96 @@ int main(int argc, const char *argv[])
     }
     cout << "Finish add events to queue" <<endl;
 
-    //compute_pose(numImg - 2, events_read_res, p_matched_res, p_matched_res_cnt, viso, pose);
-    //compute_pose(numImg - 1, events_read_res, p_matched_res, p_matched_res_cnt, viso, pose);
+    compute_pose(numImg - 2, events_read_res, p_matched_res, p_matched_res_cnt, viso, pose);
+    compute_pose(numImg - 1, events_read_res, p_matched_res, p_matched_res_cnt, viso, pose);
 
-    //Compute result
-/*     for(unsigned iteration_idx = 0; iteration_idx < numImg; iteration_idx++)
-    {
-#ifdef QUIET
-            cout << iteration_idx << " ";
-#else
-            cout << "Processing: Frame: " << iteration_idx << endl;
-#endif  
-        events_read_res[iteration_idx].wait();
 
-        //STEP 4: GET MATCHES
-        std::vector<Matcher::p_match> p_match_vec;
-        for(int j = 0; j < p_matched_res_cnt[iteration_idx*DUMMY_L]; j++)
-            p_match_vec.push_back(p_matched_res[iteration_idx*POINT_L + j]);
-        cout << "finish get_matches " << iteration_idx << ": " << p_matched_res_cnt[iteration_idx*DUMMY_L] << endl;
-
-        //STEP 5: UPDATE MOTION
-        bool update_success = viso.updateMotion(p_match_vec);
-
-        if (update_success) {
-            // on success, update current pose
-            pose = pose * Matrix::inv(viso.getMotion());
-        
-            // output some statistics
-            double num_matches = p_matched_res_cnt[iteration_idx * DUMMY_L];
-            double num_inliers = viso.getNumberOfInliers();
-            double ratio_inliers = 100.0*num_inliers/num_matches;
-#ifdef MUTE
-            cout << num_matches << " " << ratio_inliers << endl;
-            cout << pose << endl << endl;
-#else
-            cout << ", Matches: " << num_matches;
-            cout << ", Inliers: " << 100.0*num_inliers/num_matches << " %" << ", Current pose: " << endl;
-            cout << pose << endl << endl;
-#endif
-            int tmp;
-            in >> tmp;
-            //check_ans
-            if(iteration_idx != 0)
-            {
-                Matrix golden_pos;
-                int golden_num_matches; 
-                double golden_ratio_inliers;  
-
-                in >> golden_num_matches >> golden_ratio_inliers;
-                in >> golden_pos;
-                if(!pose.compare(golden_pos) || num_matches != golden_num_matches || num_inliers != golden_ratio_inliers)
-                {
-                    match = false;
-                    error += 1;
-                    cout << "Mismatch at " << iteration_idx << ", golden: " << endl;
-                    cout << golden_num_matches << " " << golden_ratio_inliers << endl;
-                    cout << golden_pos << endl <<endl;
-                }
-            }
-        } else {
-#ifdef MUTE
-            cout << endl << endl;
-#else
-            cout << " ... failed!" << endl << endl;
-#endif
-        }
-    } */
-
-    /* for(unsigned iteration_idx = 0; iteration_idx < numImg; iteration_idx++)
-    {
-    	events_read_res[iteration_idx].wait();
-        cout << "[Result] p_matched cnt " << iteration_idx << ": " << p_matched_res_cnt[(iteration_idx)*DUMMY_L] << endl;
-    } */
+    // for(unsigned iteration_idx = 0; iteration_idx < numImg; iteration_idx++)
+    // {
+    // 	events_read_res[iteration_idx].wait();
+    //     cout << "[Result] p_matched cnt " << iteration_idx << ": " << p_matched_res_cnt[(iteration_idx)*DUMMY_L] << endl;
+    // }
     q.flush();
     q.finish();
+
+    struct timeval end_time;
+    gettimeofday(&end_time, 0);
+    std::cout << "INFO: Finish kernel execution" << std::endl;
+    std::cout << "INFO: Finish E2E execution" << std::endl;
+
+    // Profiling times
+    
+    
+   /*  std::vector<cl::Event> events_init_DB(numImg);
+
+    std::vector<cl::Event> events_write_Img(numImg);
+    std::vector<cl::Event> events_write_move(numImg);
+    std::vector<cl::Event> events_write_move2(numImg);
+
+    std::vector<cl::Event> events_read_res(numImg);
+
+    std::vector<cl::Event> events_compute(numImg);
+    std::vector<cl::Event> events_match(numImg);
+    std::vector<cl::Event> events_remove(numImg); */
+
+    unsigned long timeStart, timeEnd;
+    unsigned long exec_time0, exec_time1, exec_time2;
+    for (int i = 0; i < 1; ++i)
+    {
+        std::cout << "-------------------------------------------------------" << std::endl;
+        events_init_DB[0].getProfilingInfo(CL_PROFILING_COMMAND_START, &timeStart);
+        events_init_DB[0].getProfilingInfo(CL_PROFILING_COMMAND_END, &timeEnd);
+        std::cout << "INFO: init DB from host to device: " << (timeEnd - timeStart) / 1000.0 << " us\n";
+        std::cout << "-------------------------------------------------------" << std::endl;
+
+        events_write_Img[0].getProfilingInfo(CL_PROFILING_COMMAND_START, &timeStart);
+        events_write_Img[0].getProfilingInfo(CL_PROFILING_COMMAND_END, &timeEnd);
+        std::cout << "INFO: Write Img host to device: " << (timeEnd - timeStart) / 1000.0 << " us\n";
+        std::cout << "-------------------------------------------------------" << std::endl;
+
+        events_write_move[0].getProfilingInfo(CL_PROFILING_COMMAND_START, &timeStart);
+        events_write_move[0].getProfilingInfo(CL_PROFILING_COMMAND_END, &timeEnd);
+        std::cout << "INFO: cpy previous features: " << (timeEnd - timeStart) / 1000.0 << " us\n";
+        std::cout << "-------------------------------------------------------" << std::endl;
+        
+        events_write_move2[0].getProfilingInfo(CL_PROFILING_COMMAND_START, &timeStart);
+        events_write_move2[0].getProfilingInfo(CL_PROFILING_COMMAND_END, &timeEnd);
+        std::cout << "INFO: cpy previous features: " << (timeEnd - timeStart) / 1000.0 << " us\n";
+        std::cout << "-------------------------------------------------------" << std::endl;
+        
+        events_read_res[0].getProfilingInfo(CL_PROFILING_COMMAND_START, &timeStart);
+        events_read_res[0].getProfilingInfo(CL_PROFILING_COMMAND_END, &timeEnd);
+        std::cout << "INFO: Data transfer single result from device to host: " << (timeEnd - timeStart) / 1000.0 << " us\n";
+        std::cout << "-------------------------------------------------------" << std::endl;
+
+        events_compute[0].getProfilingInfo(CL_PROFILING_COMMAND_START, &timeStart);
+        events_compute[0].getProfilingInfo(CL_PROFILING_COMMAND_END, &timeEnd);
+        exec_time0 += (timeEnd - timeStart) / 1000.0;
+        std::cout << "INFO: Kernel compute" << i + 1 << " execution: " << (timeEnd - timeStart) / 1000.0 << " us\n";
+        std::cout << "-------------------------------------------------------" << std::endl;
+
+        events_match[0].getProfilingInfo(CL_PROFILING_COMMAND_START, &timeStart);
+        events_match[0].getProfilingInfo(CL_PROFILING_COMMAND_END, &timeEnd);
+        exec_time1 += (timeEnd - timeStart) / 1000.0;
+        std::cout << "INFO: Kernel match" << i + 1 << " execution: " << (timeEnd - timeStart) / 1000.0 << " us\n";
+        std::cout << "-------------------------------------------------------" << std::endl;
+
+        events_remove[0].getProfilingInfo(CL_PROFILING_COMMAND_START, &timeStart);
+        events_remove[0].getProfilingInfo(CL_PROFILING_COMMAND_END, &timeEnd);
+        exec_time2 += (timeEnd - timeStart) / 1000.0;
+        std::cout << "INFO: Kernel remove" << i + 1 << " execution: " << (timeEnd - timeStart) / 1000.0 << " us\n";
+        std::cout << "-------------------------------------------------------" << std::endl;
+
+    }
+    std::cout << "INFO: compute kernel total execution: " << exec_time0 << " us\n";
+    std::cout << "-------------------------------------------------------" << std::endl;
+    std::cout << "INFO: match kernel total execution: " << exec_time1 << " us\n";
+    std::cout << "-------------------------------------------------------" << std::endl;
+    std::cout << "INFO: remove kernel total execution: " << exec_time2 << " us\n";
+    std::cout << "-------------------------------------------------------" << std::endl;
+    unsigned long exec_timeE2E = diff(&end_time, &start_time);
+    std::cout << "INFO: FPGA execution time:" << exec_timeE2E << " us\n";
+    std::cout << "-------------------------------------------------------" << std::endl;
 
     // Verify the results
     if(match)
