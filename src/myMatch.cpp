@@ -185,10 +185,10 @@ void myMatching (int32_t m1p[MAX_FEATURE_ARRAY_SIZE],int32_t m1c[MAX_FEATURE_ARR
         Matching_cand cand_p = mp_matching[cand_c.u_bin][c][cand_c.idx];
         if ((cand_p.u_bin == u) && (cand_p.idx == col_idx)) {
           // matched!
-          if (M[cand_c.v][cand_c.u]==0) {
+          if (M[cand_p.v][cand_p.u]==0) {
             p_matched[_p_matched_num] = Matcher::p_match(cand_c.u,cand_c.v,-1,-1,-1,-1,cand_p.u,cand_p.v,-1,-1,-1,-1);
             _p_matched_num += 1;
-            M[cand_c.v][cand_c.u]= 1;
+            M[cand_p.v][cand_p.u]= 1;
           }
         }
       } 

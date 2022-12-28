@@ -197,7 +197,7 @@ void find_match (
 }
 
 
-void myMatching (int32_t m1p[MAX_FEATURE_ARRAY_SIZE],int32_t m1c[MAX_FEATURE_ARRAY_SIZE], int32_t n1p[BIN_NUM],int32_t n1c[BIN_NUM],Matcher::p_match p_matched[POINT_L], int32_t& p_matched_num) {
+void myMatching (int32_t m1p[MAX_FEATURE_ARRAY_SIZE],int32_t m1c[MAX_FEATURE_ARRAY_SIZE], int32_t n1p[BIN_NUM],int32_t n1c[BIN_NUM],Matcher::p_match p_matched[POINT_L], int32_t *p_matched_num, int32_t iter) {
 
 #pragma HLS INTERFACE m_axi offset = slave latency = 32 num_write_outstanding = 1 num_read_outstanding = \
     16 max_write_burst_length = 2 max_read_burst_length = 256 bundle = gmem0 port = m1p max_widen_bitwidth=128 depth = 100000
@@ -216,8 +216,10 @@ void myMatching (int32_t m1p[MAX_FEATURE_ARRAY_SIZE],int32_t m1c[MAX_FEATURE_ARR
     1 max_write_burst_length = 2 max_read_burst_length = 256 bundle = gmem2 port = p_matched depth = 100000
 
 
-  // cout << "enter matching" << endl;
-  if (n1p[0]==-1) {
+  // cout << "[Debug]--enter matching" << endl;
+  // cout << "[Debug]--iter " << iter << endl;
+  if (iter==0) {
+    *p_matched_num = 0;
     return;
   }
   int32_t step_size = 12;
@@ -229,13 +231,17 @@ void myMatching (int32_t m1p[MAX_FEATURE_ARRAY_SIZE],int32_t m1c[MAX_FEATURE_ARR
   Matching_cand mc_matching[U_BIN_NUM][4][COL_BIN_FEATURE_MAX];
   Matching_cand mp_matching[U_BIN_NUM][4][COL_BIN_FEATURE_MAX];
   static int _p_matched_num;
+//#pragma HLS ARRAY_PARTITION variable=mc_buffer dim=1 type=complete
+//#pragma HLS ARRAY_PARTITION variable=mc_buffer dim=2 type=complete
+//#pragma HLS ARRAY_PARTITION variable=mp_buffer dim=1 type=complete
+//#pragma HLS ARRAY_PARTITION variable=mp_buffer dim=2 type=complete
+//#pragma HLS ARRAY_PARTITION variable=mc_buffer_num dim=1 type=complete
+//#pragma HLS ARRAY_PARTITION variable=mc_buffer_num dim=2 type=complete
+//#pragma HLS ARRAY_PARTITION variable=mp_buffer_num dim=1 type=complete
+//#pragma HLS ARRAY_PARTITION variable=mp_buffer_num dim=2 type=complete
 
-
-  // #pragma HLS ARRAY_PARTITION variable=mc_buffer dim=3 type=cyclic factor=parallel
-  // #pragma HLS ARRAY_PARTITION variable=mp_buffer dim=3 type=cyclic factor=parallel
-
-  Matching_cand end;
-  end.u = -1;
+  // Matching_cand end;
+  // end.u = -1;
 
   static bool M[IMG_H][IMG_W];
   for (int i=0; i<IMG_H; i++) {
@@ -248,10 +254,12 @@ void myMatching (int32_t m1p[MAX_FEATURE_ARRAY_SIZE],int32_t m1c[MAX_FEATURE_ARR
   fetch_col_bin(m1p, m1c, n1p, n1c, mc_buffer[0], mc_buffer_num[0], mp_buffer[0], mp_buffer_num[0], 0);
   fetch_col_bin(m1p, m1c, n1p, n1c, mc_buffer[1], mc_buffer_num[1], mp_buffer[1], mp_buffer_num[1], 1);
   fetch_col_bin(m1p, m1c, n1p, n1c, mc_buffer[2], mc_buffer_num[2], mp_buffer[2], mp_buffer_num[2], 2);
-
+  // cout << "[Debug]--matching: n1p " <<n1p[0] <<endl;
+  // cout << "[Debug]--matching: n1c " <<n1c[0] <<endl;
+  // cout << "[Debug]--matching: fetch" << endl;
   iter: for (int i=0; i < U_BIN_NUM; i++) {
+    // cout <<"[Debug]--iter: " << i << endl;
     // fetch
-    cout << "[debug]--iter" << i << endl;
     int write_u_bin = (i+3) % 7;
     if (i < U_BIN_NUM-4) { 
       fetch_col_bin(m1p, m1c, n1p, n1c, mc_buffer[write_u_bin], mc_buffer_num[write_u_bin], mp_buffer[write_u_bin], mp_buffer_num[write_u_bin], i+3);
@@ -312,12 +320,12 @@ void myMatching (int32_t m1p[MAX_FEATURE_ARRAY_SIZE],int32_t m1c[MAX_FEATURE_ARR
     }
   }
 
-  // cout << "p_matched_num" << p_matched_num << endl;
+  // cout << "[Debug]--matching: p_matched_num " << *p_matched_num << endl;
   if (_p_matched_num < 5) {
-    p_matched_num = 0;
+    *p_matched_num = 0;
   }
   else {
-    p_matched_num = _p_matched_num;
+    *p_matched_num = _p_matched_num;
   }  
 }
 
