@@ -12,6 +12,8 @@
 using namespace std;
 
 #define ABS(a, b) ((a > b)? a-b:b-a);
+#define PARALLEL        2
+#define HALF_PARALLEL   PARALLEL/2
 
 extern "C" {
 

@@ -125,10 +125,10 @@ void myMatching (int32_t m1p[MAX_FEATURE_ARRAY_SIZE],int32_t m1c[MAX_FEATURE_ARR
   int32_t       mc_buffer_num[7][4][V_BIN_NUM+1];
   Feature_Point mp_buffer[7][4][COL_BIN_FEATURE_MAX];
   int32_t       mp_buffer_num[7][4][V_BIN_NUM+1];
+  int32_t       col_matching_cnt[U_BIN_NUM][4];
   Matching_cand mc_matching[U_BIN_NUM][4][COL_BIN_FEATURE_MAX];
   Matching_cand mp_matching[U_BIN_NUM][4][COL_BIN_FEATURE_MAX];
-  Matching_cand end;
-  end.u = -1;
+  static int _p_matched_num;
 
   bool M[IMG_H][IMG_W] = {0};
   /////////////////////////////////////////////////////
@@ -160,7 +160,8 @@ void myMatching (int32_t m1p[MAX_FEATURE_ARRAY_SIZE],int32_t m1c[MAX_FEATURE_ARR
         find_match(origin, i, v_buffer_idx, col_idx, mp_buffer, mp_buffer_num, mc_matching);        
       }
       // place end
-      mc_matching[i][c][mc_buffer_num[u_buffer_idx][c][V_BIN_NUM]] = end;
+      col_matching_cnt[i][c] = mc_buffer_num[u_buffer_idx][c][V_BIN_NUM];
+      // mc_matching[i][c][mc_buffer_num[u_buffer_idx][c][V_BIN_NUM]] = end;
 
       // previous matching
       v_buffer_idx = 0;
@@ -171,25 +172,22 @@ void myMatching (int32_t m1p[MAX_FEATURE_ARRAY_SIZE],int32_t m1c[MAX_FEATURE_ARR
         Feature_Point origin = mp_buffer[u_buffer_idx][c][col_idx];
         find_match(origin, i, v_buffer_idx, col_idx, mc_buffer, mc_buffer_num, mp_matching);        
       }
-      mp_matching[i][c][mp_buffer_num[u_buffer_idx][c][V_BIN_NUM]] = end;
+      // mp_matching[i][c][mp_buffer_num[u_buffer_idx][c][V_BIN_NUM]] = end;
     }
   }
 
   // check cycle
+  _p_matched_num = 0;
   for (int u = 0; u < U_BIN_NUM; u++) {
     for (int c = 0; c < 4; c++) {
-      for (int col_idx = 0; col_idx < COL_BIN_FEATURE_MAX; col_idx++) {
+      for (int col_idx = 0; col_idx <  col_matching_cnt[u][c]; col_idx++) {
         Matching_cand cand_c = mc_matching[u][c][col_idx];
-        if (cand_c.u == -1) {
-          break;
-        }
         Matching_cand cand_p = mp_matching[cand_c.u_bin][c][cand_c.idx];
         if ((cand_p.u_bin == u) && (cand_p.idx == col_idx)) {
           // matched!
-
           if (M[cand_c.v][cand_c.u]==0) {
-            p_matched[p_matched_num] = Matcher::p_match(cand_c.u,cand_c.v,-1,-1,-1,-1,cand_p.u,cand_p.v,-1,-1,-1,-1);
-            p_matched_num += 1;
+            p_matched[_p_matched_num] = Matcher::p_match(cand_c.u,cand_c.v,-1,-1,-1,-1,cand_p.u,cand_p.v,-1,-1,-1,-1);
+            _p_matched_num += 1;
             M[cand_c.v][cand_c.u]= 1;
           }
         }
@@ -197,7 +195,10 @@ void myMatching (int32_t m1p[MAX_FEATURE_ARRAY_SIZE],int32_t m1c[MAX_FEATURE_ARR
     }
   }
 
-  if (p_matched_num < 5) {
+  if (_p_matched_num < 5) {
     p_matched_num = 0;
+  }
+  else {
+    p_matched_num = _p_matched_num;
   }  
 }

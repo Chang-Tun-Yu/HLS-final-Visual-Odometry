@@ -14,6 +14,7 @@
 #include "myMatch.hpp"
 
 using namespace std;
+const int parallel=PARALLEL;
 
 extern "C" {
 void fetch_col_bin (int32_t m1p[MAX_FEATURE_ARRAY_SIZE],int32_t m1c[MAX_FEATURE_ARRAY_SIZE], int32_t n1p[BIN_NUM],int32_t n1c[BIN_NUM], 
@@ -36,19 +37,38 @@ void fetch_col_bin (int32_t m1p[MAX_FEATURE_ARRAY_SIZE],int32_t m1c[MAX_FEATURE_
       // memcpy(mp_buffer[c][mp_buffer_num[c][v_bin]], m1p[_bin*MAX2_BIN_OFFSET], byte_len);
       fetch_perv: for (int k=0; k < n1p[_bin]; k++) {
         Feature_Point fp;
-        fp.u = m1p[_bin*MAX2_BIN_OFFSET+12*k+0];
-        fp.v = m1p[_bin*MAX2_BIN_OFFSET+12*k+1];
-        fp.val = m1p[_bin*MAX2_BIN_OFFSET+12*k+2];
-        fp.type = m1p[_bin*MAX2_BIN_OFFSET+12*k+3];
-        // memcpy(fp.d, m1p+_bin*MAX2_BIN_OFFSET+12*k+4, 32);
-        fp.d.range(31, 0) = m1p[_bin*MAX2_BIN_OFFSET+12*k+4];
-        fp.d.range(63, 32) = m1p[_bin*MAX2_BIN_OFFSET+12*k+5];
-        fp.d.range(95, 64) = m1p[_bin*MAX2_BIN_OFFSET+12*k+6];
-        fp.d.range(127, 96) = m1p[_bin*MAX2_BIN_OFFSET+12*k+7];
-        fp.d.range(159, 128) = m1p[_bin*MAX2_BIN_OFFSET+12*k+8];
-        fp.d.range(191, 160) = m1p[_bin*MAX2_BIN_OFFSET+12*k+9];
-        fp.d.range(223, 192) = m1p[_bin*MAX2_BIN_OFFSET+12*k+10];
-        fp.d.range(255, 224) = m1p[_bin*MAX2_BIN_OFFSET+12*k+11];
+        for (int ii=0; ii<12; ii++) {
+          #pragma HLS PIPELINE II=1
+          int32_t mp_data = m1p[_bin*MAX2_BIN_OFFSET+12*k+ii];
+          if (ii==0) {
+            fp.u = mp_data;
+          }
+          if (ii==1) {
+            fp.v = mp_data;
+          }
+          if (ii==2) {
+            fp.val = mp_data;
+          }
+          if (ii==3) {
+            fp.type = mp_data;
+          }
+          if (ii>=4) {
+            fp.d.range(32*(ii-3)-1, 32*(ii-4)) = mp_data;
+          }
+        }
+        // fp.u = m1p[_bin*MAX2_BIN_OFFSET+12*k+0];
+        // fp.v = m1p[_bin*MAX2_BIN_OFFSET+12*k+1];
+        // fp.val = m1p[_bin*MAX2_BIN_OFFSET+12*k+2];
+        // fp.type = m1p[_bin*MAX2_BIN_OFFSET+12*k+3];
+        // // memcpy(fp.d, m1p+_bin*MAX2_BIN_OFFSET+12*k+4, 32);
+        // fp.d.range(31, 0) = m1p[_bin*MAX2_BIN_OFFSET+12*k+4];
+        // fp.d.range(63, 32) = m1p[_bin*MAX2_BIN_OFFSET+12*k+5];
+        // fp.d.range(95, 64) = m1p[_bin*MAX2_BIN_OFFSET+12*k+6];
+        // fp.d.range(127, 96) = m1p[_bin*MAX2_BIN_OFFSET+12*k+7];
+        // fp.d.range(159, 128) = m1p[_bin*MAX2_BIN_OFFSET+12*k+8];
+        // fp.d.range(191, 160) = m1p[_bin*MAX2_BIN_OFFSET+12*k+9];
+        // fp.d.range(223, 192) = m1p[_bin*MAX2_BIN_OFFSET+12*k+10];
+        // fp.d.range(255, 224) = m1p[_bin*MAX2_BIN_OFFSET+12*k+11];
         mp_buffer[c][mp_buffer_num[c][v_bin]+k] = fp;
       }
       mp_buffer_num[c][v_bin+1] = mp_buffer_num[c][v_bin]+n1p[_bin];
@@ -57,19 +77,38 @@ void fetch_col_bin (int32_t m1p[MAX_FEATURE_ARRAY_SIZE],int32_t m1c[MAX_FEATURE_
       // memcpy(mc_buffer[c][mc_buffer_num[c][v_bin]], m1c[_bin*MAX2_BIN_OFFSET], byte_len);
       fetch_cur: for (int k=0; k < n1c[_bin]; k++) {
         Feature_Point fp;
-        fp.u = m1c[_bin*MAX2_BIN_OFFSET+12*k+0];
-        fp.v = m1c[_bin*MAX2_BIN_OFFSET+12*k+1];
-        fp.val = m1c[_bin*MAX2_BIN_OFFSET+12*k+2];
-        fp.type = m1c[_bin*MAX2_BIN_OFFSET+12*k+3];
-        // memcpy(fp.d, m1c+_bin*MAX2_BIN_OFFSET+12*k+4, 32);
-        fp.d.range(31, 0) = m1c[_bin*MAX2_BIN_OFFSET+12*k+4];
-        fp.d.range(63, 32) = m1c[_bin*MAX2_BIN_OFFSET+12*k+5];
-        fp.d.range(95, 64) = m1c[_bin*MAX2_BIN_OFFSET+12*k+6];
-        fp.d.range(127, 96) = m1c[_bin*MAX2_BIN_OFFSET+12*k+7];
-        fp.d.range(159, 128) = m1c[_bin*MAX2_BIN_OFFSET+12*k+8];
-        fp.d.range(191, 160) = m1c[_bin*MAX2_BIN_OFFSET+12*k+9];
-        fp.d.range(223, 192) = m1c[_bin*MAX2_BIN_OFFSET+12*k+10];
-        fp.d.range(255, 224) = m1c[_bin*MAX2_BIN_OFFSET+12*k+11];
+        for (int ii=0; ii<12; ii++) {
+          #pragma HLS PIPELINE II=1
+          int32_t mc_data = m1c[_bin*MAX2_BIN_OFFSET+12*k+ii];
+          if (ii==0) {
+            fp.u = mc_data;
+          }
+          if (ii==1) {
+            fp.v = mc_data;
+          }
+          if (ii==2) {
+            fp.val = mc_data;
+          }
+          if (ii==3) {
+            fp.type = mc_data;
+          }
+          if (ii>=4) {
+            fp.d.range(32*(ii-3)-1, 32*(ii-4)) = mc_data;
+          }
+        }
+        // fp.u = m1c[_bin*MAX2_BIN_OFFSET+12*k+0];
+        // fp.v = m1c[_bin*MAX2_BIN_OFFSET+12*k+1];
+        // fp.val = m1c[_bin*MAX2_BIN_OFFSET+12*k+2];
+        // fp.type = m1c[_bin*MAX2_BIN_OFFSET+12*k+3];
+        // // memcpy(fp.d, m1c+_bin*MAX2_BIN_OFFSET+12*k+4, 32);
+        // fp.d.range(31, 0) = m1c[_bin*MAX2_BIN_OFFSET+12*k+4];
+        // fp.d.range(63, 32) = m1c[_bin*MAX2_BIN_OFFSET+12*k+5];
+        // fp.d.range(95, 64) = m1c[_bin*MAX2_BIN_OFFSET+12*k+6];
+        // fp.d.range(127, 96) = m1c[_bin*MAX2_BIN_OFFSET+12*k+7];
+        // fp.d.range(159, 128) = m1c[_bin*MAX2_BIN_OFFSET+12*k+8];
+        // fp.d.range(191, 160) = m1c[_bin*MAX2_BIN_OFFSET+12*k+9];
+        // fp.d.range(223, 192) = m1c[_bin*MAX2_BIN_OFFSET+12*k+10];
+        // fp.d.range(255, 224) = m1c[_bin*MAX2_BIN_OFFSET+12*k+11];
         mc_buffer[c][mc_buffer_num[c][v_bin]+k] = fp;
       }
       mc_buffer_num[c][v_bin+1] = mc_buffer_num[c][v_bin]+n1c[_bin];
@@ -113,14 +152,14 @@ void find_match (
   find_u_bin: for (int u_bin = u_bin_min; u_bin < u_bin_max; u_bin++) {
     int u_bin_buffer = u_bin % 7;
     find_col: for (int col_idx = m_buffer_num[u_bin_buffer][bin_class][v_bin_min]; col_idx < m_buffer_num[u_bin_buffer][bin_class][v_bin_max]; col_idx++) {
-
+      #pragma HLS UNROLL factor=parallel
       Feature_Point target = m_buffer[u_bin_buffer][bin_class][col_idx];
       if (target.u>=u_min && target.u<=u_max && target.v>=v_min && target.v<=v_max) {
         psum = 0;
         calc: for (int i = 0; i < 32; i++) {
           #pragma HLS UNROLL  factor=32
-          ap_uint<8> a = origin.d.range((i+1)*32-1, 32*i);
-          ap_uint<8> b = target.d.range((i+1)*32-1, 32*i);
+          ap_uint<8> a = origin.d.range((i+1)*8-1, 8*i);
+          ap_uint<8> b = target.d.range((i+1)*8-1, 8*i);
           tmp[i] = ABS(a, b);
         }
         // adder tree
@@ -161,19 +200,20 @@ void find_match (
 void myMatching (int32_t m1p[MAX_FEATURE_ARRAY_SIZE],int32_t m1c[MAX_FEATURE_ARRAY_SIZE], int32_t n1p[BIN_NUM],int32_t n1c[BIN_NUM],Matcher::p_match p_matched[POINT_L], int32_t& p_matched_num) {
 
 #pragma HLS INTERFACE m_axi offset = slave latency = 32 num_write_outstanding = 1 num_read_outstanding = \
-    16 max_write_burst_length = 2 max_read_burst_length = 256 bundle = gmem0 port = m1p depth = 100000
+    16 max_write_burst_length = 2 max_read_burst_length = 256 bundle = gmem0 port = m1p max_widen_bitwidth=128 depth = 100000
 
 #pragma HLS INTERFACE m_axi offset = slave latency = 32 num_write_outstanding = 1 num_read_outstanding = \
-    16 max_write_burst_length = 2 max_read_burst_length = 256 bundle = gmem0 port = n1p depth = 100000
+    16 max_write_burst_length = 2 max_read_burst_length = 256 bundle = gmem1 port = n1p max_widen_bitwidth=64 depth = 100000
 
 #pragma HLS INTERFACE m_axi offset = slave latency = 32 num_write_outstanding = 1 num_read_outstanding = \
-    16 max_write_burst_length = 2 max_read_burst_length = 256 bundle = gmem1 port = m1c depth = 100000
+    16 max_write_burst_length = 2 max_read_burst_length = 256 bundle = gmem0 port = m1c max_widen_bitwidth=128 depth = 100000
 
 #pragma HLS INTERFACE m_axi offset = slave latency = 32 num_write_outstanding = 1 num_read_outstanding = \
-    16 max_write_burst_length = 2 max_read_burst_length = 256 bundle = gmem1 port = n1c depth = 100000
+    16 max_write_burst_length = 2 max_read_burst_length = 256 bundle = gmem1 port = n1c max_widen_bitwidth=64 depth = 100000
 
+// todo: optimize the p_match sturct => int32_t
 #pragma HLS INTERFACE m_axi offset = slave latency = 32 num_write_outstanding = 1 num_read_outstanding = \
-    16 max_write_burst_length = 2 max_read_burst_length = 256 bundle = gmem1 port = p_matched depth = 100000
+    16 max_write_burst_length = 2 max_read_burst_length = 256 bundle = gmem2 port = p_matched depth = 100000
 
 
   // cout << "enter matching" << endl;
@@ -185,16 +225,14 @@ void myMatching (int32_t m1p[MAX_FEATURE_ARRAY_SIZE],int32_t m1c[MAX_FEATURE_ARR
   int32_t       mc_buffer_num[7][4][V_BIN_NUM+1];
   Feature_Point mp_buffer[7][4][COL_BIN_FEATURE_MAX];
   int32_t       mp_buffer_num[7][4][V_BIN_NUM+1];
+  int32_t       col_matching_cnt[U_BIN_NUM][4];
   Matching_cand mc_matching[U_BIN_NUM][4][COL_BIN_FEATURE_MAX];
   Matching_cand mp_matching[U_BIN_NUM][4][COL_BIN_FEATURE_MAX];
-//#pragma HLS ARRAY_PARTITION variable=mc_buffer dim=1 type=complete
-//#pragma HLS ARRAY_PARTITION variable=mc_buffer dim=2 type=complete
-//#pragma HLS ARRAY_PARTITION variable=mp_buffer dim=1 type=complete
-//#pragma HLS ARRAY_PARTITION variable=mp_buffer dim=2 type=complete
-//#pragma HLS ARRAY_PARTITION variable=mc_buffer_num dim=1 type=complete
-//#pragma HLS ARRAY_PARTITION variable=mc_buffer_num dim=2 type=complete
-//#pragma HLS ARRAY_PARTITION variable=mp_buffer_num dim=1 type=complete
-//#pragma HLS ARRAY_PARTITION variable=mp_buffer_num dim=2 type=complete
+  static int _p_matched_num;
+
+
+  // #pragma HLS ARRAY_PARTITION variable=mc_buffer dim=3 type=cyclic factor=parallel
+  // #pragma HLS ARRAY_PARTITION variable=mp_buffer dim=3 type=cyclic factor=parallel
 
   Matching_cand end;
   end.u = -1;
@@ -213,6 +251,7 @@ void myMatching (int32_t m1p[MAX_FEATURE_ARRAY_SIZE],int32_t m1c[MAX_FEATURE_ARR
 
   iter: for (int i=0; i < U_BIN_NUM; i++) {
     // fetch
+    cout << "[debug]--iter" << i << endl;
     int write_u_bin = (i+3) % 7;
     if (i < U_BIN_NUM-4) { 
       fetch_col_bin(m1p, m1c, n1p, n1c, mc_buffer[write_u_bin], mc_buffer_num[write_u_bin], mp_buffer[write_u_bin], mp_buffer_num[write_u_bin], i+3);
@@ -235,7 +274,8 @@ void myMatching (int32_t m1p[MAX_FEATURE_ARRAY_SIZE],int32_t m1c[MAX_FEATURE_ARR
         find_match(origin, i, v_buffer_idx, col_idx, mp_buffer, mp_buffer_num, mc_matching);        
       }
       // place end
-      mc_matching[i][c][mc_buffer_num[u_buffer_idx][c][V_BIN_NUM]] = end;
+      col_matching_cnt[i][c] = mc_buffer_num[u_buffer_idx][c][V_BIN_NUM];
+      // mc_matching[i][c][mc_buffer_num[u_buffer_idx][c][V_BIN_NUM]] = end;
 
       // previous matching
       v_buffer_idx = 0;
@@ -246,25 +286,23 @@ void myMatching (int32_t m1p[MAX_FEATURE_ARRAY_SIZE],int32_t m1c[MAX_FEATURE_ARR
         Feature_Point origin = mp_buffer[u_buffer_idx][c][col_idx];
         find_match(origin, i, v_buffer_idx, col_idx, mc_buffer, mc_buffer_num, mp_matching);        
       }
-      mp_matching[i][c][mp_buffer_num[u_buffer_idx][c][V_BIN_NUM]] = end;
+      // mp_matching[i][c][mp_buffer_num[u_buffer_idx][c][V_BIN_NUM]] = end;
     }
   }
 
   // check cycle
+  _p_matched_num = 0;
   check_cycle_u: for (int u = 0; u < U_BIN_NUM; u++) {
 	  check_cycle_c:for (int c = 0; c < 4; c++) {
-		  check_cycle_col:for (int col_idx = 0; col_idx < COL_BIN_FEATURE_MAX; col_idx++) {
+		  check_cycle_col:for (int col_idx = 0; col_idx < col_matching_cnt[u][c]; col_idx++) {
         Matching_cand cand_c = mc_matching[u][c][col_idx];
-        if (cand_c.u == -1) {
-          break;
-        }
         Matching_cand cand_p = mp_matching[cand_c.u_bin][c][cand_c.idx];
         if ((cand_p.u_bin == u) && (cand_p.idx == col_idx)) {
           // matched!
 
           if (M[cand_c.v][cand_c.u]==0) {
-            p_matched[p_matched_num] = Matcher::p_match(cand_c.u,cand_c.v,-1,-1,-1,-1,cand_p.u,cand_p.v,-1,-1,-1,-1);
-            p_matched_num += 1;
+            p_matched[_p_matched_num] = Matcher::p_match(cand_c.u,cand_c.v,-1,-1,-1,-1,cand_p.u,cand_p.v,-1,-1,-1,-1);
+            _p_matched_num += 1;
             M[cand_c.v][cand_c.u]= 1;
           }
         }
@@ -273,8 +311,11 @@ void myMatching (int32_t m1p[MAX_FEATURE_ARRAY_SIZE],int32_t m1c[MAX_FEATURE_ARR
   }
 
   // cout << "p_matched_num" << p_matched_num << endl;
-  if (p_matched_num < 5) {
+  if (_p_matched_num < 5) {
     p_matched_num = 0;
+  }
+  else {
+    p_matched_num = _p_matched_num;
   }  
 }
 
