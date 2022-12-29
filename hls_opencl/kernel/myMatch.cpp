@@ -152,7 +152,7 @@ void find_match (
   find_u_bin: for (int u_bin = u_bin_min; u_bin < u_bin_max; u_bin++) {
     int u_bin_buffer = u_bin % 7;
     find_col: for (int col_idx = m_buffer_num[u_bin_buffer][bin_class][v_bin_min]; col_idx < m_buffer_num[u_bin_buffer][bin_class][v_bin_max]; col_idx++) {
-      #pragma HLS UNROLL factor=parallel
+      //#pragma HLS UNROLL factor=parallel
       Feature_Point target = m_buffer[u_bin_buffer][bin_class][col_idx];
       if (target.u>=u_min && target.u<=u_max && target.v>=v_min && target.v<=v_max) {
         psum = 0;
@@ -231,6 +231,10 @@ void myMatching (int32_t m1p[MAX_FEATURE_ARRAY_SIZE],int32_t m1c[MAX_FEATURE_ARR
   Matching_cand mc_matching[U_BIN_NUM][4][COL_BIN_FEATURE_MAX];
   Matching_cand mp_matching[U_BIN_NUM][4][COL_BIN_FEATURE_MAX];
   static int _p_matched_num;
+  #pragma HLS bind_storage variable=mc_buffer type=RAM_1P impl=uram
+  #pragma HLS bind_storage variable=mp_buffer type=RAM_1P impl=uram
+  #pragma HLS bind_storage variable=mc_matching type=RAM_1P impl=uram
+  #pragma HLS bind_storage variable=mp_matching type=RAM_1P impl=uram
 //#pragma HLS ARRAY_PARTITION variable=mc_buffer dim=1 type=complete
 //#pragma HLS ARRAY_PARTITION variable=mc_buffer dim=2 type=complete
 //#pragma HLS ARRAY_PARTITION variable=mp_buffer dim=1 type=complete

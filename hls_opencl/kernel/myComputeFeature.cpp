@@ -362,14 +362,18 @@ void myComputeFeatures (uint8_t I[IMG_SIZE], int32_t max2[MAX_FEATURE_ARRAY_SIZE
     int32_t dims[3] = {1024, 284, 1024};
   
   // allocate memory for sobel images and filter images
-    // uint8_t I_du[IMG_SIZE];
-    // uint8_t I_dv[IMG_SIZE];
-    // int16_t I_f1[IMG_SIZE];
-    // int16_t I_f2[IMG_SIZE];
-    uint8_t* I_du = (uint8_t*)malloc(IMG_SIZE);
-    uint8_t* I_dv = (uint8_t*)malloc(IMG_SIZE);
-    int16_t* I_f1 = (int16_t*)malloc(IMG_SIZE*2);
-    int16_t* I_f2 = (int16_t*)malloc(IMG_SIZE*2);
+    uint8_t I_du[IMG_SIZE];
+    uint8_t I_dv[IMG_SIZE];
+    int16_t I_f1[IMG_SIZE];
+    int16_t I_f2[IMG_SIZE];
+    #pragma HLS bind_storage variable=I_du type=RAM_1P impl=uram
+    #pragma HLS bind_storage variable=I_dv type=RAM_1P impl=uram
+    #pragma HLS bind_storage variable=I_f1 type=RAM_1P impl=uram
+    #pragma HLS bind_storage variable=I_f2 type=RAM_1P impl=uram
+    // uint8_t* I_du = (uint8_t*)malloc(IMG_SIZE);
+    // uint8_t* I_dv = (uint8_t*)malloc(IMG_SIZE);
+    // int16_t* I_f1 = (int16_t*)malloc(IMG_SIZE*2);
+    // int16_t* I_f2 = (int16_t*)malloc(IMG_SIZE*2);
 
     // cout << "mySobel5x5 start" << endl;
     mySobel5x5(I,I_du,I_dv,dims[2],dims[1]);
@@ -381,9 +385,9 @@ void myComputeFeatures (uint8_t I[IMG_SIZE], int32_t max2[MAX_FEATURE_ARRAY_SIZE
     myNonMaximumSuppression_and_ComputeDescriptors(I_f1,I_f2,dims, I_du, I_dv, max2, max2_num);
     // cout << "compF done" << endl;
 
-    free(I_du);
-    free(I_dv);
-    free(I_f1);
-    free(I_f2);
+    // free(I_du);
+    // free(I_dv);
+    // free(I_f1);
+    // free(I_f2);
 }
 }
