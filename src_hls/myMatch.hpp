@@ -12,7 +12,7 @@
 using namespace std;
 
 #define ABS(a, b) ((a > b)? a-b:b-a);
-#define PARALLEL        2
+#define PARALLEL        8
 #define HALF_PARALLEL   PARALLEL/2
 
 extern "C" {
@@ -39,7 +39,7 @@ void fetch_col_bin (int32_t m1p[MAX_FEATURE_ARRAY_SIZE],int32_t m1c[MAX_FEATURE_
                     int32_t       u_bin
 );
 
-void find_match (
+inline void find_match (
   Feature_Point origin,
   int origin_u_bin,
   int origin_v_bin,

@@ -15,6 +15,7 @@
 
 using namespace std;
 const int parallel=PARALLEL;
+const int half_parallel=HALF_PARALLEL;
 
 extern "C" {
 void fetch_col_bin (int32_t m1p[MAX_FEATURE_ARRAY_SIZE],int32_t m1c[MAX_FEATURE_ARRAY_SIZE], int32_t n1p[BIN_NUM],int32_t n1c[BIN_NUM], 
@@ -116,7 +117,7 @@ void fetch_col_bin (int32_t m1p[MAX_FEATURE_ARRAY_SIZE],int32_t m1c[MAX_FEATURE_
   }
 }
 
-void find_match (
+inline void find_match (
   Feature_Point origin,
   int origin_u_bin,
   int origin_v_bin,
@@ -231,8 +232,8 @@ void myMatching (int32_t m1p[MAX_FEATURE_ARRAY_SIZE],int32_t m1c[MAX_FEATURE_ARR
   static int _p_matched_num;
 
 
-  // #pragma HLS ARRAY_PARTITION variable=mc_buffer dim=3 type=cyclic factor=parallel
-  // #pragma HLS ARRAY_PARTITION variable=mp_buffer dim=3 type=cyclic factor=parallel
+   #pragma HLS ARRAY_PARTITION variable=mc_buffer dim=3 type=cyclic factor=parallel
+   #pragma HLS ARRAY_PARTITION variable=mp_buffer dim=3 type=cyclic factor=parallel
 
   Matching_cand end;
   end.u = -1;
